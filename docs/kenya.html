@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>roadmap – Health Facility Data Portal</title>
+<title>kenya – Health Facility Data Portal</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -72,7 +106,7 @@ ul.task-list li input[type="checkbox"] {
 
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -125,7 +159,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Methods</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./roadmap.html" aria-current="page"> 
+    <a class="nav-link" href="./roadmap.html"> 
 <span class="menu-text">Roadmap</span></a>
   </li>  
   <li class="nav-item compact">
@@ -146,102 +180,235 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul class="collapse">
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#facility-breakdown" id="toc-facility-breakdown" class="nav-link" data-scroll-target="#facility-breakdown">Facility Breakdown</a></li>
+  <li><a href="#data-quality" id="toc-data-quality" class="nav-link" data-scroll-target="#data-quality">Data Quality</a></li>
+  <li><a href="#available-fields" id="toc-available-fields" class="nav-link" data-scroll-target="#available-fields">Available Fields</a></li>
+  <li><a href="#download" id="toc-download" class="nav-link" data-scroll-target="#download">Download</a></li>
+  <li><a href="#code-example" id="toc-code-example" class="nav-link" data-scroll-target="#code-example">Code Example</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 
 
 
-<div class="page-banner">
-  <h1>Roadmap</h1>
-  <p>Planned features, country expansions, and data releases</p>
+<div class="country-hero">
+  <h1>🇰🇪 Kenya</h1>
+  <p class="hero-sub">Republic of Kenya — Health Facility Dataset v1.1</p>
 </div>
-<p>The roadmap below reflects the Portal team’s current priorities. Have a suggestion? <a href="https://github.com/myalla-christina/hf-data-portal/issues">Open an issue on GitHub.</a></p>
+
+<div class="stats-row">
+  <div class="stat-card"><div class="stat-value">12 700</div><div class="stat-label">Total facilities</div></div>
+  <div class="stat-card"><div class="stat-value">91 %</div><div class="stat-label">With GPS coordinates</div></div>
+  <div class="stat-card"><div class="stat-value">47 Counties</div><div class="stat-label">Admin coverage</div></div>
+  <div class="stat-card"><div class="stat-value">2016–2024</div><div class="stat-label">Temporal coverage</div></div>
+  <div class="stat-card"><div class="stat-value">v1.1</div><div class="stat-label">Current version</div></div>
+</div>
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<p>Kenya operates one of the most comprehensive open health facility registries in sub-Saharan Africa — the <strong>Kenya Master Health Facility List (KMHFL)</strong>. The Portal dataset is derived from KMHFL quarterly extracts, supplemented with DHIS2 codes and coordinate cross-validation across all 47 counties.</p>
 <hr>
-<section id="foundations" class="level2">
-<h2 class="anchored" data-anchor-id="foundations">2024 — Foundations</h2>
-<div class="timeline">
-  <div class="timeline-item completed">
-    <div class="tl-quarter">Q1 2024</div>
-    <h4 class="anchored">Tanzania v1.0 Release <span class="badge-done">Done</span></h4>
-    <p>Full national facility list with GPS coordinates, admin hierarchy, facility
-    type and ownership. Quality report published on Zenodo.</p>
-  </div>
-  <div class="timeline-item completed">
-    <div class="tl-quarter">Q2 2024</div>
-    <h4 class="anchored">Kenya v1.0 Release <span class="badge-done">Done</span></h4>
-    <p>KMHFL-sourced dataset harmonised to the Portal schema, including private
-    facilities and faith-based health units.</p>
-  </div>
-  <div class="timeline-item completed">
-    <div class="tl-quarter">Q3 2024</div>
-    <h4 class="anchored">Uganda v1.0 Release <span class="badge-done">Done</span></h4>
-    <p>MoH Uganda HMIS export cleaned, deduplicated, and georeferenced.
-    Admin level-4 (parish) codes included where available.</p>
-  </div>
-  <div class="timeline-item completed">
-    <div class="tl-quarter">Q4 2024</div>
-    <h4 class="anchored">Portal Website v1 <span class="badge-done">Done</span></h4>
-    <p>Public-facing website with country pages, methodology documentation,
-    and download links launched.</p>
-  </div>
+</section>
+<section id="facility-breakdown" class="level2">
+<h2 class="anchored" data-anchor-id="facility-breakdown">Facility Breakdown</h2>
+<div class="data-section">
+  <h3 class="anchored">By Facility Type</h3>
+  
+<table class="table table-sm caption-top" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th">Type</th>
+<th data-quarto-table-cell-role="th">Count</th>
+<th data-quarto-table-cell-role="th">%</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Dispensary / Pharmacy</td>
+<td>5 850</td>
+<td>46.1 %</td>
+</tr>
+<tr class="even">
+<td>Health Centre</td>
+<td>2 940</td>
+<td>23.1 %</td>
+</tr>
+<tr class="odd">
+<td>Clinic (Private)</td>
+<td>2 210</td>
+<td>17.4 %</td>
+</tr>
+<tr class="even">
+<td>District Hospital</td>
+<td>1 180</td>
+<td>9.3 %</td>
+</tr>
+<tr class="odd">
+<td>County / National Referral</td>
+<td>520</td>
+<td>4.1 %</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+<div class="data-section">
+  <h3 class="anchored">By Ownership</h3>
+  
+<table class="table table-sm caption-top" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th">Ownership</th>
+<th data-quarto-table-cell-role="th">Count</th>
+<th data-quarto-table-cell-role="th">%</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Government (MoH Kenya)</td>
+<td>6 350</td>
+<td>50.0 %</td>
+</tr>
+<tr class="even">
+<td>Private for Profit</td>
+<td>3 810</td>
+<td>30.0 %</td>
+</tr>
+<tr class="odd">
+<td>Faith-Based Organisation</td>
+<td>1 780</td>
+<td>14.0 %</td>
+</tr>
+<tr class="even">
+<td>NGO / Other</td>
+<td>760</td>
+<td>6.0 %</td>
+</tr>
+</tbody>
+</table>
+
 </div>
 <hr>
 </section>
-<section id="enrichment-expansion" class="level2">
-<h2 class="anchored" data-anchor-id="enrichment-expansion">2025 — Enrichment &amp; Expansion</h2>
-<div class="timeline">
-  <div class="timeline-item in-progress">
-    <div class="tl-quarter">Q1 2025</div>
-    <h4 class="anchored">Travel-Time Surfaces <span class="badge-progress">In Progress</span></h4>
-    <p>Friction-surface-based travel time to the nearest facility at 1 km²
-    resolution for all three countries.</p>
-  </div>
-  <div class="timeline-item in-progress">
-    <div class="tl-quarter">Q2 2025</div>
-    <h4 class="anchored">Malawi Pilot Dataset <span class="badge-progress">In Progress</span></h4>
-    <p>Scoping and source negotiation for Malawi national MFL underway.
-    Target release Q3 2025.</p>
-  </div>
-  <div class="timeline-item">
-    <div class="tl-quarter">Q3 2025</div>
-    <h4 class="anchored">Annual Updates — TZA, KEN, UGA <span class="badge-planned">Planned</span></h4>
-    <p>Refresh all three core country datasets with 2024 source extracts,
-    version bump to v2.0.</p>
-  </div>
-  <div class="timeline-item">
-    <div class="tl-quarter">Q4 2025</div>
-    <h4 class="anchored">Interactive Map Explorer <span class="badge-planned">Planned</span></h4>
-    <p>In-browser map to filter, visualise, and download subsets of facility
-    data without any coding required.</p>
-  </div>
+<section id="data-quality" class="level2">
+<h2 class="anchored" data-anchor-id="data-quality">Data Quality</h2>
+<div class="data-section">
+  <h3 class="anchored">Quality Scores — v1.1</h3>
+  
+<table class="table table-sm caption-top" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th">Dimension</th>
+<th data-quarto-table-cell-role="th">Score</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Coordinate validity</td>
+<td>91 / 100</td>
+</tr>
+<tr class="even">
+<td>Attribute completeness</td>
+<td>84 / 100</td>
+</tr>
+<tr class="odd">
+<td>Duplicate rate (post-dedup)</td>
+<td>&lt; 0.3 %</td>
+</tr>
+<tr class="even">
+<td>Admin code consistency</td>
+<td>97 / 100</td>
+</tr>
+<tr class="odd">
+<td>Temporal coverage</td>
+<td>2016–2024</td>
+</tr>
+</tbody>
+</table>
+
 </div>
 <hr>
 </section>
-<section id="scale" class="level2">
-<h2 class="anchored" data-anchor-id="scale">2026 — Scale</h2>
-<div class="timeline">
-  <div class="timeline-item">
-    <div class="tl-quarter">Q1 2026</div>
-    <h4 class="anchored">Mozambique &amp; Zambia Datasets <span class="badge-planned">Planned</span></h4>
-    <p>Two additional high-burden malaria countries added, bringing total coverage
-    to five countries.</p>
-  </div>
-  <div class="timeline-item">
-    <div class="tl-quarter">Q2 2026</div>
-    <h4 class="anchored">API Access <span class="badge-planned">Planned</span></h4>
-    <p>RESTful API endpoint for programmatic data access, enabling direct
-    integration into modelling pipelines without manual downloads.</p>
-  </div>
-  <div class="timeline-item">
-    <div class="tl-quarter">Q3–Q4 2026</div>
-    <h4 class="anchored">Service Availability Linkage <span class="badge-planned">Planned</span></h4>
-    <p>Link facility records to SARA and DHIS2 indicators, enabling
-    facility-level readiness scores for outpatient malaria care.</p>
-  </div>
+<section id="available-fields" class="level2">
+<h2 class="anchored" data-anchor-id="available-fields">Available Fields</h2>
+<p>
+  <span class="data-tag">facility_id</span><span class="data-tag">source_id (KMHFL)</span>
+  <span class="data-tag">name</span><span class="data-tag">facility_type</span>
+  <span class="data-tag">ownership</span><span class="data-tag">admin1 (County)</span>
+  <span class="data-tag">admin2 (Sub-County)</span><span class="data-tag">admin3 (Ward)</span>
+  <span class="data-tag">longitude</span><span class="data-tag">latitude</span>
+  <span class="data-tag">coord_source</span><span class="data-tag">keph_level</span>
+  <span class="data-tag">operational</span><span class="data-tag">year</span><span class="data-tag">version</span>
+</p>
+<hr>
+</section>
+<section id="download" class="level2">
+<h2 class="anchored" data-anchor-id="download">Download</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-<p><em>Last updated: January 2025. Timelines are indicative and subject to change.</em></p>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Data are released under <strong>CC BY 4.0</strong>. Please cite the Zenodo record in publications.</p>
+</div>
+</div>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Format</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>CSV (all facilities)</td>
+<td><em>Coming soon</em></td>
+</tr>
+<tr class="even">
+<td>GeoPackage (.gpkg)</td>
+<td><em>Coming soon</em></td>
+</tr>
+<tr class="odd">
+<td>R package <code>{hfportal}</code></td>
+<td><em>Coming soon</em></td>
+</tr>
+<tr class="even">
+<td>Quality report PDF</td>
+<td><em>Coming soon</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Zenodo DOI:</strong> <code>10.5281/zenodo.XXXXXX</code></p>
+<hr>
+</section>
+<section id="code-example" class="level2">
+<h2 class="anchored" data-anchor-id="code-example">Code Example</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(hfportal)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>ken <span class="ot">&lt;-</span> <span class="fu">get_facilities</span>(<span class="at">country =</span> <span class="st">"KEN"</span>, <span class="at">version =</span> <span class="st">"1.1"</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>ken <span class="sc">|&gt;</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(admin1, facility_type) <span class="sc">|&gt;</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(admin1, n), <span class="at">y =</span> n, <span class="at">fill =</span> facility_type)) <span class="sc">+</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span> <span class="fu">coord_flip</span>() <span class="sc">+</span> <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Kenya: Facilities by County &amp; Type"</span>, <span class="at">x =</span> <span class="cn">NULL</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><em>Dataset last updated: August 2024 | Source: KMHFL (Kenya MoH)</em></p>
+<a href="../index.html" class="btn-hf-primary" style="margin-top:1rem;display:inline-block;">← All Countries</a>
 
 
 </section>

@@ -7,18 +7,23 @@ project:
 website:
   title: "Health Facility Data Portal"
   back-to-top-navigation: true
-  page-footer: 
+  favicon: images/hf_logo.png
+
+  page-footer:
     left: "Copyright 2026, HF Portal"
     right: "Sponsored by ![](images/gates.png){height=26px style='margin-left:8px;'}"
     background: primary
+
   navbar:
     search: true
     logo: images/hf_logo.png
     logo-alt: "Structured HF data for malaria-endemic African countries"
     logo-href: /index.html
+    pinned: true
     tools:
       - icon: github
         href: https://github.com/myalla-christina/hf-data-portal
+        aria-label: GitHub
     right:
       - text: " "
         href: index.qmd
@@ -26,31 +31,29 @@ website:
       - text: About
         href: about.qmd
       - text: Countries
-        menu: 
-          - text: "Tanzania"
+        menu:
+          - text: "🇹🇿 Tanzania"
             href: countries/tanzania.qmd
-          - text: Kenya
+          - text: "🇰🇪 Kenya"
             href: countries/kenya.qmd
-          - text: Uganda
+          - text: "🇺🇬 Uganda"
             href: countries/uganda.qmd
       - text: Methods
         href: methodology.qmd
       - text: Roadmap
         href: roadmap.qmd
-      - icon: images/map_logo.jpg
-        href: https://map.ox.ac.uk   # optional link
-        
- 
+      - icon: globe
+        href: https://map.ox.ac.uk
+        aria-label: MAP Oxford
+
 format:
   html:
-   
-    theme: flatly
-    css: styles.css
-    respect-user-color-scheme: true
-runtime: shiny    
+    theme:
+      light: [flatly, style-base.scss, style-light.scss]
+      dark:  [darkly,  style-base.scss, style-dark.scss]
+    toc: false
+    link-external-icon: false
+    link-external-newwindow: true
 
-
-
-
-  
-     
+execute:
+  freeze: auto

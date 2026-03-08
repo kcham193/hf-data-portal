@@ -1,160 +1,207 @@
 ---
 title: ""
-subtitle: ""
 page-layout: full
 toc: false
 ---
 
-```{r}
-#| include: false
-knitr::opts_chunk$set(
-  echo = FALSE, #hide code
-  message = FALSE, #hide package messages
-  warning = FALSE #hide warnings
-)
+```{=html}
+<!-- WELCOME BANNER -->
+<section class="welcome-section">
+  <h1>Welcome to the HF Data Portal</h1>
+  <p class="welcome-sub">
+    The Health Facility Data Portal is a centralised resource for structured,
+    quality-assured facility data relevant to malaria modelling in sub-Saharan
+    Africa. Explore our country pages for guidance on accessing and using
+    health facility datasets.
+  </p>
+</section>
+
+<!-- SELECTOR CARD: dropdown + workflow diagram -->
+<section class="selector-section">
+  <div class="selector-card">
+
+    <div class="selector-left">
+      <label for="countrySelect">I am looking for data from</label>
+      <select class="country-select" id="countrySelect" onchange="onCountryChange(this)">
+        <option value="" disabled selected>Select a country…</option>
+        <option value="countries/tanzania.html">🇹🇿 Tanzania</option>
+        <option value="countries/kenya.html">🇰🇪 Kenya</option>
+        <option value="countries/uganda.html">🇺🇬 Uganda</option>
+      </select>
+      <button class="proceed-btn" id="proceedBtn" onclick="goToCountry()" disabled>
+        Proceed ➔
+      </button>
+    </div>
+
+    <div class="workflow-diagram">
+
+      <!-- Row 1: left to right -->
+      <div class="wf-row">
+        <div class="wf-node">
+          <span class="wf-icon">🔍</span>
+          I need HF data for modelling
+        </div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-node wf-center">
+          <span class="wf-icon">🏥</span>
+          Discover HF Portal
+        </div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-node wf-action">
+          <span class="wf-icon">📂</span>
+          Explore country pages
+        </div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-node wf-action">
+          <span class="wf-icon">💾</span>
+          Find relevant datasets
+        </div>
+      </div>
+
+      <!-- Turn: down arrow on right side -->
+      <div class="wf-turn-row">
+        <div class="wf-turn-spacer"></div>
+        <div class="wf-arrow wf-arrow-down"> <- </div>
+      </div>
+
+      <!-- Row 2: right to left (snake) -->
+      <div class="wf-row wf-row-reverse">
+        <div class="wf-node wf-download">
+          <span class="wf-icon">⬇️</span>
+          Download data
+        </div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-node wf-decision">
+          <span class="wf-icon">❓</span>
+          Decide whether to download
+        </div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-node wf-external">
+          <span class="wf-icon">🔗</span>
+          Review &amp; access source
+        </div>
+        <!-- <div class="wf-arrow">→</div> -->
+        <!-- <div class="wf-node wf-action"> -->
+        <!--   <span class="wf-icon">ℹ️</span> -->
+        <!--   Review quality report -->
+        <!-- </div> -->
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<hr class="hf-divider">
+
+<!-- FEATURE CARDS -->
+<section class="features-section">
+  <div class="feature-cards">
+
+    <div class="feature-card">
+      <h3>Facility Datasets</h3>
+      <div class="card-svg">
+        <svg viewBox="0 0 80 80" fill="none" stroke="#3d7a6e" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="12" y="12" width="20" height="22" rx="3"/>
+          <rect x="30" y="8" width="20" height="22" rx="3"/>
+          <line x1="40" y1="30" x2="40" y2="46"/>
+          <line x1="32" y1="38" x2="40" y2="46"/>
+          <line x1="48" y1="38" x2="40" y2="46"/>
+          <ellipse cx="40" cy="52" rx="14" ry="5"/>
+          <line x1="26" y1="52" x2="26" y2="62"/>
+          <line x1="54" y1="52" x2="54" y2="62"/>
+          <ellipse cx="40" cy="62" rx="14" ry="5"/>
+        </svg>
+      </div>
+      <p>Access georeferenced, harmonised facility lists including type, ownership, service availability, and administrative hierarchy across malaria-endemic countries.</p>
+    </div>
+
+    <div class="feature-card">
+      <h3>Documentation</h3>
+      <div class="card-svg">
+        <svg viewBox="0 0 80 80" fill="none" stroke="#3d7a6e" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="20" y="12" width="34" height="44" rx="3"/>
+          <rect x="24" y="8" width="34" height="44" rx="3" fill="white" stroke="#3d7a6e"/>
+          <line x1="32" y1="24" x2="50" y2="24"/>
+          <line x1="32" y1="31" x2="50" y2="31"/>
+          <line x1="32" y1="38" x2="50" y2="38"/>
+          <line x1="32" y1="45" x2="44" y2="45"/>
+        </svg>
+      </div>
+      <p>Detailed quality reports and methodology documentation describing how each dataset was collected, cleaned, and validated for disease modelling use.</p>
+    </div>
+
+    <div class="feature-card">
+      <h3>Code Examples</h3>
+      <div class="card-svg">
+        <svg viewBox="0 0 80 80" fill="none" stroke="#3d7a6e" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="10" y="16" width="60" height="48" rx="4"/>
+          <line x1="10" y1="28" x2="70" y2="28"/>
+          <circle cx="20" cy="22" r="2.5"/>
+          <circle cx="29" cy="22" r="2.5"/>
+          <circle cx="38" cy="22" r="2.5"/>
+          <polyline points="24,40 32,50 24,60"/>
+          <line x1="38" y1="60" x2="56" y2="60"/>
+        </svg>
+      </div>
+      <p>Worked R and Python examples showing how to load, clean, and integrate health facility data into epidemiological models and access-to-care analyses.</p>
+    </div>
+
+  </div>
+</section>
+
+<hr class="hf-divider">
+
+<!-- ABOUT STRIP -->
+<section class="about-strip">
+  <div class="about-inner">
+    <div class="about-text">
+      <h2>Responsible Access to Health Facility Data for Analysis and Research</h2>
+      <p>
+        The HF Data Portal makes it easier to find and use health facility data for
+        malaria modelling. The Portal collates facility lists from national master
+        facility registers, DHIS2, and partner sources — documenting each dataset
+        and providing code examples for integration into modelling workflows.
+      </p>
+      <p>
+        While data files are hosted on Zenodo, the Portal guides you through
+        downloading and contextualises each dataset with quality reports and
+        worked examples.
+      </p>
+      <a href="about.html" class="btn-hf-primary">Learn More About the Portal</a>
+    </div>
+    <div class="about-visual">
+      <div class="about-stat">
+        <span class="about-stat-icon">🌍</span>
+        <div>
+          <div class="about-stat-value">3</div>
+          <div class="about-stat-label">Countries covered</div>
+        </div>
+      </div>
+      <div class="about-stat">
+        <span class="about-stat-icon">🏥</span>
+        <div>
+          <div class="about-stat-value">25 940</div>
+          <div class="about-stat-label">Facilities catalogued</div>
+        </div>
+      </div>
+      <div class="about-stat">
+        <span class="about-stat-icon">📅</span>
+        <div>
+          <div class="about-stat-value">2015–2024</div>
+          <div class="about-stat-label">Temporal coverage</div>
+        </div>
+      </div>
+      <div class="about-stat">
+        <span class="about-stat-icon">🔓</span>
+        <div>
+          <div class="about-stat-value">Open Access</div>
+          <div class="about-stat-label">CC BY 4.0 licensed</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 ```
-<!-- ===================== -->
-<!-- Hero Image -->
-<!-- ===================== -->
-
-::: hero-image
-![Africa Health Facilities Map](images/mosquito.jpg)
-:::
-
-<!-- ===================== -->
-<!-- Welcome Text -->
-<!-- ===================== -->
-
-::: hero-welcome
-# Geocoded Health Facility Data for Malaria-Endemic Africa
-
-This portal provides harmonized, facility-level demographic, service,  
-and equipment data across malaria-endemic African countries.  
-The data are structured to directly support malaria modelling,  
-spatial accessibility analysis, and health systems research.
-:::
-
-::: section-light
-<!-- ===================== -->
-
-<!-- Core Services -->
-
-<!-- ===================== -->
-
-:::::: services-container
-::: service-card
-        
-<h3>Facility Demographics</h3>
-<p>
-  Standardized information on facility type, ownership,
-  administrative location, and geocoordinates.
-</p>
-
-:::
-
-::: service-card
-        
-<h3>Service Availability</h3>
-<p>
-  Facility-level availability of clinical and diagnostic services,
-  including malaria-related interventions.
-</p>
-
-:::
-
-::: service-card
-         
-<h3>Equipment & Readiness</h3>
-<p>
-  Availability of essential equipment and commodities relevant
-  to malaria case management and service readiness.
-</p>
-
-:::
-::::::
-
-------------------------------------------------------------------------
-
-## Why this portal exists
-
-Reliable, geocoded health facility data remain scarce across many malaria-endemic African countries. Existing datasets are often fragmented, stored in PDF formats, or lack the standardization required for spatial and mathematical modelling.
-
-This portal addresses this gap by extracting, cleaning, and structuring facility profile data into analysis-ready formats.
-
-## What this portal provides
-
--   Harmonized facility-level datasets across countries
--   Consistent classification of services and facility attributes
--   Geographic coordinates suitable for spatial modelling
--   Reusable outputs for integration into malaria transmission models
-
-## Intended users
-
-The primary users of this portal are malaria modelers, epidemiologists, geospatial analysts, and health systems researchers.
-
-------------------------------------------------------------------------
-
-## Dataset coverage
-
-```{r} 
-library(readr) 
-library(dplyr)
-
-hf_demo <- read_csv("data/tanzania/hf_demographics.csv", show_col_types = FALSE) 
-hf_services <- read_csv("data/tanzania/hf_services.csv", show_col_types = FALSE)
-
-tibble( Metric = c( "Total health facilities", "Facilities with service data", "Unique service categories" ), Value = c( n_distinct(hf_demo$facility_code),n_distinct(hf_services$facility_code), n_distinct(hf_services$general_services) ) )
-
-```    
-
-<!-- ===================== -->
-<!-- Our Values Section -->
-<!-- ===================== -->
-
-::: values-section
-
-### <i class="bi bi-heart"></i> Our Values
-
-::: values-grid
-::: value-card
-#### <i class="bi bi-book"></i> Openness
-We promote open data principles and transparent workflows to ensure that
-health facility data can be accessed, reviewed, and reused by researchers,
-policymakers, and implementers.
-:::
-
-::: value-card
-#### <i class="bi bi-eye"></i> Transparency
-All data processing steps, assumptions, and limitations are clearly documented
-to support reproducibility, trust, and informed interpretation.
-:::
-
-::: value-card
-#### <i class="bi bi-bar-chart"></i> Robust Methods
-We apply rigorous data validation, geospatial harmonization, and methodological
-best practices to ensure analytical reliability for malaria modelling and
-health systems research.
-:::
-:::
-
-:::
-
-<!-- ===================== -->
-<!-- Footer Bar -->
-<!-- ===================== -->
-
-::: footer-bar
-<div class="footer-content">
-  <span>© 2026 Health Facility Data Portal</span>
-  <span class="footer-logos">
-    <img src="images/sponsor1.png" alt="Sponsor 1">
-    <img src="images/sponsor2.png" alt="Sponsor 2">
-  </span>
-</div>
-:::
-
-
-
-
-:::

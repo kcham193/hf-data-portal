@@ -1,9 +1,98 @@
 ---
-title: "About"
+title: ""
+toc: true
+toc-depth: 2
 ---
 
-About this site
+```{=html}
+<div class="page-banner">
+  <h1>About the HF Data Portal</h1>
+  <p>Background, goals, and the team behind the Portal</p>
+</div>
+```
 
-```{r}
-1 + 1
+## What Is the HF Data Portal?
+
+The Health Facility Data Portal is a centralised, openly accessible resource providing
+standardised health facility information for malaria-endemic countries in sub-Saharan
+Africa. It was developed to remove a persistent bottleneck in infectious-disease
+modelling: the time-consuming, error-prone work of locating, cleaning, and harmonising
+national facility lists before any analysis can begin.
+
+The Portal currently covers **Tanzania**, **Kenya**, and **Uganda**, with additional
+countries planned on the [roadmap](roadmap.html).
+
+---
+
+## Why Health Facility Data?
+
+Health facility location and capacity underpin a wide range of analytical needs:
+
+- **Transmission modelling** — estimating care-seeking rates and treatment coverage
+- **Access mapping** — computing travel-time surfaces to the nearest facility
+- **Intervention planning** — targeting IRS and bed-net distribution campaigns
+- **Health system evaluation** — monitoring facility density and equity over time
+
+Despite their importance, national master facility lists are rarely harmonised across
+sources or years, limiting reproducibility and cross-country comparison.
+
+---
+
+## Our Approach
+
+```{=html}
+<div class="method-card">
+  <h3>🗂 Source Collation</h3>
+  <p>We draw on national Ministry of Health master facility lists, DHIS2 organisation
+  unit exports, WHO SARA assessments, and curated partner datasets.</p>
+</div>
+
+<div class="method-card">
+  <h3>🔗 Harmonisation</h3>
+  <p>All sources are mapped to a common schema: unique facility ID, name, admin
+  hierarchy (levels 1–4), facility type, ownership, GPS coordinates, and operational
+  status.</p>
+</div>
+
+<div class="method-card">
+  <h3>✅ Quality Assessment</h3>
+  <p>Each dataset receives a structured quality report covering coordinate validity,
+  duplicate records, admin code consistency, and temporal completeness. Scores are
+  published alongside the data.</p>
+</div>
+
+<div class="method-card">
+  <h3>📦 Versioned Release</h3>
+  <p>Datasets follow semantic versioning and are archived with a DOI on Zenodo. A
+  full changelog is maintained so users can track what changed between versions.</p>
+</div>
+```
+
+---
+
+## Team
+
+The Portal is maintained by a cross-institutional team with expertise in health
+data science, GIS, and malaria epidemiology.
+
+| Name | Role | Institution |
+|---|---|---|
+| *Coordinator TBC* | Data Lead | — |
+| *Coordinator TBC* | GIS Analysis | — |
+| *Coordinator TBC* | Software & Infra | — |
+
+*Interested in contributing? See the [GitHub repository](https://github.com/myalla-christina/hf-data-portal).*
+
+---
+
+## Funding & Acknowledgements
+
+This work is supported by the **Bill & Melinda Gates Foundation**. We thank the
+Ministries of Health in Tanzania, Kenya, and Uganda for sharing national facility
+data, and the broader open-data community whose tools make this Portal possible.
+
+```{=html}
+<a href="methodology.html" class="btn-hf-primary" style="margin-top:1.2rem; display:inline-block;">
+  Read the Methods →
+</a>
 ```

@@ -1,0 +1,998 @@
+---
+title: ""
+runtime: shiny
+toc: false
+---
+
+```{r}
+#| include: false
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
+
+library(sf)
+library(leaflet)
+library(dplyr)
+library(ggplot2)
+
+# ── Safe data loader ─────────────────────────────────────────────
+# Tries the real RDS; falls back to synthetic demo data so the
+# page always renders even when the file is absent.
+rds_path <- "../data/tanzania/hf_demographic_sf.rds"
+
+if (file.exists(rds_path)) {
+
+  hf_sf <- readRDS(rds_path)
+
+} else {
+
+  message("Demo data: real RDS not found at ", rds_path)
+
+  set.seed(42)
+  n <- 300
+
+  # Random points roughly inside Tanzania
+  lon <- runif(n, 29.5, 40.5)
+  lat <- runif(n, -11.7, -1.0)
+
+  hf_sf <- data.frame(
+    name          = paste("Facility", seq_len(n)),
+    facility_type = sample(c("Dispensary","Health Centre",
+                             "District Hospital","Regional Hospital",
+                             "Other"), n, replace = TRUE,
+                           prob = c(.50, .25, .12, .08, .05)),
+    ownership     = sample(c("Government","Faith-Based",
+                             "Private for Profit","NGO"),
+                           n, replace = TRUE,
+                           prob = c(.60, .18, .15, .07)),
+    admin1        = sample(paste("Region", LETTERS[1:8]), n, replace = TRUE),
+    admin2        = sample(paste("District", 1:20),       n, replace = TRUE),
+    longitude     = lon,
+    latitude      = lat
+  ) |>
+    st_as_sf(coords = c("longitude","latitude"), crs = 4326, remove = FALSE)
+}
+```
+
+```{=html}
+<!-- ═══════════════════════════════════════════════
+     HERO BANNER
+════════════════════════════════════════════════ -->
+<div class="tz-hero">
+  <img src="../images/banner3.png" class="tz-hero-img" alt="Tanzania banner"/>
+  <div class="tz-hero-overlay">
+    <div class="tz-hero-content">
+      <h1 class="tz-hero-title">
+        Tanzania
+        <img src="../images/flags/tz_flag.png" alt="Tanzania flag" class="tz-flag"/>
+      </h1>
+      <p class="tz-hero-sub">Geocoded Health Facilities for Malaria Modelling</p>
+      <p class="tz-hero-desc">Standardised, geolocated facility information to strengthen modelling, planning, and decision-making</p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     QUICK-STATS BAR
+════════════════════════════════════════════════ -->
+<div class="tz-stats-bar">
+  <div class="tz-stat">
+    <span class="tz-stat-value">7 560</span>
+    <span class="tz-stat-label">Total Facilities</span>
+  </div>
+  <div class="tz-stat-divider"></div>
+  <div class="tz-stat">
+    <span class="tz-stat-value">86 %</span>
+    <span class="tz-stat-label">GPS Coordinates</span>
+  </div>
+  <div class="tz-stat-divider"></div>
+  <div class="tz-stat">
+    <span class="tz-stat-value">26</span>
+    <span class="tz-stat-label">Regions</span>
+  </div>
+  <div class="tz-stat-divider"></div>
+  <div class="tz-stat">
+    <span class="tz-stat-value">2015–2024</span>
+    <span class="tz-stat-label">Temporal Coverage</span>
+  </div>
+  <div class="tz-stat-divider"></div>
+  <div class="tz-stat">
+    <span class="tz-stat-value">v1.2</span>
+    <span class="tz-stat-label">Dataset Version</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     SECTION NAV PILLS
+════════════════════════════════════════════════ -->
+<div class="tz-section-nav">
+  <a href="#overview"     class="tz-nav-pill active">📋 Overview</a>
+  <a href="#map"          class="tz-nav-pill">🗺️ Map</a>
+  <a href="#demographics" class="tz-nav-pill">👥 Demographics</a>
+  <a href="#services"     class="tz-nav-pill">🏥 Services</a>
+  <a href="#quality"      class="tz-nav-pill">✅ Data Quality</a>
+  <a href="#download"     class="tz-nav-pill">⬇️ Download</a>
+</div>
+```
+
+<!-- ═══════════════════════════════════════════════
+     OVERVIEW
+════════════════════════════════════════════════ -->
+
+```{=html}
+<section class="tz-section" id="overview">
+  <div class="tz-section-inner">
+    <div class="tz-section-header">
+      <span class="tz-section-badge">Overview</span>
+      <h2>Tanzania Health Facility Landscape</h2>
+    </div>
+    <div class="tz-overview-grid">
+      <div class="tz-overview-text">
+        <p>
+          Tanzania operates a tiered health system — from national and regional referral
+          hospitals down to dispensaries and community health posts — overseen by the
+          Ministry of Health, Community Development, Gender, Elderly and Children
+          (MoHCDGEC).
+        </p>
+        <p>
+          This dataset aggregates facility records from the national master facility list
+          and annual DHIS2 organisation unit exports, covering all 26 regions of mainland
+          Tanzania and Zanzibar. Records are harmonised to the HF Portal common schema
+          and validated against GADM v4.1 administrative boundaries.
+        </p>
+        <p>
+          Coordinate coverage stands at <strong>86 %</strong>. Facilities without GPS
+          points are assigned the centroid of their lowest available administrative unit
+          and flagged via <code>coord_source = "Centroid"</code>.
+        </p>
+      </div>
+      <div class="tz-overview-cards">
+        <div class="tz-info-card">
+          <div class="tz-info-icon">🏛️</div>
+          <div class="tz-info-body">
+            <div class="tz-info-label">Primary source</div>
+            <div class="tz-info-value">MoHCDGEC / DHIS2</div>
+          </div>
+        </div>
+        <div class="tz-info-card">
+          <div class="tz-info-icon">📐</div>
+          <div class="tz-info-body">
+            <div class="tz-info-label">Coordinate system</div>
+            <div class="tz-info-value">WGS84 (EPSG:4326)</div>
+          </div>
+        </div>
+        <div class="tz-info-card">
+          <div class="tz-info-icon">🔄</div>
+          <div class="tz-info-body">
+            <div class="tz-info-label">Update frequency</div>
+            <div class="tz-info-value">Annual (Oct each year)</div>
+          </div>
+        </div>
+        <div class="tz-info-card">
+          <div class="tz-info-icon">📜</div>
+          <div class="tz-info-body">
+            <div class="tz-info-label">Licence</div>
+            <div class="tz-info-value">CC BY 4.0</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+```
+
+<!-- ═══════════════════════════════════════════════
+     MAP
+════════════════════════════════════════════════ -->
+
+```{=html}
+<section class="tz-section tz-section-alt" id="map">
+  <div class="tz-section-inner">
+    <div class="tz-section-header">
+      <span class="tz-section-badge">Interactive Map</span>
+      <h2>Health Facilities Map</h2>
+      <p class="tz-section-desc">Click any marker for facility details. Use the layer control to filter by facility type or ownership.</p>
+    </div>
+    <div class="tz-map-wrap">
+```
+
+```{r}
+#| out.height: "520px"
+pal <- colorFactor(
+  palette = c("#3d7a6e","#bf5b38","#4a7ab5","#6b7fa0","#2a9d5c"),
+  domain  = hf_sf$facility_type
+)
+
+leaflet(hf_sf) |>
+  addProviderTiles(providers$CartoDB.Positron,
+                   options = tileOptions(minZoom = 5)) |>
+  addCircleMarkers(
+    radius      = 4,
+    stroke      = TRUE,
+    color       = "#fff",
+    weight      = 0.8,
+    fillColor   = ~pal(facility_type),
+    fillOpacity = 0.82,
+    popup = ~paste0(
+      "<div style='font-family:Inter,sans-serif;min-width:180px'>",
+      "<strong style='color:#162033'>", name, "</strong><br>",
+      "<span style='color:#5a6a7e'>", facility_type, "</span><br>",
+      "<hr style='margin:6px 0;border-color:#d8e3ec'>",
+      "Ownership: <b>", ownership, "</b><br>",
+      "Region: ", admin1, " › ", admin2,
+      "</div>"
+    )
+  ) |>
+  addLegend(
+    pal      = pal,
+    values   = ~facility_type,
+    title    = "Facility Type",
+    position = "bottomright",
+    opacity  = 0.9
+  ) |>
+  setView(lng = 34.9, lat = -6.4, zoom = 6)
+```
+
+```{=html}
+    </div><!-- /.tz-map-wrap -->
+  </div>
+</section>
+```
+
+<!-- ═══════════════════════════════════════════════
+     DEMOGRAPHICS
+════════════════════════════════════════════════ -->
+
+```{=html}
+<section class="tz-section" id="demographics">
+  <div class="tz-section-inner">
+    <div class="tz-section-header">
+      <span class="tz-section-badge">Demographics</span>
+      <h2>Facility Composition</h2>
+      <p class="tz-section-desc">Breakdown of facilities by type and ownership across Tanzania.</p>
+    </div>
+    <div class="tz-chart-grid">
+      <div class="tz-chart-card">
+        <h3 class="tz-chart-title">By Facility Type</h3>
+```
+
+```{r}
+#| fig.height: 3.8
+type_df <- hf_sf |>
+  st_drop_geometry() |>
+  dplyr::count(facility_type, name = "n") |>
+  dplyr::arrange(desc(n)) |>
+  dplyr::mutate(
+    facility_type = factor(facility_type, levels = facility_type)
+  )
+
+ggplot(type_df, aes(x = facility_type, y = n, fill = facility_type)) +
+  geom_col(width = 0.65, show.legend = FALSE) +
+  geom_text(aes(label = formatC(n, format = "d", big.mark = ",")),
+            hjust = -0.15, size = 3.2, colour = "#1a2033") +
+  coord_flip() +
+  scale_fill_manual(
+    values = setNames(
+      rep(c("#3d7a6e","#bf5b38","#4a7ab5","#6b7fa0","#2a9d5c"),
+          length.out = nrow(type_df)),
+      levels(type_df$facility_type)
+    )
+  ) +
+  scale_y_continuous(expand = expansion(mult = c(0, 0.22))) +
+  labs(x = NULL, y = "Number of facilities") +
+  theme_minimal(base_size = 11) +
+  theme(
+    panel.grid.major.y = element_blank(),
+    panel.grid.minor   = element_blank(),
+    axis.text.y        = element_text(colour = "#1a2033"),
+    axis.text.x        = element_text(colour = "#5a6a7e"),
+    plot.background    = element_rect(fill = "transparent", colour = NA)
+  )
+```
+
+```{=html}
+      </div><!-- /.tz-chart-card -->
+      <div class="tz-chart-card">
+        <h3 class="tz-chart-title">By Ownership</h3>
+```
+
+```{r}
+#| fig.height: 3.8
+own_df <- hf_sf |>
+  st_drop_geometry() |>
+  dplyr::count(ownership, name = "n") |>
+  dplyr::arrange(desc(n)) |>
+  dplyr::mutate(
+    pct       = round(n / sum(n) * 100, 1),
+    ownership = factor(ownership, levels = ownership)
+  )
+
+pal_own <- c("#3d7a6e","#bf5b38","#4a7ab5","#6b7fa0","#2a9d5c",
+             "#e8a838","#7b5ea7")
+
+ggplot(own_df, aes(x = "", y = n, fill = ownership)) +
+  geom_col(width = 1, colour = "white", linewidth = 0.8) +
+  coord_polar(theta = "y") +
+  scale_fill_manual(
+    values = setNames(pal_own[seq_len(nrow(own_df))], levels(own_df$ownership))
+  ) +
+  labs(fill = NULL) +
+  theme_void() +
+  theme(
+    legend.position = "right",
+    legend.text     = element_text(size = 9, colour = "#1a2033"),
+    plot.background = element_rect(fill = "transparent", colour = NA)
+  )
+```
+
+```{=html}
+      </div><!-- /.tz-chart-card -->
+    </div><!-- /.tz-chart-grid -->
+
+    <!-- Summary table -->
+    <div class="tz-table-wrap">
+      <h3 class="tz-chart-title" style="margin-bottom:1rem">Facility Count by Type &amp; Ownership</h3>
+```
+
+```{r}
+hf_sf |>
+  st_drop_geometry() |>
+  dplyr::count(facility_type, ownership) |>
+  tidyr::pivot_wider(
+    names_from   = ownership,
+    values_from  = n,
+    values_fill  = 0
+  ) |>
+  dplyr::rename(Type = facility_type) |>
+  knitr::kable(
+    format     = "html",
+    table.attr = 'class="table table-sm table-hover tz-table"'
+  )
+```
+
+```{=html}
+    </div>
+  </div>
+</section>
+```
+
+<!-- ═══════════════════════════════════════════════
+     SERVICES
+════════════════════════════════════════════════ -->
+
+```{=html}
+<section class="tz-section tz-section-alt" id="services">
+  <div class="tz-section-inner">
+    <div class="tz-section-header">
+      <span class="tz-section-badge">Services</span>
+      <h2>Available Health Services</h2>
+      <p class="tz-section-desc">Service availability across facility levels as captured in the dataset.</p>
+    </div>
+
+    <div class="tz-service-grid">
+      <div class="tz-service-card">
+        <div class="tz-service-icon">🦟</div>
+        <h4>Malaria Services</h4>
+        <p>Outpatient diagnosis, rapid diagnostic tests (RDTs), artemisinin-based combination therapy (ACT), and inpatient malaria management.</p>
+        <div class="tz-service-tag">Available at Health Centres &amp; above</div>
+      </div>
+      <div class="tz-service-card">
+        <div class="tz-service-icon">🤱</div>
+        <h4>Maternal Health</h4>
+        <p>Antenatal care (ANC), skilled birth attendance, postnatal care, and emergency obstetric services at district and above.</p>
+        <div class="tz-service-tag">Available at Health Centres &amp; above</div>
+      </div>
+      <div class="tz-service-card">
+        <div class="tz-service-icon">💉</div>
+        <h4>Immunisation</h4>
+        <p>Routine EPI services including measles, DPT, polio, and seasonal malaria chemoprevention (SMC) where applicable.</p>
+        <div class="tz-service-tag">Available at Dispensaries &amp; above</div>
+      </div>
+      <div class="tz-service-card">
+        <div class="tz-service-icon">🔬</div>
+        <h4>Laboratory</h4>
+        <p>Basic diagnostics at lower levels; full laboratory capacity (blood counts, culture, parasitology) at district hospitals and above.</p>
+        <div class="tz-service-tag">Full capacity at Hospitals</div>
+      </div>
+      <div class="tz-service-card">
+        <div class="tz-service-icon">🩺</div>
+        <h4>HIV / TB Services</h4>
+        <p>HIV testing, counselling, ART initiation and follow-up, TB diagnosis and DOTS at PEPFAR-supported facilities and higher levels.</p>
+        <div class="tz-service-tag">Selected facilities</div>
+      </div>
+      <div class="tz-service-card">
+        <div class="tz-service-icon">🚑</div>
+        <h4>Emergency Care</h4>
+        <p>Emergency triage and basic resuscitation at health centres; comprehensive emergency and surgical care at district hospitals.</p>
+        <div class="tz-service-tag">District Hospitals &amp; above</div>
+      </div>
+    </div>
+
+    <div class="tz-callout">
+      <span class="tz-callout-icon">ℹ️</span>
+      <span>Service availability in this dataset is derived from SARA survey rounds and DHIS2 service indicators. Coverage may not reflect real-time facility status. Consult the quality report for survey dates.</span>
+    </div>
+  </div>
+</section>
+```
+
+<!-- ═══════════════════════════════════════════════
+     DATA QUALITY
+════════════════════════════════════════════════ -->
+
+```{=html}
+<section class="tz-section" id="quality">
+  <div class="tz-section-inner">
+    <div class="tz-section-header">
+      <span class="tz-section-badge">Data Quality</span>
+      <h2>Quality Assessment — v1.2</h2>
+      <p class="tz-section-desc">Standardised quality scores across five dimensions. Full report included in the download bundle.</p>
+    </div>
+
+    <div class="tz-quality-grid">
+      <div class="tz-quality-card">
+        <div class="tz-quality-header">
+          <span class="tz-quality-icon">📍</span>
+          <span class="tz-quality-label">Coordinate Validity</span>
+        </div>
+        <div class="tz-quality-bar-wrap">
+          <div class="tz-quality-bar" style="width:86%"></div>
+        </div>
+        <div class="tz-quality-score">86 / 100</div>
+        <div class="tz-quality-note">86 % of facilities have valid GPS points within Tanzania's boundary</div>
+      </div>
+
+      <div class="tz-quality-card">
+        <div class="tz-quality-header">
+          <span class="tz-quality-icon">🗂️</span>
+          <span class="tz-quality-label">Attribute Completeness</span>
+        </div>
+        <div class="tz-quality-bar-wrap">
+          <div class="tz-quality-bar" style="width:78%"></div>
+        </div>
+        <div class="tz-quality-score">78 / 100</div>
+        <div class="tz-quality-note">Mean non-missing rate across all schema fields</div>
+      </div>
+
+      <div class="tz-quality-card">
+        <div class="tz-quality-header">
+          <span class="tz-quality-icon">🔁</span>
+          <span class="tz-quality-label">Duplicate Rate</span>
+        </div>
+        <div class="tz-quality-bar-wrap">
+          <div class="tz-quality-bar" style="width:99.5%; background:#2a9d5c"></div>
+        </div>
+        <div class="tz-quality-score">&lt; 0.5 %</div>
+        <div class="tz-quality-note">Post-deduplication residual duplicate rate</div>
+      </div>
+
+      <div class="tz-quality-card">
+        <div class="tz-quality-header">
+          <span class="tz-quality-icon">🏛️</span>
+          <span class="tz-quality-label">Admin Consistency</span>
+        </div>
+        <div class="tz-quality-bar-wrap">
+          <div class="tz-quality-bar" style="width:94%"></div>
+        </div>
+        <div class="tz-quality-score">94 / 100</div>
+        <div class="tz-quality-note">admin1–admin2 codes consistent with GADM v4.1</div>
+      </div>
+
+      <div class="tz-quality-card">
+        <div class="tz-quality-header">
+          <span class="tz-quality-icon">📅</span>
+          <span class="tz-quality-label">Temporal Coverage</span>
+        </div>
+        <div class="tz-quality-bar-wrap">
+          <div class="tz-quality-bar" style="width:90%"></div>
+        </div>
+        <div class="tz-quality-score">2015 – 2024</div>
+        <div class="tz-quality-note">10-year longitudinal coverage with annual snapshots</div>
+      </div>
+    </div>
+  </div>
+</section>
+```
+
+<!-- ═══════════════════════════════════════════════
+     DATA DOWNLOAD
+════════════════════════════════════════════════ -->
+
+```{=html}
+<section class="tz-section tz-section-alt" id="download">
+  <div class="tz-section-inner">
+    <div class="tz-section-header">
+      <span class="tz-section-badge">Download</span>
+      <h2>Access the Dataset</h2>
+      <p class="tz-section-desc">All files are hosted on Zenodo under CC BY 4.0. Please cite the DOI in any publication.</p>
+    </div>
+
+    <div class="tz-download-grid">
+      <div class="tz-download-card">
+        <div class="tz-dl-icon">📄</div>
+        <div class="tz-dl-body">
+          <div class="tz-dl-name">Facility List (CSV)</div>
+          <div class="tz-dl-desc">Flat file, all 7 560 facilities with full schema fields</div>
+        </div>
+        <a href="../data/tanzania/hf_demographics.csv" class="tz-dl-btn">Download</a>
+      </div>
+
+      <div class="tz-download-card">
+        <div class="tz-dl-icon">🌍</div>
+        <div class="tz-dl-body">
+          <div class="tz-dl-name">Spatial File (GeoPackage)</div>
+          <div class="tz-dl-desc">GPKG format, ready for QGIS / R / Python spatial analysis</div>
+        </div>
+        <a href="../data/tanzania/hf_demographics.gpkg" class="tz-dl-btn">Download</a>
+      </div>
+
+      <div class="tz-download-card">
+        <div class="tz-dl-icon">📦</div>
+        <div class="tz-dl-body">
+          <div class="tz-dl-name">R sf Object (RDS)</div>
+          <div class="tz-dl-desc">Pre-processed sf object for direct use in R modelling pipelines</div>
+        </div>
+        <a href="../data/tanzania/hf_demographic_sf.rds" class="tz-dl-btn">Download</a>
+      </div>
+
+      <div class="tz-download-card">
+        <div class="tz-dl-icon">📋</div>
+        <div class="tz-dl-body">
+          <div class="tz-dl-name">Quality Report (PDF)</div>
+          <div class="tz-dl-desc">Full quality assessment including field-level completeness scores</div>
+        </div>
+        <a href="#" class="tz-dl-btn tz-dl-btn-muted">Coming soon</a>
+      </div>
+    </div>
+
+    <div class="tz-cite-box">
+      <div class="tz-cite-label">📖 How to cite</div>
+      <code class="tz-cite-text">
+        HF Data Portal Team (2024). Tanzania Health Facility Dataset v1.2.
+        Zenodo. https://doi.org/10.5281/zenodo.XXXXXX
+      </code>
+    </div>
+
+    <div class="tz-code-toggle">
+      <h3 class="tz-chart-title">Load in R</h3>
+```
+
+```{r}
+#| echo: true
+#| eval: false
+# Option 1: Load the pre-processed sf object
+hf_tz <- readRDS("data/tanzania/hf_demographic_sf.rds")
+
+# Option 2: Read CSV and convert to sf
+library(readr)
+library(sf)
+hf_tz <- read_csv("data/tanzania/hf_demographics.csv") |>
+  filter(!is.na(longitude)) |>
+  st_as_sf(coords = c("longitude", "latitude"), crs = 4326)
+
+# Quick summary
+cat("Facilities:", nrow(hf_tz), "\n")
+cat("Regions:", n_distinct(hf_tz$admin1), "\n")
+table(hf_tz$facility_type)
+```
+
+```{=html}
+    </div><!-- /.tz-code-toggle -->
+  </div>
+</section>
+
+<!-- Back link -->
+<div style="padding: 2rem 2rem 3rem; background:#fff;">
+  <a href="../index.html" class="btn-hf-primary">← All Countries</a>
+</div>
+```
+
+```{=html}
+<style>
+/* ═══════════════════════════════════════════════════
+   Tanzania Page — Local Styles
+   (uses global palette via CSS custom properties)
+═══════════════════════════════════════════════════ */
+
+/* ── Hero ─────────────────────────────────────── */
+.tz-hero {
+  position: relative;
+  height: 320px;
+  overflow: hidden;
+}
+.tz-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+  display: block;
+}
+.tz-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(22, 32, 51, 0.82) 0%,
+    rgba(22, 32, 51, 0.5)  60%,
+    rgba(22, 32, 51, 0.15) 100%
+  );
+  display: flex;
+  align-items: center;
+  padding: 0 5%;
+}
+.tz-hero-content { max-width: 560px; }
+.tz-hero-title {
+  font-size: 2.6rem;
+  color: #fff;
+  margin: 0 0 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.tz-flag { height: 36px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.3); }
+.tz-hero-sub {
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.88);
+  margin: 0 0 0.5rem;
+  font-weight: 600;
+}
+.tz-hero-desc {
+  font-size: 0.92rem;
+  color: rgba(255,255,255,0.7);
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* ── Stats bar ────────────────────────────────── */
+.tz-stats-bar {
+  background: var(--hf-navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0;
+  padding: 0;
+}
+.tz-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 18px 32px;
+  color: #fff;
+}
+.tz-stat-value {
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1;
+}
+.tz-stat-label {
+  font-size: 0.74rem;
+  color: rgba(255,255,255,0.6);
+  margin-top: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.tz-stat-divider {
+  width: 1px;
+  height: 36px;
+  background: rgba(255,255,255,0.18);
+}
+
+/* ── Section nav pills ────────────────────────── */
+.tz-section-nav {
+  background: var(--hf-bg-section);
+  border-bottom: 1px solid var(--hf-border);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding: 10px 24px;
+  position: sticky;
+  top: 60px;
+  z-index: 100;
+}
+.tz-nav-pill {
+  padding: 6px 16px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--hf-text-muted);
+  text-decoration: none;
+  transition: all 0.18s ease;
+  border: 1px solid transparent;
+}
+.tz-nav-pill:hover,
+.tz-nav-pill.active {
+  background: #fff;
+  color: var(--hf-teal);
+  border-color: var(--hf-border);
+  text-decoration: none;
+}
+
+/* ── Section wrapper ──────────────────────────── */
+.tz-section {
+  background: #fff;
+  padding: 60px 0;
+}
+.tz-section-alt { background: var(--hf-bg-section); }
+.tz-section-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+/* ── Section header ───────────────────────────── */
+.tz-section-badge {
+  display: inline-block;
+  background: rgba(61,122,110,0.1);
+  color: var(--hf-teal);
+  border: 1px solid rgba(61,122,110,0.25);
+  border-radius: 50px;
+  padding: 3px 14px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.75rem;
+}
+.tz-section-header {
+  margin-bottom: 2.2rem;
+}
+.tz-section-header h2 {
+  font-size: 1.7rem;
+  color: var(--hf-navy);
+  margin: 0 0 0.5rem;
+}
+.tz-section-desc {
+  color: var(--hf-text-muted);
+  font-size: 0.96rem;
+  margin: 0;
+  max-width: 600px;
+}
+
+/* ── Overview grid ────────────────────────────── */
+.tz-overview-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+.tz-overview-text p {
+  color: var(--hf-text-muted);
+  line-height: 1.78;
+  font-size: 0.96rem;
+  margin-bottom: 1rem;
+}
+.tz-info-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: #fff;
+  border: 1px solid var(--hf-border);
+  border-radius: var(--hf-radius-sm);
+  padding: 14px 18px;
+  margin-bottom: 10px;
+  box-shadow: var(--hf-shadow);
+}
+.tz-info-icon { font-size: 1.5rem; }
+.tz-info-label { font-size: 0.76rem; color: var(--hf-text-muted); }
+.tz-info-value { font-size: 0.94rem; font-weight: 600; color: var(--hf-navy); }
+
+/* ── Map ──────────────────────────────────────── */
+.tz-map-wrap {
+  border-radius: var(--hf-radius);
+  overflow: hidden;
+  box-shadow: var(--hf-shadow);
+  border: 1px solid var(--hf-border);
+}
+.tz-map-wrap .leaflet-container { border-radius: var(--hf-radius); }
+
+/* ── Charts grid ──────────────────────────────── */
+.tz-chart-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 2rem;
+}
+.tz-chart-card {
+  background: #fff;
+  border: 1px solid var(--hf-border);
+  border-radius: var(--hf-radius);
+  padding: 24px;
+  box-shadow: var(--hf-shadow);
+}
+.tz-chart-title {
+  font-size: 0.97rem;
+  font-weight: 600;
+  color: var(--hf-navy);
+  margin: 0 0 1rem;
+  padding-bottom: 0.65rem;
+  border-bottom: 1px solid var(--hf-border);
+}
+.tz-table-wrap {
+  background: #fff;
+  border: 1px solid var(--hf-border);
+  border-radius: var(--hf-radius);
+  padding: 24px;
+  box-shadow: var(--hf-shadow);
+  overflow-x: auto;
+}
+.tz-table { font-size: 0.88rem; }
+.tz-table thead th { color: var(--hf-navy); border-bottom: 2px solid var(--hf-border); }
+
+/* ── Services grid ────────────────────────────── */
+.tz-service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 2rem;
+}
+.tz-service-card {
+  background: #fff;
+  border: 1px solid var(--hf-border);
+  border-radius: var(--hf-radius);
+  padding: 24px 20px;
+  box-shadow: var(--hf-shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.tz-service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--hf-shadow-hover);
+}
+.tz-service-icon { font-size: 2rem; margin-bottom: 0.75rem; display: block; }
+.tz-service-card h4 {
+  font-size: 0.97rem;
+  font-weight: 700;
+  color: var(--hf-navy);
+  margin: 0 0 0.6rem;
+}
+.tz-service-card p {
+  font-size: 0.87rem;
+  color: var(--hf-text-muted);
+  line-height: 1.65;
+  margin: 0 0 0.9rem;
+}
+.tz-service-tag {
+  display: inline-block;
+  background: rgba(61,122,110,0.09);
+  color: var(--hf-teal);
+  border-radius: 4px;
+  padding: 3px 10px;
+  font-size: 0.76rem;
+  font-weight: 500;
+}
+.tz-callout {
+  background: rgba(61,122,110,0.07);
+  border: 1px solid rgba(61,122,110,0.22);
+  border-radius: var(--hf-radius-sm);
+  padding: 14px 18px;
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  font-size: 0.89rem;
+  color: var(--hf-text-muted);
+  line-height: 1.6;
+}
+.tz-callout-icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 1px; }
+
+/* ── Quality scores ───────────────────────────── */
+.tz-quality-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.tz-quality-card {
+  background: #fff;
+  border: 1px solid var(--hf-border);
+  border-radius: var(--hf-radius);
+  padding: 20px 24px;
+  box-shadow: var(--hf-shadow);
+}
+.tz-quality-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+.tz-quality-icon { font-size: 1.2rem; }
+.tz-quality-label { font-weight: 600; font-size: 0.96rem; color: var(--hf-navy); }
+.tz-quality-bar-wrap {
+  background: var(--hf-bg-section);
+  border-radius: 50px;
+  height: 10px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+.tz-quality-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--hf-teal), #4a9080);
+  border-radius: 50px;
+  transition: width 1s ease;
+}
+.tz-quality-score {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--hf-teal);
+  margin-bottom: 4px;
+}
+.tz-quality-note { font-size: 0.84rem; color: var(--hf-text-muted); }
+
+/* ── Download cards ───────────────────────────── */
+.tz-download-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-bottom: 2rem;
+}
+.tz-download-card {
+  background: #fff;
+  border: 1px solid var(--hf-border);
+  border-radius: var(--hf-radius);
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  box-shadow: var(--hf-shadow);
+}
+.tz-dl-icon { font-size: 2rem; flex-shrink: 0; }
+.tz-dl-body { flex: 1; min-width: 0; }
+.tz-dl-name { font-weight: 600; font-size: 0.94rem; color: var(--hf-navy); margin-bottom: 3px; }
+.tz-dl-desc { font-size: 0.82rem; color: var(--hf-text-muted); line-height: 1.45; }
+.tz-dl-btn {
+  flex-shrink: 0;
+  background: var(--hf-teal);
+  color: #fff !important;
+  border-radius: var(--hf-radius-sm);
+  padding: 8px 18px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none !important;
+  transition: background 0.18s;
+  white-space: nowrap;
+}
+.tz-dl-btn:hover { background: #4a9080; }
+.tz-dl-btn-muted { background: #aab8c4 !important; cursor: default; }
+.tz-dl-btn-muted:hover { background: #aab8c4 !important; }
+
+/* ── Citation box ─────────────────────────────── */
+.tz-cite-box {
+  background: var(--hf-navy);
+  border-radius: var(--hf-radius);
+  padding: 20px 24px;
+  margin-bottom: 2rem;
+}
+.tz-cite-label {
+  color: rgba(255,255,255,0.65);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 8px;
+}
+.tz-cite-text {
+  display: block;
+  color: rgba(255,255,255,0.88);
+  font-size: 0.88rem;
+  line-height: 1.6;
+  font-family: 'Courier New', monospace;
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
+.tz-code-toggle h3 { margin-bottom: 0.75rem; }
+
+/* ── Responsive ───────────────────────────────── */
+@media (max-width: 900px) {
+  .tz-service-grid   { grid-template-columns: repeat(2, 1fr); }
+  .tz-overview-grid  { grid-template-columns: 1fr; gap: 24px; }
+  .tz-download-grid  { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .tz-hero           { height: 240px; }
+  .tz-hero-title     { font-size: 1.9rem; }
+  .tz-stat           { padding: 14px 18px; }
+  .tz-stat-divider   { display: none; }
+  .tz-chart-grid     { grid-template-columns: 1fr; }
+  .tz-service-grid   { grid-template-columns: 1fr; }
+  .tz-section-inner  { padding: 0 16px; }
+}
+</style>
+```

@@ -1,5 +1,54 @@
 [
   {
+    "objectID": "uganda.html",
+    "href": "uganda.html",
+    "title": "🇺🇬 Uganda",
+    "section": "",
+    "text": "Republic of Uganda — Health Facility Dataset v1.0"
+  },
+  {
+    "objectID": "uganda.html#overview",
+    "href": "uganda.html#overview",
+    "title": "🇺🇬 Uganda",
+    "section": "Overview",
+    "text": "Overview\nUganda’s health system is structured through the Ministry of Health HMIS. The Portal dataset draws on the MoH Uganda HMIS organisation unit list and supplementary georeferencing using GADM v4.1 boundaries. Parish-level (admin4) codes are included for approximately 68 % of records — the highest admin4 completeness among current Portal countries."
+  },
+  {
+    "objectID": "uganda.html#facility-breakdown",
+    "href": "uganda.html#facility-breakdown",
+    "title": "🇺🇬 Uganda",
+    "section": "Facility Breakdown",
+    "text": "Facility Breakdown\n\n  By Facility Type\n  \n\n\n\nType\nCount\n%\n\n\n\n\nHealth Centre II\n2 560\n45.1 %\n\n\nHealth Centre III\n1 300\n22.9 %\n\n\nHealth Centre IV\n480\n8.5 %\n\n\nGeneral Hospital\n360\n6.3 %\n\n\nRegional / National Referral\n980\n17.2 %\n\n\n\n\n\n\n\n  By Ownership\n  \n\n\n\nOwnership\nCount\n%\n\n\n\n\nGovernment (MoH Uganda)\n3 180\n56.0 %\n\n\nPrivate Not-for-Profit (PNFP)\n1 420\n25.0 %\n\n\nPrivate for Profit\n820\n14.4 %\n\n\nNGO / Other\n260\n4.6 %"
+  },
+  {
+    "objectID": "uganda.html#data-quality",
+    "href": "uganda.html#data-quality",
+    "title": "🇺🇬 Uganda",
+    "section": "Data Quality",
+    "text": "Data Quality\n\n  Quality Scores — v1.0\n  \n\n\n\nDimension\nScore\n\n\n\n\nCoordinate validity\n79 / 100\n\n\nAttribute completeness\n73 / 100\n\n\nDuplicate rate (post-dedup)\n&lt; 1.0 %\n\n\nAdmin code consistency\n91 / 100\n\n\nTemporal coverage\n2017–2024"
+  },
+  {
+    "objectID": "uganda.html#available-fields",
+    "href": "uganda.html#available-fields",
+    "title": "🇺🇬 Uganda",
+    "section": "Available Fields",
+    "text": "Available Fields\n\n  facility_idsource_id (HMIS)\n  namefacility_type\n  ownershipadmin1 (Region)\n  admin2 (District)admin3 (Sub-county)\n  admin4 (Parish)longitude\n  latitudecoord_source\n  operationalyearversion"
+  },
+  {
+    "objectID": "uganda.html#download",
+    "href": "uganda.html#download",
+    "title": "🇺🇬 Uganda",
+    "section": "Download",
+    "text": "Download\n\n\n\n\n\n\nNote\n\n\n\nData are released under CC BY 4.0. Please cite the Zenodo record in publications.\n\n\n\n\n\nFormat\nLink\n\n\n\n\nCSV (all facilities)\nComing soon\n\n\nGeoPackage (.gpkg)\nComing soon\n\n\nR package {hfportal}\nComing soon\n\n\nQuality report PDF\nComing soon\n\n\n\nZenodo DOI: 10.5281/zenodo.XXXXXX"
+  },
+  {
+    "objectID": "uganda.html#code-example",
+    "href": "uganda.html#code-example",
+    "title": "🇺🇬 Uganda",
+    "section": "Code Example",
+    "text": "Code Example\nlibrary(hfportal)\n\nuga &lt;- get_facilities(country = \"UGA\", version = \"1.0\")\n\nlibrary(dplyr)\nuga |&gt;\n  filter(!is.na(latitude)) |&gt;\n  group_by(facility_type) |&gt;\n  summarise(n = n(), pct_gps = mean(!is.na(longitude)) * 100) |&gt;\n  arrange(desc(n))\nDataset last updated: September 2024 | Source: MoH Uganda HMIS\n← All Countries"
+  },
+  {
     "objectID": "services.html",
     "href": "services.html",
     "title": "Services",
@@ -11,12 +60,152 @@
     "href": "methodology.html",
     "title": "Methodology",
     "section": "",
+    "text": "How we source, clean, harmonise, and quality-assess health facility data"
+  },
+  {
+    "objectID": "methodology.html#overview",
+    "href": "methodology.html#overview",
+    "title": "Methodology",
+    "section": "Overview",
+    "text": "Overview\nThis page describes the end-to-end pipeline used to produce each country dataset. The pipeline runs through four stages: source collation → harmonisation → quality assessment → versioned release. All pipeline code is open-source and available in the GitHub repository."
+  },
+  {
+    "objectID": "methodology.html#source-collation",
+    "href": "methodology.html#source-collation",
+    "title": "Methodology",
+    "section": "1. Source Collation",
+    "text": "1. Source Collation\n\nPrimary Sources\n\n\n\nCountry\nPrimary Source\nUpdate Frequency\n\n\n\n\nTanzania\nMOHCDGEC / DHIS2\nAnnual\n\n\nKenya\nKenya Master Health Facility List (KMHFL)\nQuarterly\n\n\nUganda\nMoH Uganda HMIS\nAnnual\n\n\n\n\n\nSecondary Sources\nWhere the MFL has coverage gaps we supplement with DHIS2 organisation unit exports, WHO SARA surveys, OpenStreetMap for coordinate cross-validation, and HDX historical snapshots."
+  },
+  {
+    "objectID": "methodology.html#harmonisation",
+    "href": "methodology.html#harmonisation",
+    "title": "Methodology",
+    "section": "2. Harmonisation",
+    "text": "2. Harmonisation\n\nCommon Schema\nAll datasets are transformed to a shared flat schema before analysis:\nfacility_id     character   Portal-assigned unique ID (ISO2_NNNNN)\nsource_id       character   Identifier in the original source\nname            character   Facility name (original language)\nfacility_type   character   Hospital / Health Centre / Dispensary / Clinic / Other\nownership       character   Public / Private-for-profit / Faith-based / NGO\nadmin1          character   Province / Region\nadmin2          character   District / County\nadmin3          character   Division / Sub-county (if available)\nadmin4          character   Ward / Parish (if available)\nlongitude       numeric     WGS84 decimal degrees\nlatitude        numeric     WGS84 decimal degrees\ncoord_source    character   GPS / Geocoded / Centroid / Unknown\noperational     logical     Operational at time of data extraction\nyear            integer     Reference year of the record\nversion         character   Portal dataset version\n\n\nDeduplication\nDuplicates are identified by combining Jaro–Winkler string similarity on facility names (≥ 0.92) with spatial proximity (within 500 m)."
+  },
+  {
+    "objectID": "methodology.html#quality-assessment",
+    "href": "methodology.html#quality-assessment",
+    "title": "Methodology",
+    "section": "3. Quality Assessment",
+    "text": "3. Quality Assessment\n\n  📍 Coordinate Validity\n  Proportion of records with non-missing GPS coordinates falling within the\n  country boundary. Centroid-imputed coordinates are flagged separately.\n\n\n\n  🗂 Attribute Completeness\n  Proportion of non-missing values per schema field, reported individually and\n  as an overall completeness score (0–100).\n\n\n\n  🔁 Duplicate Rate\n  Estimated proportion of duplicate records before and after deduplication\n  using the name × coordinate matching procedure.\n\n\n\n  📅 Temporal Coverage\n  Year range spanned by records, and the proportion of facilities with a\n  recorded update date within the past 24 months.\n\n\n\n  🏛 Administrative Consistency\n  Proportion of records whose admin1–admin2 codes are consistent with\n  official GADM v4.1 administrative boundary files."
+  },
+  {
+    "objectID": "methodology.html#versioned-release",
+    "href": "methodology.html#versioned-release",
+    "title": "Methodology",
+    "section": "4. Versioned Release",
+    "text": "4. Versioned Release\nDatasets follow semantic versioning (MAJOR.MINOR.PATCH):\n\nMAJOR — schema-breaking changes\nMINOR — new facilities or additional fields (backward-compatible)\nPATCH — coordinate corrections or name fixes\n\nEach release is archived on Zenodo and assigned a citable DOI."
+  },
+  {
+    "objectID": "methodology.html#citation",
+    "href": "methodology.html#citation",
+    "title": "Methodology",
+    "section": "Citation",
+    "text": "Citation\n\nHF Data Portal Team (2025). HF Data Portal Methodology.\n\nAbout the Project\nRoadmap"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Welcome to the HF Data Portal",
+    "section": "",
+    "text": "Welcome to the HF Data Portal\n  \n    The Health Facility Data Portal is a centralised resource for structured,\n    quality-assured facility data relevant to malaria modelling in sub-Saharan\n    Africa. Explore our country pages for guidance on accessing and using\n    health facility datasets.\n  \n\n\n\n\n  \n\n    \n      I am looking for data from\n      \n        Select a country…\n        🇹🇿 Tanzania\n        🇰🇪 Kenya\n        🇺🇬 Uganda\n      \n      \n        Proceed ➔\n      \n    \n\n    \n\n      \n      \n        \n          🔍\n          I need HF data for modelling\n        \n        →\n        \n          🏥\n          Discover HF Portal\n        \n        →\n        \n          📂\n          Explore country pages\n        \n        →\n        \n          💾\n          Find relevant datasets\n        \n      \n\n      \n      \n        \n         &lt;- \n      \n\n      \n      \n        \n          ⬇️\n          Download data\n        \n        →\n        \n          ❓\n          Decide whether to download\n        \n        →\n        \n          🔗\n          Review & access source\n        \n        \n        \n        \n        \n        \n      \n\n    \n\n  \n\n\n\n\n\n\n  \n\n    \n      Facility Datasets\n      \n        \n          \n          \n          \n          \n          \n          \n          \n          \n          \n        \n      \n      Access georeferenced, harmonised facility lists including type, ownership, service availability, and administrative hierarchy across malaria-endemic countries.\n    \n\n    \n      Documentation\n      \n        \n          \n          \n          \n          \n          \n          \n        \n      \n      Detailed quality reports and methodology documentation describing how each dataset was collected, cleaned, and validated for disease modelling use.\n    \n\n    \n      Code Examples\n      \n        \n          \n          \n          \n          \n          \n          \n          \n        \n      \n      Worked R and Python examples showing how to load, clean, and integrate health facility data into epidemiological models and access-to-care analyses.\n    \n\n  \n\n\n\n\n\n\n  \n    \n      Responsible Access to Health Facility Data for Analysis and Research\n      \n        The HF Data Portal makes it easier to find and use health facility data for\n        malaria modelling. The Portal collates facility lists from national master\n        facility registers, DHIS2, and partner sources — documenting each dataset\n        and providing code examples for integration into modelling workflows.\n      \n      \n        While data files are hosted on Zenodo, the Portal guides you through\n        downloading and contextualises each dataset with quality reports and\n        worked examples.\n      \n      Learn More About the Portal\n    \n    \n      \n        🌍\n        \n          3\n          Countries covered\n        \n      \n      \n        🏥\n        \n          25 940\n          Facilities catalogued\n        \n      \n      \n        📅\n        \n          2015–2024\n          Temporal coverage\n        \n      \n      \n        🔓\n        \n          Open Access\n          CC BY 4.0 licensed\n        \n      \n    \n  \n\n\n\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "demographics.html",
+    "href": "demographics.html",
+    "title": "demographic",
+    "section": "",
     "text": "Back to top"
   },
   {
-    "objectID": "downloads.html",
-    "href": "downloads.html",
-    "title": "Downloads",
+    "objectID": "countries/tanzania.html",
+    "href": "countries/tanzania.html",
+    "title": "\n",
+    "section": "",
+    "text": "Standardized, geolocated facility information to strengthen modelling, planning, and decision-making"
+  },
+  {
+    "objectID": "countries/tanzania.html#health-facilities-map",
+    "href": "countries/tanzania.html#health-facilities-map",
+    "title": "\n",
+    "section": "Health Facilities Map",
+    "text": "Health Facilities Map"
+  },
+  {
+    "objectID": "countries/tanzania.html#overview",
+    "href": "countries/tanzania.html#overview",
+    "title": "\n",
+    "section": "Overview",
+    "text": "Overview\nThis section gives a general summary of health facilities in Tanzania.\nYou can include charts, stats, or key messages here."
+  },
+  {
+    "objectID": "countries/tanzania.html#demographics",
+    "href": "countries/tanzania.html#demographics",
+    "title": "\n",
+    "section": "Demographics",
+    "text": "Demographics\nHere you display facility-level demographic info, e.g., number of beds, staff, population served, etc."
+  },
+  {
+    "objectID": "countries/tanzania.html#services",
+    "href": "countries/tanzania.html#services",
+    "title": "\n",
+    "section": "Services",
+    "text": "Services\nDetails of available services per facility, e.g., outpatient, malaria, maternal health, HIV services."
+  },
+  {
+    "objectID": "countries/tanzania.html#data-download",
+    "href": "countries/tanzania.html#data-download",
+    "title": "\n",
+    "section": "Data Download",
+    "text": "Data Download\nProvide links for users to download:\n\nCSV\n\nJSON\n\nRDS"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About the HF Data Portal",
+    "section": "",
+    "text": "Background, goals, and the team behind the Portal"
+  },
+  {
+    "objectID": "about.html#what-is-the-hf-data-portal",
+    "href": "about.html#what-is-the-hf-data-portal",
+    "title": "About the HF Data Portal",
+    "section": "What Is the HF Data Portal?",
+    "text": "What Is the HF Data Portal?\nThe Health Facility Data Portal is a centralised, openly accessible resource providing standardised health facility information for malaria-endemic countries in sub-Saharan Africa. It was developed to remove a persistent bottleneck in infectious-disease modelling: the time-consuming, error-prone work of locating, cleaning, and harmonising national facility lists before any analysis can begin.\nThe Portal currently covers Tanzania, Kenya, and Uganda, with additional countries planned on the roadmap."
+  },
+  {
+    "objectID": "about.html#why-health-facility-data",
+    "href": "about.html#why-health-facility-data",
+    "title": "About the HF Data Portal",
+    "section": "Why Health Facility Data?",
+    "text": "Why Health Facility Data?\nHealth facility location and capacity underpin a wide range of analytical needs:\n\nTransmission modelling — estimating care-seeking rates and treatment coverage\nAccess mapping — computing travel-time surfaces to the nearest facility\nIntervention planning — targeting IRS and bed-net distribution campaigns\nHealth system evaluation — monitoring facility density and equity over time\n\nDespite their importance, national master facility lists are rarely harmonised across sources or years, limiting reproducibility and cross-country comparison."
+  },
+  {
+    "objectID": "about.html#our-approach",
+    "href": "about.html#our-approach",
+    "title": "About the HF Data Portal",
+    "section": "Our Approach",
+    "text": "Our Approach\n\n  🗂 Source Collation\n  We draw on national Ministry of Health master facility lists, DHIS2 organisation\n  unit exports, WHO SARA assessments, and curated partner datasets.\n\n\n\n  🔗 Harmonisation\n  All sources are mapped to a common schema: unique facility ID, name, admin\n  hierarchy (levels 1–4), facility type, ownership, GPS coordinates, and operational\n  status.\n\n\n\n  ✅ Quality Assessment\n  Each dataset receives a structured quality report covering coordinate validity,\n  duplicate records, admin code consistency, and temporal completeness. Scores are\n  published alongside the data.\n\n\n\n  📦 Versioned Release\n  Datasets follow semantic versioning and are archived with a DOI on Zenodo. A\n  full changelog is maintained so users can track what changed between versions."
+  },
+  {
+    "objectID": "about.html#team",
+    "href": "about.html#team",
+    "title": "About the HF Data Portal",
+    "section": "Team",
+    "text": "Team\nThe Portal is maintained by a cross-institutional team with expertise in health data science, GIS, and malaria epidemiology.\n\n\n\nName\nRole\nInstitution\n\n\n\n\nCoordinator TBC\nData Lead\n—\n\n\nCoordinator TBC\nGIS Analysis\n—\n\n\nCoordinator TBC\nSoftware & Infra\n—\n\n\n\nInterested in contributing? See the GitHub repository."
+  },
+  {
+    "objectID": "about.html#funding-acknowledgements",
+    "href": "about.html#funding-acknowledgements",
+    "title": "About the HF Data Portal",
+    "section": "Funding & Acknowledgements",
+    "text": "Funding & Acknowledgements\nThis work is supported by the Bill & Melinda Gates Foundation. We thank the Ministries of Health in Tanzania, Kenya, and Uganda for sharing national facility data, and the broader open-data community whose tools make this Portal possible.\n\n  Read the Methods →"
+  },
+  {
+    "objectID": "countries/kenya.html",
+    "href": "countries/kenya.html",
+    "title": "countries",
     "section": "",
     "text": "Back to top"
   },
@@ -28,108 +217,94 @@
     "text": "Back to top"
   },
   {
-    "objectID": "countries/kenya.html",
-    "href": "countries/kenya.html",
-    "title": "countries",
+    "objectID": "downloads.html",
+    "href": "downloads.html",
+    "title": "Downloads",
     "section": "",
     "text": "Back to top"
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
+    "objectID": "kenya.html",
+    "href": "kenya.html",
+    "title": "🇰🇪 Kenya",
     "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2\n\n\n\n\n\n Back to top"
+    "text": "Republic of Kenya — Health Facility Dataset v1.1"
   },
   {
-    "objectID": "countries/tanzania.html",
-    "href": "countries/tanzania.html",
-    "title": "\nTanzania \n",
-    "section": "",
-    "text": "Standardized, geolocated facility information to strengthen modelling, planning, and decision-making"
-  },
-  {
-    "objectID": "countries/tanzania.html#health-facilities-map",
-    "href": "countries/tanzania.html#health-facilities-map",
-    "title": "\nTanzania \n",
-    "section": "Health Facilities Map",
-    "text": "Health Facilities Map"
-  },
-  {
-    "objectID": "countries/tanzania.html#overview",
-    "href": "countries/tanzania.html#overview",
-    "title": "\nTanzania \n",
+    "objectID": "kenya.html#overview",
+    "href": "kenya.html#overview",
+    "title": "🇰🇪 Kenya",
     "section": "Overview",
-    "text": "Overview\nThis section gives a general summary of health facilities in Tanzania.\nYou can include charts, stats, or key messages here."
+    "text": "Overview\nKenya operates one of the most comprehensive open health facility registries in sub-Saharan Africa — the Kenya Master Health Facility List (KMHFL). The Portal dataset is derived from KMHFL quarterly extracts, supplemented with DHIS2 codes and coordinate cross-validation across all 47 counties."
   },
   {
-    "objectID": "countries/tanzania.html#demographics",
-    "href": "countries/tanzania.html#demographics",
-    "title": "\nTanzania \n",
-    "section": "Demographics",
-    "text": "Demographics\nHere you display facility-level demographic info, e.g., number of beds, staff, population served, etc."
+    "objectID": "kenya.html#facility-breakdown",
+    "href": "kenya.html#facility-breakdown",
+    "title": "🇰🇪 Kenya",
+    "section": "Facility Breakdown",
+    "text": "Facility Breakdown\n\n  By Facility Type\n  \n\n\n\nType\nCount\n%\n\n\n\n\nDispensary / Pharmacy\n5 850\n46.1 %\n\n\nHealth Centre\n2 940\n23.1 %\n\n\nClinic (Private)\n2 210\n17.4 %\n\n\nDistrict Hospital\n1 180\n9.3 %\n\n\nCounty / National Referral\n520\n4.1 %\n\n\n\n\n\n\n\n  By Ownership\n  \n\n\n\nOwnership\nCount\n%\n\n\n\n\nGovernment (MoH Kenya)\n6 350\n50.0 %\n\n\nPrivate for Profit\n3 810\n30.0 %\n\n\nFaith-Based Organisation\n1 780\n14.0 %\n\n\nNGO / Other\n760\n6.0 %"
   },
   {
-    "objectID": "countries/tanzania.html#services",
-    "href": "countries/tanzania.html#services",
-    "title": "\nTanzania \n",
-    "section": "Services",
-    "text": "Services\nDetails of available services per facility, e.g., outpatient, malaria, maternal health, HIV services."
+    "objectID": "kenya.html#data-quality",
+    "href": "kenya.html#data-quality",
+    "title": "🇰🇪 Kenya",
+    "section": "Data Quality",
+    "text": "Data Quality\n\n  Quality Scores — v1.1\n  \n\n\n\nDimension\nScore\n\n\n\n\nCoordinate validity\n91 / 100\n\n\nAttribute completeness\n84 / 100\n\n\nDuplicate rate (post-dedup)\n&lt; 0.3 %\n\n\nAdmin code consistency\n97 / 100\n\n\nTemporal coverage\n2016–2024"
   },
   {
-    "objectID": "countries/tanzania.html#data-download",
-    "href": "countries/tanzania.html#data-download",
-    "title": "\nTanzania \n",
-    "section": "Data Download",
-    "text": "Data Download\nProvide links for users to download:\n\nCSV\n\nJSON\n\nRDS"
+    "objectID": "kenya.html#available-fields",
+    "href": "kenya.html#available-fields",
+    "title": "🇰🇪 Kenya",
+    "section": "Available Fields",
+    "text": "Available Fields\n\n  facility_idsource_id (KMHFL)\n  namefacility_type\n  ownershipadmin1 (County)\n  admin2 (Sub-County)admin3 (Ward)\n  longitudelatitude\n  coord_sourcekeph_level\n  operationalyearversion"
   },
   {
-    "objectID": "demographics.html",
-    "href": "demographics.html",
-    "title": "demographic",
-    "section": "",
-    "text": "Back to top"
+    "objectID": "kenya.html#download",
+    "href": "kenya.html#download",
+    "title": "🇰🇪 Kenya",
+    "section": "Download",
+    "text": "Download\n\n\n\n\n\n\nNote\n\n\n\nData are released under CC BY 4.0. Please cite the Zenodo record in publications.\n\n\n\n\n\nFormat\nLink\n\n\n\n\nCSV (all facilities)\nComing soon\n\n\nGeoPackage (.gpkg)\nComing soon\n\n\nR package {hfportal}\nComing soon\n\n\nQuality report PDF\nComing soon\n\n\n\nZenodo DOI: 10.5281/zenodo.XXXXXX"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Geocoded Health Facility Data for Malaria-Endemic Africa",
-    "section": "",
-    "text": "Africa Health Facilities Map"
-  },
-  {
-    "objectID": "index.html#why-this-portal-exists",
-    "href": "index.html#why-this-portal-exists",
-    "title": "Geocoded Health Facility Data for Malaria-Endemic Africa",
-    "section": "Why this portal exists",
-    "text": "Why this portal exists\nReliable, geocoded health facility data remain scarce across many malaria-endemic African countries. Existing datasets are often fragmented, stored in PDF formats, or lack the standardization required for spatial and mathematical modelling.\nThis portal addresses this gap by extracting, cleaning, and structuring facility profile data into analysis-ready formats."
-  },
-  {
-    "objectID": "index.html#what-this-portal-provides",
-    "href": "index.html#what-this-portal-provides",
-    "title": "Geocoded Health Facility Data for Malaria-Endemic Africa",
-    "section": "What this portal provides",
-    "text": "What this portal provides\n\nHarmonized facility-level datasets across countries\nConsistent classification of services and facility attributes\nGeographic coordinates suitable for spatial modelling\nReusable outputs for integration into malaria transmission models"
-  },
-  {
-    "objectID": "index.html#intended-users",
-    "href": "index.html#intended-users",
-    "title": "Geocoded Health Facility Data for Malaria-Endemic Africa",
-    "section": "Intended users",
-    "text": "Intended users\nThe primary users of this portal are malaria modelers, epidemiologists, geospatial analysts, and health systems researchers."
-  },
-  {
-    "objectID": "index.html#dataset-coverage",
-    "href": "index.html#dataset-coverage",
-    "title": "Geocoded Health Facility Data for Malaria-Endemic Africa",
-    "section": "Dataset coverage",
-    "text": "Dataset coverage\n\n\n# A tibble: 3 × 2\n  Metric                       Value\n  &lt;chr&gt;                        &lt;int&gt;\n1 Total health facilities          7\n2 Facilities with service data     7\n3 Unique service categories        7\n\n\n\n\n\n\n Our Values\n\n\n Openness\nWe promote open data principles and transparent workflows to ensure that health facility data can be accessed, reviewed, and reused by researchers, policymakers, and implementers.\n\n\n Transparency\nAll data processing steps, assumptions, and limitations are clearly documented to support reproducibility, trust, and informed interpretation.\n\n\n Robust Methods\nWe apply rigorous data validation, geospatial harmonization, and methodological best practices to ensure analytical reliability for malaria modelling and health systems research.\n\n\n\n\n\n\n\n\n© 2026 Health Facility Data Portal"
+    "objectID": "kenya.html#code-example",
+    "href": "kenya.html#code-example",
+    "title": "🇰🇪 Kenya",
+    "section": "Code Example",
+    "text": "Code Example\nlibrary(hfportal)\n\nken &lt;- get_facilities(country = \"KEN\", version = \"1.1\")\n\nlibrary(dplyr)\nken |&gt;\n  count(admin1, facility_type) |&gt;\n  ggplot(aes(x = reorder(admin1, n), y = n, fill = facility_type)) +\n  geom_col() + coord_flip() + theme_minimal() +\n  labs(title = \"Kenya: Facilities by County & Type\", x = NULL)\nDataset last updated: August 2024 | Source: KMHFL (Kenya MoH)\n← All Countries"
   },
   {
     "objectID": "roadmap.html",
     "href": "roadmap.html",
-    "title": "changelog",
+    "title": "Roadmap",
     "section": "",
-    "text": "Back to top"
+    "text": "Planned features, country expansions, and data releases\nThe roadmap below reflects the Portal team’s current priorities. Have a suggestion? Open an issue on GitHub."
+  },
+  {
+    "objectID": "roadmap.html#foundations",
+    "href": "roadmap.html#foundations",
+    "title": "Roadmap",
+    "section": "2024 — Foundations",
+    "text": "2024 — Foundations\n\n  \n    Q1 2024\n    Tanzania v1.0 Release Done\n    Full national facility list with GPS coordinates, admin hierarchy, facility\n    type and ownership. Quality report published on Zenodo.\n  \n  \n    Q2 2024\n    Kenya v1.0 Release Done\n    KMHFL-sourced dataset harmonised to the Portal schema, including private\n    facilities and faith-based health units.\n  \n  \n    Q3 2024\n    Uganda v1.0 Release Done\n    MoH Uganda HMIS export cleaned, deduplicated, and georeferenced.\n    Admin level-4 (parish) codes included where available.\n  \n  \n    Q4 2024\n    Portal Website v1 Done\n    Public-facing website with country pages, methodology documentation,\n    and download links launched."
+  },
+  {
+    "objectID": "roadmap.html#enrichment-expansion",
+    "href": "roadmap.html#enrichment-expansion",
+    "title": "Roadmap",
+    "section": "2025 — Enrichment & Expansion",
+    "text": "2025 — Enrichment & Expansion\n\n  \n    Q1 2025\n    Travel-Time Surfaces In Progress\n    Friction-surface-based travel time to the nearest facility at 1 km²\n    resolution for all three countries.\n  \n  \n    Q2 2025\n    Malawi Pilot Dataset In Progress\n    Scoping and source negotiation for Malawi national MFL underway.\n    Target release Q3 2025.\n  \n  \n    Q3 2025\n    Annual Updates — TZA, KEN, UGA Planned\n    Refresh all three core country datasets with 2024 source extracts,\n    version bump to v2.0.\n  \n  \n    Q4 2025\n    Interactive Map Explorer Planned\n    In-browser map to filter, visualise, and download subsets of facility\n    data without any coding required."
+  },
+  {
+    "objectID": "roadmap.html#scale",
+    "href": "roadmap.html#scale",
+    "title": "Roadmap",
+    "section": "2026 — Scale",
+    "text": "2026 — Scale\n\n  \n    Q1 2026\n    Mozambique & Zambia Datasets Planned\n    Two additional high-burden malaria countries added, bringing total coverage\n    to five countries.\n  \n  \n    Q2 2026\n    API Access Planned\n    RESTful API endpoint for programmatic data access, enabling direct\n    integration into modelling pipelines without manual downloads.\n  \n  \n    Q3–Q4 2026\n    Service Availability Linkage Planned\n    Link facility records to SARA and DHIS2 indicators, enabling\n    facility-level readiness scores for outpatient malaria care.\n  \n\nLast updated: January 2025. Timelines are indicative and subject to change."
+  },
+  {
+    "objectID": "tanzania.html",
+    "href": "tanzania.html",
+    "title": "\n        Tanzania\n        \n      ",
+    "section": "",
+    "text": "Tanzania\n        \n      \n      Geocoded Health Facilities for Malaria Modelling\n      Standardised, geolocated facility information to strengthen modelling, planning, and decision-making\n    \n  \n\n\n\n\n  \n    7 560\n    Total Facilities\n  \n  \n  \n    86 %\n    GPS Coordinates\n  \n  \n  \n    26\n    Regions\n  \n  \n  \n    2015–2024\n    Temporal Coverage\n  \n  \n  \n    v1.2\n    Dataset Version\n  \n\n\n\n\n  📋 Overview\n  🗺️ Map\n  👥 Demographics\n  🏥 Services\n  ✅ Data Quality\n  ⬇️ Download\n\n\n\n  \n    \n      Overview\n      Tanzania Health Facility Landscape\n    \n    \n      \n        \n          Tanzania operates a tiered health system — from national and regional referral\n          hospitals down to dispensaries and community health posts — overseen by the\n          Ministry of Health, Community Development, Gender, Elderly and Children\n          (MoHCDGEC).\n        \n        \n          This dataset aggregates facility records from the national master facility list\n          and annual DHIS2 organisation unit exports, covering all 26 regions of mainland\n          Tanzania and Zanzibar. Records are harmonised to the HF Portal common schema\n          and validated against GADM v4.1 administrative boundaries.\n        \n        \n          Coordinate coverage stands at 86 %. Facilities without GPS\n          points are assigned the centroid of their lowest available administrative unit\n          and flagged via coord_source = \"Centroid\".\n        \n      \n      \n        \n          🏛️\n          \n            Primary source\n            MoHCDGEC / DHIS2\n          \n        \n        \n          📐\n          \n            Coordinate system\n            WGS84 (EPSG:4326)\n          \n        \n        \n          🔄\n          \n            Update frequency\n            Annual (Oct each year)\n          \n        \n        \n          📜\n          \n            Licence\n            CC BY 4.0\n          \n        \n      \n    \n  \n\n\n\n  \n    \n      Interactive Map\n      Health Facilities Map\n      Click any marker for facility details. Use the layer control to filter by facility type or ownership.\n    \n    \n\n\n\n\n\n\n    \n  \n\n\n\n  \n    \n      Demographics\n      Facility Composition\n      Breakdown of facilities by type and ownership across Tanzania.\n    \n    \n      \n        By Facility Type\n\n\n\n\n\n\n\n\n\n      \n      \n        By Ownership\n\n\n\n\n\n\n\n\n\n      \n    \n\n    \n    \n      Facility Count by Type & Ownership\n\n\n\n\n\nType\nFaith-Based\nGovernment\nNGO\nPrivate for Profit\n\n\n\n\nDispensary\n23\n100\n15\n16\n\n\nDistrict Hospital\n2\n20\n1\n9\n\n\nHealth Centre\n12\n44\n4\n13\n\n\nOther\n0\n8\n0\n2\n\n\nRegional Hospital\n8\n17\n2\n4\n\n\n\n\n\n\n\n    \n  \n\n\n\n  \n    \n      Services\n      Available Health Services\n      Service availability across facility levels as captured in the dataset.\n    \n\n    \n      \n        🦟\n        Malaria Services\n        Outpatient diagnosis, rapid diagnostic tests (RDTs), artemisinin-based combination therapy (ACT), and inpatient malaria management.\n        Available at Health Centres & above\n      \n      \n        🤱\n        Maternal Health\n        Antenatal care (ANC), skilled birth attendance, postnatal care, and emergency obstetric services at district and above.\n        Available at Health Centres & above\n      \n      \n        💉\n        Immunisation\n        Routine EPI services including measles, DPT, polio, and seasonal malaria chemoprevention (SMC) where applicable.\n        Available at Dispensaries & above\n      \n      \n        🔬\n        Laboratory\n        Basic diagnostics at lower levels; full laboratory capacity (blood counts, culture, parasitology) at district hospitals and above.\n        Full capacity at Hospitals\n      \n      \n        🩺\n        HIV / TB Services\n        HIV testing, counselling, ART initiation and follow-up, TB diagnosis and DOTS at PEPFAR-supported facilities and higher levels.\n        Selected facilities\n      \n      \n        🚑\n        Emergency Care\n        Emergency triage and basic resuscitation at health centres; comprehensive emergency and surgical care at district hospitals.\n        District Hospitals & above\n      \n    \n\n    \n      ℹ️\n      Service availability in this dataset is derived from SARA survey rounds and DHIS2 service indicators. Coverage may not reflect real-time facility status. Consult the quality report for survey dates.\n    \n  \n\n\n\n  \n    \n      Data Quality\n      Quality Assessment — v1.2\n      Standardised quality scores across five dimensions. Full report included in the download bundle.\n    \n\n    \n      \n        \n          📍\n          Coordinate Validity\n        \n        \n          \n        \n        86 / 100\n        86 % of facilities have valid GPS points within Tanzania's boundary\n      \n\n      \n        \n          🗂️\n          Attribute Completeness\n        \n        \n          \n        \n        78 / 100\n        Mean non-missing rate across all schema fields\n      \n\n      \n        \n          🔁\n          Duplicate Rate\n        \n        \n          \n        \n        &lt; 0.5 %\n        Post-deduplication residual duplicate rate\n      \n\n      \n        \n          🏛️\n          Admin Consistency\n        \n        \n          \n        \n        94 / 100\n        admin1–admin2 codes consistent with GADM v4.1\n      \n\n      \n        \n          📅\n          Temporal Coverage\n        \n        \n          \n        \n        2015 – 2024\n        10-year longitudinal coverage with annual snapshots\n      \n    \n  \n\n\n\n  \n    \n      Download\n      Access the Dataset\n      All files are hosted on Zenodo under CC BY 4.0. Please cite the DOI in any publication.\n    \n\n    \n      \n        📄\n        \n          Facility List (CSV)\n          Flat file, all 7 560 facilities with full schema fields\n        \n        Download\n      \n\n      \n        🌍\n        \n          Spatial File (GeoPackage)\n          GPKG format, ready for QGIS / R / Python spatial analysis\n        \n        Download\n      \n\n      \n        📦\n        \n          R sf Object (RDS)\n          Pre-processed sf object for direct use in R modelling pipelines\n        \n        Download\n      \n\n      \n        📋\n        \n          Quality Report (PDF)\n          Full quality assessment including field-level completeness scores\n        \n        Coming soon\n      \n    \n\n    \n      📖 How to cite\n      \n        HF Data Portal Team (2024). Tanzania Health Facility Dataset v1.2.\n        Zenodo. https://doi.org/10.5281/zenodo.XXXXXX\n      \n    \n\n    \n      Load in R\n\n# Option 1: Load the pre-processed sf object\nhf_tz &lt;- readRDS(\"data/tanzania/hf_demographic_sf.rds\")\n\n# Option 2: Read CSV and convert to sf\nlibrary(readr)\nlibrary(sf)\nhf_tz &lt;- read_csv(\"data/tanzania/hf_demographics.csv\") |&gt;\n  filter(!is.na(longitude)) |&gt;\n  st_as_sf(coords = c(\"longitude\", \"latitude\"), crs = 4326)\n\n# Quick summary\ncat(\"Facilities:\", nrow(hf_tz), \"\\n\")\ncat(\"Regions:\", n_distinct(hf_tz$admin1), \"\\n\")\ntable(hf_tz$facility_type)\n\n    \n  \n\n\n\n\n  ← All Countries\n\n\n\n\n\n Back to top"
   }
 ]

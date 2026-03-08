@@ -1,6 +1,6 @@
 ---
 title: ""
-runtime: shiny
+runtime: 
 toc: false
 ---
 ```{r}
@@ -14,22 +14,19 @@ knitr::opts_chunk$set(
 ```
 
 
-::::: full-width-banner
-:::: country-hero
-![](../images/banner3.png){.country-banner}
+
 
 ::: country-hero-text
 <h1 class="country-title">
 
-Tanzania <img src="../images/flags/tz_flag.png" alt="Tanzania flag" class="country-flag"/>
+
 
 </h1>
 
 <h2>Geocoded Health Facilities for Malaria Modelling</h2>
 
 <p>Standardized, geolocated facility information to strengthen modelling, planning, and decision-making</p>
-:::
-::::
+
 :::::
 
 <!-- ===================== -->

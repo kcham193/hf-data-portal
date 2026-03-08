@@ -1,0 +1,14 @@
+/*-- scss:defaults --*/
+
+$primary:   #3d7a6e;
+$secondary: #1e2e47;
+$success:   #2a9d5c;
+$warning:   #bf5b38;
+$body-color: #1a2033;
+$link-color: #3d7a6e;
+
+/*-- scss:rules --*/
+// Light mode is the default — all styling lives in style-base.scss
+// Only add light-specific overrides here if needed
+
+.navbar-brand-title { color: #fff !important; }
