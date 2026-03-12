@@ -32,12 +32,20 @@ website:
         href: about.qmd
       - text: Countries
         menu:
-          - text: "🇹🇿 Tanzania"
+          - text: "Tanzania"
             href: countries/tanzania.qmd
-          - text: "🇰🇪 Kenya"
-            href: countries/kenya.qmd
-          - text: "🇺🇬 Uganda"
+          - text: "Malawi"
+            href: countries/Malawi.qmd
+          - text: "Uganda"
             href: countries/uganda.qmd
+          - text: "Zambia"
+            href: countries/Zambia.qmd
+          - text: "Benin"
+            href: countries/Benin.qmd
+          - text: "Botswana"
+            href: countries/Botswana.qmd
+          - text: "Nigeria"
+            href: countries/Nigeria.qmd
       - text: Methods
         href: methodology.qmd
       - text: Roadmap

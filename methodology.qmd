@@ -26,8 +26,7 @@ available in the [GitHub repository](https://github.com/myalla-christina/hf-data
 
 | Country | Primary Source | Update Frequency |
 |---|---|---|
-| Tanzania | MOHCDGEC / DHIS2 | Annual |
-| Kenya | Kenya Master Health Facility List (KMHFL) | Quarterly |
+| Tanzania | MOH Tanzania | Annual |
 | Uganda | MoH Uganda HMIS | Annual |
 
 ### Secondary Sources
@@ -62,12 +61,8 @@ year            integer     Reference year of the record
 version         character   Portal dataset version
 ```
 
-### Deduplication
 
-Duplicates are identified by combining Jaro–Winkler string similarity on facility
-names (≥ 0.92) with spatial proximity (within 500 m).
 
----
 
 ## 3. Quality Assessment
 
@@ -117,9 +112,6 @@ Each release is archived on Zenodo and assigned a citable DOI.
 
 ---
 
-## Citation
-
-> *HF Data Portal Team (2025). HF Data Portal Methodology.*
 
 ```{=html}
 <a href="about.html" class="btn-hf-primary" style="margin-top:1.2rem;display:inline-block;">About the Project</a>

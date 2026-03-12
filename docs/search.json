@@ -109,7 +109,7 @@
     "href": "index.html",
     "title": "Welcome to the HF Data Portal",
     "section": "",
-    "text": "Welcome to the HF Data Portal\n  \n    The Health Facility Data Portal is a centralised resource for structured,\n    quality-assured facility data relevant to malaria modelling in sub-Saharan\n    Africa. Explore our country pages for guidance on accessing and using\n    health facility datasets.\n  \n\n\n\n\n  \n\n    \n      I am looking for data from\n      \n        Select a country…\n        🇹🇿 Tanzania\n        🇰🇪 Kenya\n        🇺🇬 Uganda\n      \n      \n        Proceed ➔\n      \n    \n\n    \n\n      \n      \n        \n          🔍\n          I need HF data for modelling\n        \n        →\n        \n          🏥\n          Discover HF Portal\n        \n        →\n        \n          📂\n          Explore country pages\n        \n        →\n        \n          💾\n          Find relevant datasets\n        \n      \n\n      \n      \n        \n         &lt;- \n      \n\n      \n      \n        \n          ⬇️\n          Download data\n        \n        →\n        \n          ❓\n          Decide whether to download\n        \n        →\n        \n          🔗\n          Review & access source\n        \n        \n        \n        \n        \n        \n      \n\n    \n\n  \n\n\n\n\n\n\n  \n\n    \n      Facility Datasets\n      \n        \n          \n          \n          \n          \n          \n          \n          \n          \n          \n        \n      \n      Access georeferenced, harmonised facility lists including type, ownership, service availability, and administrative hierarchy across malaria-endemic countries.\n    \n\n    \n      Documentation\n      \n        \n          \n          \n          \n          \n          \n          \n        \n      \n      Detailed quality reports and methodology documentation describing how each dataset was collected, cleaned, and validated for disease modelling use.\n    \n\n    \n      Code Examples\n      \n        \n          \n          \n          \n          \n          \n          \n          \n        \n      \n      Worked R and Python examples showing how to load, clean, and integrate health facility data into epidemiological models and access-to-care analyses.\n    \n\n  \n\n\n\n\n\n\n  \n    \n      Responsible Access to Health Facility Data for Analysis and Research\n      \n        The HF Data Portal makes it easier to find and use health facility data for\n        malaria modelling. The Portal collates facility lists from national master\n        facility registers, DHIS2, and partner sources — documenting each dataset\n        and providing code examples for integration into modelling workflows.\n      \n      \n        While data files are hosted on Zenodo, the Portal guides you through\n        downloading and contextualises each dataset with quality reports and\n        worked examples.\n      \n      Learn More About the Portal\n    \n    \n      \n        🌍\n        \n          3\n          Countries covered\n        \n      \n      \n        🏥\n        \n          25 940\n          Facilities catalogued\n        \n      \n      \n        📅\n        \n          2015–2024\n          Temporal coverage\n        \n      \n      \n        🔓\n        \n          Open Access\n          CC BY 4.0 licensed\n        \n      \n    \n  \n\n\n\n\n\n\n Back to top"
+    "text": "Welcome to the HF Data Portal\n  \n    The Health Facility Data Portal is a centralised resource for structured,\n    quality-assured facility data relevant to modelling in sub-Saharan\n    Africa. Explore our country pages for guidance on accessing and using\n    health facility datasets.\n  \n\n\n\n\n  \n\n\n  I am looking for data from\n  \n    Select a country…\n    🇹🇿 Tanzania\n    🇲🇼 Malawi\n    🇺🇬 Uganda\n    🇿🇲 Zambia\n    🇧🇯 Benin\n    🇧🇼 Botswana\n    🇳🇬 Nigeria\n  \n  \n    Proceed ➔\n  \n\n\n    \n\n      \n      \n        \n          🔍\n          I need HF data for modelling\n        \n        →\n        \n          🏥\n          Visit HFD Portal\n        \n        →\n        \n          📂\n          Explore country pages\n        \n        →\n        \n          🔗\n          Find the dataset links\n        \n      \n\n      \n      \n        \n         &lt;- \n      \n\n      \n      \n        \n          ⬇️\n          Download data\n        \n        →\n        \n          ❓\n          Decide whether to download\n        \n        →\n        \n          🏥\n          Review country HF profile\n        \n        \n        \n        \n        \n        \n      \n\n    \n\n  \n\n\n\n\n\n\n      What we Have \n  \n\n    \n      Facility Datasets\n      \n        \n          \n          \n          \n          \n          \n          \n          \n          \n          \n        \n      \n      Access georeferenced, harmonised facility lists including type, ownership, service availability, and administrative hierarchy across sub-saharan countries.\n    \n\n    \n      Countries HF Profiles\n      \n        \n          \n          \n          \n          \n          \n          \n        \n      \n      Detailed informationabout the health faciliies overview, demographics and services per each avaliable country\n    \n\n    \n      Methods\n      \n        \n          \n          \n          \n          \n          \n          \n          \n        \n      \n      Detailed information on the methods used in gathering, processing and standardizing the health facilities dataset\n    \n\n  \n\n\n\n\n\n\n  \n    \n      Access to Health Facility Data for Analysis and Research\n      \n        The HF Data Portal makes it easier to find and use health facility data for modelling. The Portal collates facility lists from national master facility registries, DHIS2, and partner sources and documenting the each country.\n      \n      \n        The Portal guides you through downloading and contextualises each dataset with quality overview.\n      \n      Learn More About the Portal\n    \n    \n      \n        🌍\n        \n          8\n          Countries covered\n        \n      \n      \n        🏥\n        \n          +50,000\n          Facilities catalogued\n        \n      \n      \n        📅\n        \n          Current\n          Temporal coverage\n        \n      \n      \n      \n      \n      \n      \n      \n      \n    \n   Back to top"
   },
   {
     "objectID": "demographics.html",
@@ -119,46 +119,116 @@
     "text": "Back to top"
   },
   {
-    "objectID": "countries/tanzania.html",
-    "href": "countries/tanzania.html",
+    "objectID": "countries/uganda.html",
+    "href": "countries/uganda.html",
     "title": "\n",
     "section": "",
     "text": "Standardized, geolocated facility information to strengthen modelling, planning, and decision-making"
   },
   {
-    "objectID": "countries/tanzania.html#health-facilities-map",
-    "href": "countries/tanzania.html#health-facilities-map",
+    "objectID": "countries/uganda.html#health-facilities-map",
+    "href": "countries/uganda.html#health-facilities-map",
     "title": "\n",
     "section": "Health Facilities Map",
     "text": "Health Facilities Map"
   },
   {
-    "objectID": "countries/tanzania.html#overview",
-    "href": "countries/tanzania.html#overview",
+    "objectID": "countries/uganda.html#overview",
+    "href": "countries/uganda.html#overview",
     "title": "\n",
     "section": "Overview",
-    "text": "Overview\nThis section gives a general summary of health facilities in Tanzania.\nYou can include charts, stats, or key messages here."
+    "text": "Overview\nUganda’s health system comprises approximately 6,000 government and private facilities, structured into a six-tier system from Village Health Teams (VHTs) at the community level to national referral hospitals. The Ministry of Health has made significant efforts to decentralize health services, though inequities persist between urban and rural areas, particularly in the northern regions."
   },
   {
-    "objectID": "countries/tanzania.html#demographics",
-    "href": "countries/tanzania.html#demographics",
+    "objectID": "countries/uganda.html#demographics",
+    "href": "countries/uganda.html#demographics",
     "title": "\n",
     "section": "Demographics",
-    "text": "Demographics\nHere you display facility-level demographic info, e.g., number of beds, staff, population served, etc."
+    "text": "Demographics\nWith a population of around 47 million — one of the fastest-growing in the world — Uganda’s health facilities face significant demand pressure. Health centre IIs and IIIs form the backbone of primary care, each serving populations of approximately 5,000 and 20,000 respectively. Uganda has a physician density of roughly 0.5 per 10,000 population, and relies heavily on nurses, midwives, and community health workers to deliver frontline care."
   },
   {
-    "objectID": "countries/tanzania.html#services",
-    "href": "countries/tanzania.html#services",
+    "objectID": "countries/uganda.html#services",
+    "href": "countries/uganda.html#services",
     "title": "\n",
     "section": "Services",
-    "text": "Services\nDetails of available services per facility, e.g., outpatient, malaria, maternal health, HIV services."
+    "text": "Services\nUgandan facilities offer outpatient and inpatient care, malaria diagnosis (RDT and microscopy) and treatment, PMTCT (prevention of mother-to-child transmission of HIV), ART, immunization, reproductive and maternal health services, nutrition support, and TB management. Malaria is the leading cause of morbidity and mortality, accounting for a large share of all outpatient visits, especially in children under five."
   },
   {
-    "objectID": "countries/tanzania.html#data-download",
-    "href": "countries/tanzania.html#data-download",
+    "objectID": "countries/uganda.html#data-download",
+    "href": "countries/uganda.html#data-download",
     "title": "\n",
     "section": "Data Download",
-    "text": "Data Download\nProvide links for users to download:\n\nCSV\n\nJSON\n\nRDS"
+    "text": "Data Download\nDownload the facilities data here:\n\nCSV\n\nRDS"
+  },
+  {
+    "objectID": "countries/Nigeria.html",
+    "href": "countries/Nigeria.html",
+    "title": "\n",
+    "section": "",
+    "text": "Standardized, geolocated facility information to strengthen modelling, planning, and decision-making"
+  },
+  {
+    "objectID": "countries/Nigeria.html#health-facilities-map",
+    "href": "countries/Nigeria.html#health-facilities-map",
+    "title": "\n",
+    "section": "Health Facilities Map",
+    "text": "Health Facilities Map"
+  },
+  {
+    "objectID": "countries/Nigeria.html#overview",
+    "href": "countries/Nigeria.html#overview",
+    "title": "\n",
+    "section": "Overview",
+    "text": "Overview\nNigeria has the largest health facility network in Africa, with over 40,000 facilities ranging from primary health care centres (PHCs) to federal tertiary hospitals. The health system is decentralized across federal, state, and local government levels, which creates significant variability in service quality and availability across the country’s 36 states and FCT. Northern states generally have lower facility density and worse health outcomes compared to southern states."
+  },
+  {
+    "objectID": "countries/Nigeria.html#demographics",
+    "href": "countries/Nigeria.html#demographics",
+    "title": "\n",
+    "section": "Demographics",
+    "text": "Demographics\nWith a population exceeding 220 million, Nigeria faces enormous demand on its health system. Primary health centres — the most numerous facility type — are designed to serve communities of approximately 5,000 people, though many are under-resourced or non-functional. Nigeria has a physician density of approximately 3.8 per 10,000 population, though distribution is highly skewed toward urban centres. Brain drain of health workers remains a significant systemic challenge. ## Services {#services}\nNigerian health facilities deliver a broad range of services including outpatient and inpatient care, malaria diagnosis and treatment (Nigeria bears the highest global malaria burden, accounting for ~27% of global cases), HIV/AIDS services, maternal and child health (ANC, skilled delivery, postnatal care), immunization under the National Programme on Immunization, TB services, and nutrition support. The private sector plays a large role in service delivery, particularly in urban areas."
+  },
+  {
+    "objectID": "countries/Nigeria.html#data-download",
+    "href": "countries/Nigeria.html#data-download",
+    "title": "\n",
+    "section": "Data Download",
+    "text": "Data Download\nDownload the facilities datset here:\n\nCSV\n\nRDS"
+  },
+  {
+    "objectID": "countries/Botswana.html",
+    "href": "countries/Botswana.html",
+    "title": "\n",
+    "section": "",
+    "text": "Standardized, geolocated facility information to strengthen modelling, planning, and decision-making"
+  },
+  {
+    "objectID": "countries/Botswana.html#health-facilities-map",
+    "href": "countries/Botswana.html#health-facilities-map",
+    "title": "\n",
+    "section": "Health Facilities Map",
+    "text": "Health Facilities Map"
+  },
+  {
+    "objectID": "countries/Botswana.html#overview",
+    "href": "countries/Botswana.html#overview",
+    "title": "\n",
+    "section": "Overview",
+    "text": "Overview\nBotswana has one of the more developed health systems in sub-Saharan Africa, supported by the country’s relative economic prosperity from diamond revenues. The country has around 1,000 health facilities including clinics, primary hospitals, district hospitals, and referral hospitals. The government provides largely free primary health care to citizens, and the country has achieved remarkable success in its HIV response."
+  },
+  {
+    "objectID": "countries/Botswana.html#demographics",
+    "href": "countries/Botswana.html#demographics",
+    "title": "\n",
+    "section": "Demographics",
+    "text": "Demographics\nWith a population of approximately 2.5 million and a relatively low population density, Botswana’s health facilities serve both urban centres and widely dispersed rural communities. The country has a higher physician density than most African peers, at around 3–4 per 10,000 population. Mobile health facilities and outreach teams support populations in remote districts such as the Central Kalahari."
+  },
+  {
+    "objectID": "countries/Botswana.html#services",
+    "href": "countries/Botswana.html#services",
+    "title": "\n",
+    "section": "Services",
+    "text": "Services\nBotswana’s facilities offer comprehensive primary care, one of Africa’s most successful HIV/ART programmes (with over 85% of eligible patients on treatment), TB services, maternal and child health, immunization, malaria diagnosis and treatment (primarily in the northern districts bordering Zimbabwe and Zambia), mental health services, and management of NCDs including diabetes and hypertension. ## Data Download {#data-download}\nDownload facilities dtaset here:\n\nCSV\n\nRDS"
   },
   {
     "objectID": "about.html",
@@ -203,18 +273,172 @@
     "text": "Funding & Acknowledgements\nThis work is supported by the Bill & Melinda Gates Foundation. We thank the Ministries of Health in Tanzania, Kenya, and Uganda for sharing national facility data, and the broader open-data community whose tools make this Portal possible.\n\n  Read the Methods →"
   },
   {
-    "objectID": "countries/kenya.html",
-    "href": "countries/kenya.html",
-    "title": "countries",
+    "objectID": "countries/Benin.html",
+    "href": "countries/Benin.html",
+    "title": "\n",
     "section": "",
-    "text": "Back to top"
+    "text": "Standardized, geolocated facility information to strengthen modelling, planning, and decision-making"
   },
   {
-    "objectID": "countries/uganda.html",
-    "href": "countries/uganda.html",
-    "title": "countries",
+    "objectID": "countries/Benin.html#health-facilities-map",
+    "href": "countries/Benin.html#health-facilities-map",
+    "title": "\n",
+    "section": "Health Facilities Map",
+    "text": "Health Facilities Map"
+  },
+  {
+    "objectID": "countries/Benin.html#overview",
+    "href": "countries/Benin.html#overview",
+    "title": "\n",
+    "section": "Overview",
+    "text": "Overview\nBenin’s health system is structured into three levels: peripheral (health zones), intermediate (departmental), and central (national). The country has around 900 public health facilities complemented by a growing private sector. Health zone offices coordinate service delivery across Benin’s 12 departments. Despite improvements, access to care remains unequal, with the northern regions facing greater barriers due to distance and infrastructure."
+  },
+  {
+    "objectID": "countries/Benin.html#demographics",
+    "href": "countries/Benin.html#demographics",
+    "title": "\n",
+    "section": "Demographics",
+    "text": "Demographics\nBenin has a population of approximately 13 million, with high fertility and a young population structure. Most public facilities are community health centres (CSC/CCS) serving rural communities. The country has a significant shortage of skilled health personnel, particularly in rural zones, with a physician density of approximately 0.7 per 10,000 population. Community health agents (relais communautaires) extend the reach of facility-based care."
+  },
+  {
+    "objectID": "countries/Benin.html#services",
+    "href": "countries/Benin.html#services",
+    "title": "\n",
+    "section": "Services",
+    "text": "Services\nHealth facilities in Benin provide outpatient consultations, antenatal care, malaria prevention (IPTp, ITN distribution) and treatment, HIV testing and ART, immunization under the Expanded Programme on Immunization (EPI), nutrition services, and family planning. Malaria is the leading cause of morbidity and mortality in Benin, particularly in children under five, with high transmission in the south."
+  },
+  {
+    "objectID": "countries/Benin.html#data-download",
+    "href": "countries/Benin.html#data-download",
+    "title": "\n",
+    "section": "Data Download",
+    "text": "Data Download\nDownload the facilities dataset here:\n\nCSV\n\nRDS"
+  },
+  {
+    "objectID": "countries/Malawi.html",
+    "href": "countries/Malawi.html",
+    "title": "\n",
     "section": "",
-    "text": "Back to top"
+    "text": "Standardized, geolocated facility information to strengthen modelling, planning, and decision-making"
+  },
+  {
+    "objectID": "countries/Malawi.html#health-facilities-map",
+    "href": "countries/Malawi.html#health-facilities-map",
+    "title": "\n",
+    "section": "Health Facilities Map",
+    "text": "Health Facilities Map"
+  },
+  {
+    "objectID": "countries/Malawi.html#overview",
+    "href": "countries/Malawi.html#overview",
+    "title": "\n",
+    "section": "Overview",
+    "text": "Overview\nMalawi operates a mixed health system with government facilities managed by the Ministry of Health and a significant proportion run by the Christian Health Association of Malawi (CHAM), which provides nearly 40% of health services. The country has around 1,000 health facilities across its 28 districts. Despite being a low-income country, Malawi has achieved notable gains in reducing child and maternal mortality over recent decades."
+  },
+  {
+    "objectID": "countries/Malawi.html#demographics",
+    "href": "countries/Malawi.html#demographics",
+    "title": "\n",
+    "section": "Demographics",
+    "text": "Demographics\nMalawi has a population of approximately 20 million, with over 80% living in rural areas. Most facilities are health centres and dispensaries serving rural communities. The country faces severe health workforce shortages, with one of the lowest doctor-to-population ratios in the world approximately 0.2 physicians per 10,000 people. Community health workers (Health Surveillance Assistants) play a critical role in bridging service gaps."
+  },
+  {
+    "objectID": "countries/Malawi.html#services",
+    "href": "countries/Malawi.html#services",
+    "title": "\n",
+    "section": "Services",
+    "text": "Services\nMalawian health facilities deliver outpatient care, malaria prevention (including insecticide-treated nets distribution), diagnosis and treatment, maternal and neonatal health, HIV/AIDS services including ART and PMTCT, TB treatment, immunization, and nutrition services. Malaria, respiratory infections, and diarrhoeal diseases are the most common reasons for facility visits."
+  },
+  {
+    "objectID": "countries/Malawi.html#data-download",
+    "href": "countries/Malawi.html#data-download",
+    "title": "\n",
+    "section": "Data Download",
+    "text": "Data Download\nDownload facilities dataset here:\n\nCSV\n\nRDS"
+  },
+  {
+    "objectID": "countries/tanzania.html",
+    "href": "countries/tanzania.html",
+    "title": "\n",
+    "section": "",
+    "text": "Standardized, geolocated facility information to strengthen modelling, planning, and decision-making"
+  },
+  {
+    "objectID": "countries/tanzania.html#health-facilities-map",
+    "href": "countries/tanzania.html#health-facilities-map",
+    "title": "\n",
+    "section": "Health Facilities Map",
+    "text": "Health Facilities Map"
+  },
+  {
+    "objectID": "countries/tanzania.html#overview",
+    "href": "countries/tanzania.html#overview",
+    "title": "\n",
+    "section": "Overview",
+    "text": "Overview\nTanzania has one of the largest health facility networks in sub-Saharan Africa, with over 8,000 facilities spread across 26 regions. The health system is organized into a tiered structure ranging from dispensaries at the village level to national referral hospitals. Despite significant progress in expanding access, rural and remote areas still face challenges with staffing, supply chains, and infrastructure."
+  },
+  {
+    "objectID": "countries/tanzania.html#demographics",
+    "href": "countries/tanzania.html#demographics",
+    "title": "\n",
+    "section": "Demographics",
+    "text": "Demographics\nTanzania’s health facilities primarily serve a population of approximately 63 million people, with a high proportion residing in rural areas. Dispensaries account for the majority of facilities and typically serve catchment populations of 6,000–10,000 people. Health centres serve larger populations and are expected to cover around 50,000 people each. The country faces a critical shortage of health workers, with an estimated 1.7 physicians per 10,000 population."
+  },
+  {
+    "objectID": "countries/tanzania.html#services",
+    "href": "countries/tanzania.html#services",
+    "title": "\n",
+    "section": "Services",
+    "text": "Services\nTanzanian health facilities provide outpatient consultations, maternal and child health (MCH) services, malaria diagnosis and treatment, HIV/AIDS testing and antiretroviral therapy (ART), tuberculosis (TB) diagnosis and treatment, family planning, and immunization. Malaria remains a leading cause of outpatient visits, particularly in high-transmission zones along the coast and Lake Victoria basin."
+  },
+  {
+    "objectID": "countries/tanzania.html#data-download",
+    "href": "countries/tanzania.html#data-download",
+    "title": "\n",
+    "section": "Data Download",
+    "text": "Data Download\nDownload the facilities data here:\n\nCSV\n\nRDS"
+  },
+  {
+    "objectID": "countries/Zambia.html",
+    "href": "countries/Zambia.html",
+    "title": "\n",
+    "section": "",
+    "text": "Standardized, geolocated facility information to strengthen modelling, planning, and decision-making"
+  },
+  {
+    "objectID": "countries/Zambia.html#health-facilities-map",
+    "href": "countries/Zambia.html#health-facilities-map",
+    "title": "\n",
+    "section": "Health Facilities Map",
+    "text": "Health Facilities Map"
+  },
+  {
+    "objectID": "countries/Zambia.html#overview",
+    "href": "countries/Zambia.html#overview",
+    "title": "\n",
+    "section": "Overview",
+    "text": "Overview\nZambia has approximately 3,000 health facilities across its ten provinces, governed by the Ministry of Health through district health offices. The country has undergone significant health system reforms, including the rollout of community health workers and the integration of HIV and malaria services. Urban–rural disparities remain a key challenge, with Lusaka province having significantly better facility density than rural provinces like Western and North-Western."
+  },
+  {
+    "objectID": "countries/Zambia.html#demographics",
+    "href": "countries/Zambia.html#demographics",
+    "title": "\n",
+    "section": "Demographics",
+    "text": "Demographics\nZambia’s population of around 20 million is served by a tiered system of health posts, health centres, district hospitals, and tertiary facilities. Health posts are designed to serve approximately 500–1,000 households in rural areas. The country has a physician density of approximately 1.2 per 10,000 population, with nurses and midwives forming the majority of the health workforce."
+  },
+  {
+    "objectID": "countries/Zambia.html#services",
+    "href": "countries/Zambia.html#services",
+    "title": "\n",
+    "section": "Services",
+    "text": "Services\nZambian health facilities provide malaria diagnosis and treatment (including ACT and IPTp for pregnant women), HIV testing and ART, PMTCT, maternal and child health, immunization, family planning, TB services, and management of non-communicable diseases (NCDs) at higher-level facilities. Malaria transmission is perennial in most provinces, with higher intensity in the rainy season (November–April)."
+  },
+  {
+    "objectID": "countries/Zambia.html#data-download",
+    "href": "countries/Zambia.html#data-download",
+    "title": "\n",
+    "section": "Data Download",
+    "text": "Data Download\nDownload facilities dataset here:\n\nCSV\n\nRDS"
   },
   {
     "objectID": "downloads.html",
