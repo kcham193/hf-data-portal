@@ -184,7 +184,7 @@ Shimabala Health Post,1466,Health Post,MOH,-15.67292,28.2395,Lusaka,Functional
 Libonda Rural Health Centre,1695,Health Centre,MOH,-15.008999,22.949631,Western,Functional
 Chikumbi Rural Health Center,2352,Health Centre,MOH,-12.871667,28.653083,Copperbelt,Functional
 Ntantumbila Rural Health Center,3410,Health Centre,MOH,-9.205351,32.283502,Muchinga,Functional
-Veronica Chikonda adolescent clinic,4418,Health Centre,MOH,11.361103,29.548795,Luapula,Functional
+Veronica Chikonda adolescent clinic,4418,Health Centre,MOH,,,Luapula,Functional
 Kafubu Block Health Post,4112,Health Post,MOH,-13.124087,28.569221,Copperbelt,Functional
 Mlera Rural Health Centre,3165,Health Centre,MOH,-14.348157,31.524362,Eastern,Functional
 Mambolomoka Rural Health Centre,1341,Health Centre,MOH,-16.0871,22.133593,Western,Functional
@@ -409,7 +409,7 @@ Kabongo Rural Health Center,2651,Health Centre,MOH,-11.756,29.5079,Luapula,Funct
 Satellite 30 Rural Health Centre,3611,Health Centre,MOH,-13.915571,31.700436,Eastern,Functional
 Makuzu Rural Health Post,3697,Health Post,MOH,-15.979373461864,26.105736390381,Southern,Functional
 Masaiti Boarding Health Post,3818,Health Post,MOH,-13.285353,28.417769,Copperbelt,Functional
-South Point Clinic,4159,General clinic,Private,28.275096,-15.315045,Central,Functional
+South Point Clinic,4159,General clinic,Private,,,Central,Functional
 Chilenje  First Level Hospital,1492,1st Level Hospital,MOH,-15.4896,28.33782,Lusaka,Functional
 Ikabako Health Post,1669,Health Post,MOH,-15.121787,23.323951,Western,Functional
 Mutamino Health Post,1590,Health Post,MOH,-15.288347,28.543301,Lusaka,Functional
@@ -559,7 +559,7 @@ Kaminzekenzeke Health Centre,3977,Health Centre,MOH,-13.73625,25.548555,North-We
 Tena Ultrasound Diagnostic Service,4449,Diagnostic centre,Private,-12.186614,26.398374,North-Western,Functional
 Kayosha Rural Health Centre,1634,Health Centre,MOH,-15.2037,28.2374,Central,Functional
 Masasabi Rural health Post,3584,Health Post,MOH,-15.612263693203,26.25903,Southern,Functional
- Chaisa Urban Health Centre,1535,Health Centre,MOH,-15.38441,28.282861,Lusaka,Functional
+ÃÂ Chaisa Urban Health Centre,1535,Health Centre,MOH,-15.38441,28.282861,Lusaka,Functional
 Katonga Health Post,3694,Health Post,MOH,-12.293872,29.992134,Central,Functional
 Kabowa Health Post,4621,Health Post,MOH,NA,NA,Central,Functional
 George Urban Health Centre,1539,Health Centre,MOH,-15.379271,28.238473,Lusaka,Functional
@@ -699,7 +699,7 @@ Senanga General Hospital,1332,2nd Level Hospital,MOH,-16.146,23.146,Western,Func
 Ipumbu Rural Health Centre,2074,Health Centre,MOH,-13.63776405,27.84502029,Copperbelt,Functional
 Twalumba Rural Health Centre,1701,Health Centre,Faith Based,-14.9973,28.1396,Central,Functional
 Masempela Rural Health Centre,1102,Health Centre,MOH,-17.25224809,26.93642358,Southern,Functional
-Lambwe Chomba Mini Hospital,4437,1st Level Hospital,MOH,-8.411006,29580210,Luapula,Functional
+Lambwe Chomba Mini Hospital,4437,1st Level Hospital,MOH,,,Luapula,Functional
 ZNS Airport Rural Health Centre,1581,Health Centre,ZDF,-15.307966,28.440925,Lusaka,Functional
 Kabilamwandi Health Post,1795,Health Post,MOH,-14.589764,23.977341,Western,Functional
 Minyanya Rural Health Center,2657,Health Centre,MOH,-11.723905,24.804897,North-Western,Functional
@@ -974,7 +974,7 @@ Kalongelo Health Post,3989,Health Post,MOH,-13.692109,25.554193,North-Western,Fu
 Mukalashi,4463,Health Centre,MOH,-14.619461,28.181913,Central,Functional
 Momboshi  Health Post,3764,Health Post,MOH,-13.902273,29.586072,Central,Functional
 Chipeketi Rural Health Post,3173,Health Post,MOH,-15.1945,29.90112,Lusaka,Functional
- Tiny Tim & Friends Health Centre,1559,Health Centre,Private,-15.3487,28.3567,Lusaka,Functional
+ÃÂ Tiny Tim & Friends Health Centre,1559,Health Centre,Private,-15.3487,28.3567,Lusaka,Functional
 Crown Dental Clinic,4245,Dental clinic,Private,-15.453846,28.266216,Lusaka,Functional
 Chileshya Rural Health Centre,3033,Health Centre,MOH,-9.019715,31.895079,Northern,Functional
 Sansamwenje Health Post,3196,Health Post,MOH,-9.78799,32.74736,Muchinga,Functional
@@ -1022,7 +1022,7 @@ Dr Yang Surgery,4246,General clinic,Private,-15.4452244,28.3511156,Lusaka,Functi
 Odala Medical Centre,4298,General clinic,Private,NA,NA,Lusaka,Functional
 Mbala (Chulungoma) Urban Clinic,3533,Health Centre,MOH,-8.864431,31.385244,Northern,Functional
 Kayombo Health Centre,3555,Health Centre,MOH,-13.308398,24.070395,North-Western,Functional
-Kasunga Health post,4140,Health Post,MOH,30.3554,-10.4633,Northern,Functional
+Kasunga Health post,4140,Health Post,MOH,,,Northern,Functional
 TAZARA Mununga Quarry Clinic,4215,First-aid stations,Private,-12.672333,31.020447,Muchinga,Functional
 Mululu,4445,Health Post,MOH,NA,NA,Central,Functional
 Muyembe Health POst,4498,Health Post,MOH,-10.10169,30.06146,Northern,Functional
@@ -1069,7 +1069,7 @@ Mwenda Health Post,3955,Health Post,MOH,-13.801880452352,22.842281953125,North-W
 Katombi Health Post,4122,Health Post,MOH,-13.5711076,24.4411774,North-Western,Functional
 Mukopa Health Post,3140,Health Post,MOH,-13.742707,30.163424,Central,Functional
 Kabosha Health Post,4500,Health Post,MOH,-9.4819,30.6892,Northern,Functional
-Myangaluba Health Post,4501,Health Post,MOH,30.890932,-9.703778,Northern,Functional
+Myangaluba Health Post,4501,Health Post,MOH,,,Northern,Functional
 Mfungwe Health Post,4143,Health Post,MOH,-10.659786,30.024099,Northern,Functional
 Daghamskhoeld Health Post,2317,Health Post,MOH,-12.96912114,28.59667861,Copperbelt,Functional
 Lalafuta Health Post,3980,Health Post,MOH,-14.159808,24.878872,North-Western,Functional
@@ -1116,7 +1116,7 @@ Kasanda Urban Health Centre,1831,Health Centre,MOH,-14.4554,28.426,Central,Funct
 St. Fidelis (Chilubula) Mission Hospital,3941,1st Level Hospital,Faith Based,-10.00654,30.87493,Northern,Functional
 Kalande Health Post,3870,Health Post,MOH,-9.057733,29.112929,Luapula,Functional
 Mpande Rural Health Centre,2990,Health Centre,MOH,-9.397233,31.684851,Northern,Functional
-Lupongwe Health Post,4468,Health Post,MOH,8.53235968,31.10589512,Northern,Functional
+Lupongwe Health Post,4468,Health Post,MOH,,,Northern,Functional
 Mutanda Research Rural Health Centre,2513,Health Centre,MOH,-12.390915,26.258845,North-Western,Functional
 Nanjuca Rural Health Centre,1463,Health Centre,MOH,-15.6821,23.2341,Western,Functional
 Lipaneno Health Post,1113,Health Post,MOH,-17.13549,22.797899,Western,Functional
@@ -1349,7 +1349,7 @@ Kasiya Mission Hospital,4406,1st Level Hospital,Faith Based,-16.52859027,27.2736
 Keumba Health Post,3634,Health Post,MOH,-11.299,24.2211,North-Western,Functional
 Lunkunyi Health Post,4032,Health Post,MOH,-13.218497216636,23.013935283451,North-Western,Functional
 Mapungu Health Post,1378,Health Post,MOH,-15.9589,23.16211,Western,Functional
-Chengelo Clinic,3750,Health Post,Private,-13628105,29.384462,Central,Functional
+Chengelo Clinic,3750,Health Post,Private,,,Central,Functional
 Chanyumbu Health Post,2186,Health Post,MOH,-13.26811514,32.5675289,Eastern,Functional
 Bwafwano Health Centre,1551,Health Centre,Private,-15.3674,28.323684,Lusaka,Functional
 Petra Medical Centre,4478,Health Centre,Private,-15.4199264,28.2456613,Lusaka,Functional
@@ -1367,7 +1367,7 @@ Mafuta Rural Health Centre,2143,Health Centre,MOH,-13.37183489,32.73093785,Easte
 Figolo Health Post,3190,Health Post,MOH,-10.1565,33.04839,Muchinga,Functional
 Moloshi Rural Health Centre,2745,Health Centre,MOH,-11.2045,29.4551,Luapula,Functional
 Libuyu Urban Health Centre,1018,Health Centre,MOH,-17.8537,25.8836,Southern,Functional
-Chongo Chinondo Health Post,2982,Health Post,MOH,-9.44974,-3019665,Northern,Functional
+Chongo Chinondo Health Post,2982,Health Post,MOH,,,Northern,Functional
 Khoza Health Post,2063,Health Post,MOH,-13.6604,32.22535,Eastern,Functional
 Lupando Health Post,1940,Health Post,MOH,-14.117361,31.921659,Eastern,Functional
 Kaywala Rural Health Centre,1391,Health Centre,MOH,-15.9034,24.9034,Western,Functional
@@ -1392,7 +1392,7 @@ Lulamba Urban Health Centre,2532,Health Centre,Private,-12.343049,27.505213,Copp
 Mkanda Rural Health Centre,2121,Health Centre,MOH,-13.47217804,32.80586994,Eastern,Functional
 Nakatindi Health Centre,1017,Health Centre,MOH,-17.85509,25.817862,Southern,Functional
 Kefulwa Health Post,3028,Health Post,MOH,-9.0468503827436,29.051938424072,Luapula,Functional
-Kalabwe Rural Health Centre,1002,Health Centre,MOH,-9485495,29.823627,Northern,Functional
+Kalabwe Rural Health Centre,1002,Health Centre,MOH,,,Northern,Functional
 Kasanga  Health Post,3628,Health Post,MOH,-11.1212,24.1641,North-Western,Functional
 Nameembo Rural Health Centre,1333,Health Centre,MOH,-16.0998325,28.1216842,Southern,Functional
 Mpusu Rural Health Center,1825,Health Centre,MOH,-14.4608,27.06094,Central,Functional
@@ -1416,7 +1416,7 @@ Muswilo Health Post,3048,Health Post,MOH,-8.789584,31.262983,Northern,Functional
 Dambwa Site & Service Health Post,1012,Health Post,MOH,-17.86793,25.838662,Southern,Functional
 Maramba Urban Health Centre,1022,Health Centre,MOH,-17.8475,25.8719,Southern,Functional
 Kaoma HAHC (Mulamba Clinic),3226,Health Centre,MOH,-14.79,24.799,Western,Functional
-Sunkutu Rural Health Centre,1001,Health Centre,MOH,-9677935,29.681359,Northern,Functional
+Sunkutu Rural Health Centre,1001,Health Centre,MOH,,,Northern,Functional
 Chipungu Rural  Health Centre,1954,Health Centre,MOH,-14.079348,31.273873,Eastern,Functional
 Chiundaponde Mini Hospital,4201,Health Centre,MOH,-12.14269,30.343648,Muchinga,Functional
 PearliWhyte Dental Solutions,4306,General clinic,Private,-15.4166289,28.3083213,Lusaka,Functional
@@ -1539,7 +1539,7 @@ Nvumabaranda Lumwana Health service,4703,Health Centre,Private,NA,NA,North-Weste
 Chisekesi Rural Health Centre,1241,Health Centre,MOH,-16.43893872,27.47761893,Southern,Functional
 Nakalombwe Health Post,1206,Health Post,MOH,-16.57257599,26.20153528,Southern,Functional
 Mangunza Rural Health Centre,1265,Health Centre,MOH,-16.35732151,27.03820344,Southern,Functional
-Manchanvwa Rural Health Centre,1231,Health Centre,MOH,-16421948,28.399907,Southern,Functional
+Manchanvwa Rural Health Centre,1231,Health Centre,MOH,,,Southern,Functional
 Tokyo Opticians Lusaka,4329,Eye clinic,Private,-15.4165525,28.2813829,Lusaka,Functional
 Kaale Rural Health Centre,1235,Health Centre,MOH,-16.4635,23.42569,Western,Functional
 Chipembele Health Post,1262,Health Post,MOH,-16.3643812,27.6063047,Southern,Functional
@@ -1602,7 +1602,7 @@ Mooya Health Post,1319,Health Post,MOH,-16.15639017,27.38368135,Southern,Functio
 Maunga Health Post,1316,Health Post,MOH,-16.171316,28.458731,Southern,Functional
 Itapa Health Post,1330,Health Post,MOH,-16.11770167,26.52875556,Southern,Functional
 Teranova Farm Rural Health Centre,1314,Health Centre,MOH,-16.1797474,27.9904761,Southern,Functional
-Ibbwemunyama Rural Health Centre,1327,Health Centre,MOH,-16.1338,28.5341,Southern,Functional
+Ibbwemunyama Rural HealthÃÂ Centre,1327,Health Centre,MOH,-16.1338,28.5341,Southern,Functional
 Munyumabisi Health Post,1329,Health Post,MOH,-16.12006805,27.45555508,Southern,Functional
 Banakaila Rural Health Centre,1373,Health Centre,MOH,-15.9780235,27.32711687,Southern,Functional
 Mukuyu Rural Health Centre,1355,Health Centre,MOH,-16.03165,27.624362,Southern,Functional
@@ -1836,7 +1836,7 @@ Kangomba Health Post,1811,Health Post,MOH,-14.5265,28.409300000000002,Central,Fu
 Kalwalo Health Post,1766,Health Post,MOH,-14.746624,23.902136,Western,Functional
 Muswishi Rural Health Centre,1799,Health Centre,MOH,-14.5564,28.6626,Central,Functional
 Kapompwa Health Post,2764,Health Post,MOH,-11.16,28.5245,Luapula,Functional
-Luola Health Post,1757,Health Post,MOH,-19.77890782,22.5114012,Western,Functional
+Luola Health Post,1757,Health Post,MOH,,,Western,Functional
 Kamakuti Health Post,1813,Health Post,MOH,-14.512387,28.482606,Central,Functional
 Situlu 1 Health Post,1740,Health Post,MOH,-14.856636,22.019137,Western,Functional
 Chansa Health Post,2731,Health Post,MOH,-11.22514,28.5141,Luapula,Functional
@@ -2095,7 +2095,7 @@ Nyatanda Health Post,2265,Health Post,MOH,-13.063754,22.322733,North-Western,Fun
 Mailo Rural Health Centre,2271,Health Centre,MOH,-13.0542,30.9027,Central,Functional
 Kamakanga Rural Health Centre,2252,Health Centre,MOH,-13.098084,28.09539,Copperbelt,Functional
 Micheal Chilufya Sata Rockfield Urban Health Centre,4210,Health Centre,MOH,NA,NA,Lusaka,Functional
-Mwansabombwe District Hospital,4636,1st Level Hospital,MOH,9.80952,28.769958,Luapula,Functional
+Mwansabombwe District Hospital,4636,1st Level Hospital,MOH,,,Luapula,Functional
 Chiyeke Rural Health Centre,2262,Health Centre,MOH,-13.073477,22.734292,North-Western,Functional
 Mandia Health Post,1051,Health Post,MOH,-17.5009,25.3277,Southern,Functional
 TDRC Urban Health Centre,2303,Health Centre,Private,-12.988867,28.587517,Copperbelt,Functional
@@ -2487,7 +2487,7 @@ Chibote Health post,3034,Health Post,MOH,-9.005923,30.8639498,Northern,Functiona
 Isoko Health Post,3045,Health Centre,MOH,-8.8254846,31.1987825,Northern,Functional
 Kaputa District Hospital,3066,1st Level Hospital,MOH,-8.4704,29.664217,Northern,Functional
 Mwabu Rural Health Centre,3062,Health Centre,MOH,-8.56964,29.08694,Luapula,Functional
-Chezi Health Post,3052,Health Post,MOH,-8.780731,31005482,Northern,Functional
+Chezi Health Post,3052,Health Post,MOH,,,Northern,Functional
 Nkosha Health Post,3022,Health Post,MOH,-9.136485,29.224528,Northern,Functional
 Namumu Health Post,3089,Health Post,MOH,-16.51462,28.71117,Southern,Functional
 Siamwiinga Health Post,3090,Health Post,MOH,-16.1502,28.3101,Southern,Functional
@@ -2569,20 +2569,20 @@ Chindwin Camp Hospital,3127,Health Centre,ZDF,NA,NA,Central,Functional
 Chibansa Rural Health Centre,3198,Health Centre,MOH,-11.9066,31.43653,Muchinga,Functional
 Ntumpa Health Post,3216,Health Post,MOH,-10.50983,30.95161,Northern,Functional
 Vision Care Limited- Levy Junction,4353,Eye clinic,Private,NA,NA,Lusaka,Functional
-Malandula Rural Health Centre,3244,Health Centre,MOH,-11.50174,33.9489,Eastern,Functional
-Hoya Health Post,3260,Health Post,MOH,-12.69,33.957,Eastern,Functional
+Malandula Rural Health Centre,3244,Health Centre,MOH,,,Eastern,Functional
+Hoya Health Post,3260,Health Post,MOH,,,Eastern,Functional
 Manyi Health Post,3257,Health Post,MOH,-12.17069,33.14049,Eastern,Functional
 Chituta Health Post,3241,Health Post,MOH,-8.774195,31.185897,Northern,Functional
 Lui-Wanyau Health Post,3236,Health Post,MOH,-16.189155,23.401847,Western,Functional
 Sakubita Health Post,3225,Health Post,MOH,-17.841546,25.861262,Southern,Functional
 Siavonga District Hospital,3266,1st Level Hospital,MOH,-16.3218,28.4233,Southern,Functional
 Sompani Health Post,3273,Health Post,MOH,-16.74341465,27.74142575,Southern,Functional
-Kanyanga Rural Health Centre,3252,Health Centre,Faith Based,-12.0216,33.712,Eastern,Functional
+Kanyanga Rural Health Centre,3252,Health Centre,Faith Based,,,Eastern,Functional
 Gwembe Hospital Affiliated Health Centre,3270,Health Centre,MOH,-16.49869833,27.60200461,Southern,Functional
 Mtwalo Rural Health Centre,3245,Health Centre,MOH,-11.5346,33.15184,Eastern,Functional
 Kamzoole Health Post,3256,Health Post,MOH,-12.15,33.155,Eastern,Functional
 Ntanga Health post,3272,Health Post,MOH,-16.881796,27.661788,Southern,Functional
-Egichikeni Rural Health Centre,3248,Health Centre,Faith Based,-11.5733,33.951,Eastern,Functional
+Egichikeni Rural Health Centre,3248,Health Centre,Faith Based,,,Eastern,Functional
 Lusuntha Rural Health Centre,3258,Health Centre,MOH,-12.244821,33.307947,Eastern,Functional
 Munyukwa Rural Health Centre,3259,Health Centre,MOH,-12.293,32.594,Eastern,Functional
 Mungulube Rural Health Center,3249,Health Centre,MOH,-11.6054,29.4422,Luapula,Functional
@@ -2875,9 +2875,9 @@ Kamwala South Health Post,3901,Health Post,MOH,-15.445963,28.293805,Lusaka,Funct
 Phil Opticians- East Park,4315,Eye clinic,Private,-15.3915356,28.3209411,Lusaka,Functional
 Linda Health Post,3876,Health Post,MOH,-15.529173,28.234799,Lusaka,Functional
 Hilltop Private Hospital,3934,1st Level Hospital,Private,-10.19617,31.19078,Northern,Functional
-Arakan Camp Hospital,3914,1st Level Hospital,ZDF,28.325086,-15.439505,Lusaka,Functional
+Arakan Camp Hospital,3914,1st Level Hospital,ZDF,,,Lusaka,Functional
 Kapale  Health post,3303,Health Post,MOH,-9.817256,28.779578,Luapula,Functional
-Ng’ anjo Bazimu Health Post,3919,Health Post,MOH,-11.284727,32.990079,Eastern,Functional
+NgÃ¢ÂÂ anjo Bazimu Health Post,3919,Health Post,MOH,-11.284727,32.990079,Eastern,Functional
 Chimpatika Health Post,3932,Health Post,MOH,-8.933792,29.438737,Northern,Functional
 Lewanika Referral Hospital,1610,2nd Level Hospital,MOH,-15.26542,23.137881,Western,Functional
 Monica Health Post,3937,Health Post,MOH,-10.224691,30.916059,Northern,Functional
@@ -3254,25 +3254,25 @@ Mkonda Health Post,1976,Health Post,MOH,-14.030647,31.187795,Eastern,Functional
 Nyamphondolo Rural Health Centre,1933,Health Centre,MOH,-14.151545,31.299589,Eastern,Functional
 Msanzala Rural Health Centre,3618,Health Centre,MOH,-13.891538,31.649426,Eastern,Functional
 DEVIN MEDICAL CENTRE,4508,General clinic,Private,-14.4285061,28.451357,Central,Functional
-Chinzule Health Post,4517,Health Post,MOH,-140324289,31.928612,Eastern,Functional
+Chinzule Health Post,4517,Health Post,MOH,,,Eastern,Functional
 Bethel Infirmary Clinic,4525,Health Centre,Faith Based,NA,NA,Lusaka,Functional
 Chiawa Mini Hospital,4594,Health Centre,MOH,NA,NA,Lusaka,Functional
 Zambia Army Chinsali,4524,First-aid stations,ZDF,-10.573752,32.08275,Muchinga,Functional
 Antu Omwe,4540,Health Centre,Private,-15.206871,28.14614,Central,Functional
 Masompe Health Post,4488,Health Post,MOH,-16.180254,26.897107,Southern,Functional
 Chipote Health Post,4574,Health Post,MOH,-8.6816446,30.6232929,Northern,Functional
-Mpolo Health Post,4641,Health Post,MOH,12.05554,29.491607,Luapula,Functional
+Mpolo Health Post,4641,Health Post,MOH,,,Luapula,Functional
 Itope Rural Health Post,4664,Health Post,MOH,NA,NA,Lusaka,Functional
 Kumenso Eye Clinic,4528,Health Centre,Private,-15.443063695107,28.357075349121,Lusaka,Functional
-Mwanzi Health Post,4534,Health Post,MOH,-17.06314,-22.73168,Western,Functional
+Mwanzi Health Post,4534,Health Post,MOH,,,Western,Functional
 Mwapona health Post,4456,Health Post,MOH,-16.8190463,26.9978751,Southern,Functional
 Kalaba Mini Hospital,4527,Health Centre,MOH,-8.432691,29.880173,Northern,Functional
 Nsumbu District Hospital,4526,1st Level Hospital,MOH,-8.513951548,30.46770399,Northern,Functional
 Chamkoma Health Post,4530,Health Post,MOH,-12.547032,32.856804,Eastern,Functional
 Yakobe Health Post,4531,Health Post,MOH,-12.851227,32.001514,Eastern,Functional
 Healing Care Medical Centre,4533,Health Centre,Private,-15.867279,27.7453967,Southern,Functional
-Lukulo Health Post,4539,Health Post,MOH,1535707,2350231,Western,Functional
-Likulushitu Health Post,4535,Health Post,MOH,-17.22675,-22.88017,Western,Functional
+Lukulo Health Post,4539,Health Post,MOH,,,Western,Functional
+Likulushitu Health Post,4535,Health Post,MOH,,,Western,Functional
 Liumbo Health Post,4076,Health Post,MOH,-16.285447,23.113077,Western,Functional
 Bunsanga Health Post,4475,Health Post,MOH,-17.1645,25.5608,Southern,Functional
 Nguba Rural Health Post,4473,Health Post,MOH,-16.5486,26.0307,Southern,Functional
@@ -3304,7 +3304,7 @@ Premium Medical Services,4472,Health Centre,Private,-13.1378548,28.4228598,Coppe
 New Beginnings Nursing Home,4569,Rehabilitation centre,Private,-15.4176767,28.3589681,Lusaka,Functional
 Chembe Mini-Hospital,3603,Health Centre,MOH,-11.943487213262,28.750335816383,Luapula,Functional
 Shimpundu Health Post,4562,Health Post,MOH,-9.2151073956854,28.821762696533,Luapula,Functional
-Mpumba Mini Hospital,3197,Health Centre,MOH,31.0003,-12.6169,Muchinga,Functional
+Mpumba Mini Hospital,3197,Health Centre,MOH,,,Muchinga,Functional
 Milongo Health Post,4567,Health Post,MOH,-10.1555,32.3924,Muchinga,Functional
 Nangweshi Mini Hospital,4077,Health Centre,MOH,-16.422103,23.0304353,Western,Functional
 Berthel,4564,Health Centre,Private,-15.223901,28.272199,Central,Functional
@@ -3323,7 +3323,7 @@ Munkuye mini Hospital,1733,Health Centre,MOH,-14.87681,25.19688,Western,Function
 Mukubwe mini Hospital,4161,Health Centre,MOH,-13.898478,27.74686,Central,Functional
 Anthu Omwe Health Centre,4566,Health Centre,Private,-15.292602873337,28.240688935547,Central,Functional
 Tubalange Health Centre,1637,Health Centre,MOH,-15.201494,28.110391,Lusaka,Functional
-Edgar Chagwa Lungu,4416,Health Centre,MOH,26.9983,-16.896826,Luapula,Functional
+Edgar Chagwa Lungu,4416,Health Centre,MOH,,,Luapula,Functional
 Kashiba Mini Hospital,4427,Health Centre,MOH,-10.442681,28.666011,Luapula,Functional
 Nsheketeni mini Hospital,4111,Health Centre,MOH,-14.220591,31.68298,Eastern,Functional
 Mize Mini Hospital,1908,Health Centre,MOH,-13.543098,23.06597,North-Western,Functional
@@ -3332,8 +3332,8 @@ Katungulu Mini Hospital,2950,Health Centre,MOH,-9.633885,29.165301,Luapula,Funct
 Kagunda Mini Hospital,2055,Health Centre,MOH,-13.70394,32.60537,Eastern,Functional
 Ntulo Mini Hospital,2930,Health Centre,MOH,-9.78216,29.065524,Luapula,Functional
 Chikosa Mini Hospital,4450,Health Centre,MOH,-9.37476,30.121937,Northern,Functional
-Musaila,4434,Health Centre,MOH,48.856614,2.352221,Luapula,Functional
-Sishekanu,4543,Health Centre,MOH,22.807555,-14.840783,Western,Functional
+Musaila,4434,Health Centre,MOH,,,Luapula,Functional
+Sishekanu,4543,Health Centre,MOH,,,Western,Functional
 Chalabesa Mini Hospital,2694,Health Centre,MOH,-11.375679,31.013443,Muchinga,Functional
 Mkwama Mini Hospital,3166,Health Centre,MOH,-14.144936,31.352342,Eastern,Functional
 Kopa Mini Hospital,3923,Health Centre,MOH,-11.747,30.7928,Muchinga,Functional
@@ -3396,8 +3396,8 @@ Chitindi Mini Hospital,4514,Health Centre,MOH,-14.0633269,31.4494702,Eastern,Fun
 Kaumbwe Mini Hospital,4515,Health Centre,MOH,-14.230913178673,31.268795625,Eastern,Functional
 Chitanda Lumamba Adventist Hospital,4541,Health Centre,Faith Based,-14.63874,27.5945,Central,Functional
 Kazembe Mini Hospital,4532,Health Centre,MOH,-12.17435,32.563265,Eastern,Functional
-Holland Lukwesa Mini Hospital,4529,Health Centre,MOH,9.13842,29.24358,Northern,Functional
-Lukona,4542,Health Centre,MOH,22.74247476,15.34516067,Western,Functional
+Holland Lukwesa Mini Hospital,4529,Health Centre,MOH,,,Northern,Functional
+Lukona,4542,Health Centre,MOH,,,Western,Functional
 Kanwanjiba Health Post,3681,Health Post,MOH,-15.144088,27.815422,Central,Functional
 Kaparu Rural Health Centre,1714,Health Centre,Faith Based,-14.9739,27.7538,Central,Functional
 Keembe Rural Health Centre,1729,Health Centre,MOH,-14.9024,27.7802,Central,Functional
@@ -3483,10 +3483,10 @@ Musonda Rural Health Centre,2826,Health Centre,MOH,-10.7068,28.8049,Luapula,Func
 Nachitete Health Centre,1483,Health Centre,MOH,-15.551219,28.481511,Lusaka,Functional
 Mwembeshi Open Air Correctional Facility,3456,Health Post,MOH,-15.4165,28.12195,Lusaka,Functional
 Chifubu District Hospital,4597,1st Level Hospital,MOH,-12.910426,28.601739,Copperbelt,Functional
-Chililabombwe District Hospital,4596,1st Level Hospital,MOH,27.862289,-12.371303,Copperbelt,Functional
+Chililabombwe District Hospital,4596,1st Level Hospital,MOH,,,Copperbelt,Functional
 Katito Health Post,3947,Health Post,MOH,-9.061009,31.35838,Northern,Functional
 Lunzua Health Post,4602,Health Post,MOH,-9.009728,31.398523,Northern,Functional
-University Teaching Hospital - Adult,1507,3rd Level Hospital,MOH,-15.432238,15.432238,Lusaka,Functional
+University Teaching Hospital - Adult,1507,3rd Level Hospital,MOH,,,Lusaka,Functional
 Chaola Rural Health Post,3175,Health Post,MOH,-15.1082,29.72387,Lusaka,Functional
 Max Clinic - Matero,4603,Health Centre,Private,-15.3739465,28.2648745,Lusaka,Functional
 SHAYNEZ OPTICAL CENTRE LTD,4607,Optic Clinics,Private,-15.4044355,28.2866242,Lusaka,Functional
@@ -3506,7 +3506,7 @@ Walawala Health Post,4085,Health Post,MOH,-16.777199,24.009229,Western,Functiona
 Optic Zone Opticians,4614,Optic Clinics,Private,-15.4297858,28.2810944,Lusaka,Functional
 Sanjeevani Healthcare Ltd,4613,Health Centre,Private,-15.4068221,28.3033688,Lusaka,Functional
 El Shalom Private Clinic,1288,Health Centre,Private,-16.27446628,27.4817869,Southern,Functional
-Prisons Heath Post,4584,Health Post,Correctional Service,16.30019,27.493259,Southern,Functional
+Prisons Heath Post,4584,Health Post,Correctional Service,,,Southern,Functional
 Charles J Nyirenda Hospital,1495,1st Level Hospital,ZDF,-15.4770543,28.328042,Lusaka,Functional
 Circle of Hope VCT & ART Centre,3663,Health Post,Private,-15.4545,28.25207,Lusaka,Functional
 Care For You Medical Clinic Limited,4219,General clinic,Private,-15.402893,28.312213,Lusaka,Functional
@@ -3541,9 +3541,9 @@ ALPINE HEALTH CENTRE,4632,Health Centre,Private,-15.4574023,28.3169714,Lusaka,Fu
 BAKWETU DENTAL CARE,4617,Dental clinic,Private,-12.188056,26.422669,North-Western,Functional
 Chamboli Level 1 Hospital,4626,1st Level Hospital,MOH,-12.856581,28.2288427,Copperbelt,Functional
 TWIN PALMS CLINIC AND ARTHRITIS CARE CENTRE,4629,General clinic,Private,-15.4253094,28.3462203,Lusaka,Functional
-Mission Regan Zambia Clinic,4624,Health Centre,Faith Based,12.72292,28.17621,Copperbelt,Functional
-Speciality Emergency Services,4625,Health Centre,Private,12.804237,28.218611,Copperbelt,Functional
-Chimwemwe Level 1 District Hospital,4627,1st Level Hospital,MOH,12.72771,28.146457,Copperbelt,Functional
+Mission Regan Zambia Clinic,4624,Health Centre,Faith Based,,,Copperbelt,Functional
+Speciality Emergency Services,4625,Health Centre,Private,,,Copperbelt,Functional
+Chimwemwe Level 1 District Hospital,4627,1st Level Hospital,MOH,,,Copperbelt,Functional
 Kakikasa Health Post,4631,Health Post,MOH,-13.168256,25.01074,North-Western,Functional
 WOODLANDS SPECIALIST CLINIC AND WELLNESS,4628,Health Centre,Private,-15.4407298,28.3462528,Lusaka,Functional
 Hillbengrace Medical Centre,4634,Health Centre,Private,-12.826991,28.215737,Copperbelt,Functional
@@ -3556,7 +3556,7 @@ Extend Care and Consultancy Ltd,4644,Health Centre,Private,-15.4283498,28.355815
 ZNS Musakashi Camp Health Centre,4635,General clinic,ZNS,NA,NA,Copperbelt,Functional
 Nalwange Family Clinic,2337,Health Centre,Private,-12.93662839,28.61359051,Copperbelt,Functional
 Kalulushi Healthlane Medical Centre,4637,Health Centre,Private,-12.8302491,28.0858085,Copperbelt,Functional
-Morningstar Clinic,4639,Health Centre,Private,28.4169,15.3834,Lusaka,Functional
+Morningstar Clinic,4639,Health Centre,Private,,,Lusaka,Functional
 St. Clare Mission Clinic,4307,General clinic,Faith Based,-15.46921,28.22249,Lusaka,Functional
 Sunbright Medical Consultancy,4642,Health Centre,Private,-12.5464692,28.2544155,Copperbelt,Functional
 Mulema Sampa Health Post,4643,Health Post,MOH,-10.475542,31.723639,Northern,Functional
@@ -3570,20 +3570,20 @@ Kagem Mine Clinic,4661,Health Post,Private,-13.089771,28.128418,Copperbelt,Funct
 Grizzly Mine Clinic,4662,Health Post,Private,-13.097837,28.107128,Copperbelt,Functional
 Zambia Air Force Hospital,4665,1st Level Hospital,ZAF,-15.4117341,28.3253011,Lusaka,Functional
 Mauluzhi Rural Health Post,4673,Health Post,MOH,-15.383788230898,26.882783070831,Southern,Functional
-Tubondo Health Post,4678,Health Post,MOH,31.51361,-12.431337,Muchinga,Functional
+Tubondo Health Post,4678,Health Post,MOH,,,Muchinga,Functional
 South Point Clinic - Manda Hill,4666,Health Centre,Private,-15.3941081,28.3122806,Lusaka,Functional
 Mosi-Ou-Tunya Private Clinic and Diagnostic Centre,4672,General clinic,Private,-17.83761756688,25.842423931389,Southern,Functional
 Sunview Medical Centre,4675,Others,Private,-15.734094741046,26.030924216537,Southern,Functional
 Claradens Dental Clinic,4659,Dental clinic,Private,-15.3580098,28.3614691,Lusaka,Functional
 Kabangamika Rural Health Post,4656,Health Post,MOH,NA,NA,Northern,Functional
 Langiza Chikondi Clinic,4671,Fertility clinic,Private,-15.3860901,28.361757,Lusaka,Functional
-Kantimba Health Post,4680,Health Post,MOH,31.6544293,-10.5563786,Muchinga,Functional
+Kantimba Health Post,4680,Health Post,MOH,,,Muchinga,Functional
 Chinthimbe Health Post,4677,Health Post,MOH,-12.198287,32.610333,Eastern,Functional
 Luana Rural Health Post,4687,Health Post,MOH,NA,NA,Central,Functional
 Fishikwa Health Post,4658,Health Post,MOH,-11.61402,29.13252,Luapula,Functional
 Kansansa Rural Health Post,4657,Health Post,MOH,-10.511111,29.996635,Northern,Functional
 Santa Maria Missions Affiliated Rural Health Centre,4679,Health Centre,Faith Based,NA,NA,Northern,Functional
-Munguulube Health Post,4681,Health Post,MOH,31.51361,-12.431337,Muchinga,Functional
+Munguulube Health Post,4681,Health Post,MOH,,,Muchinga,Functional
 Sancho Medical Services Limited,4688,General clinic,Private,-15.3460031,28.328805,Lusaka,Functional
 Enock Kavindele Mini Hospital,3570,Health Centre,MOH,-13.57382,24.24074,North-Western,Functional
 Kanyikomboshi Health Post,4695,Health Post,MOH,NA,NA,North-Western,Functional
@@ -3617,7 +3617,7 @@ Mugurameno Health Post,1423,Health Post,MOH,-15.8316,29.1077,Lusaka,Functional
 Chitipa Health post,3291,Health Post,MOH,-9.612673,29.005875,Luapula,Functional
 Kazimva Rural Health Center,1618,Health Post,MOH,-15.3748,28.201,Lusaka,Functional
 Kaunda Square Health Centre,3890,Health Centre,MOH,-15.37256,28.3513,Lusaka,Functional
- Health Shield Medical Services,1570,General clinic,Private,-15.35252,28.307301,Lusaka,Functional
+ÃÂ Health Shield Medical Services,1570,General clinic,Private,-15.35252,28.307301,Lusaka,Functional
 ZAF Logistics  Command,4732,Health Centre,ZAF,NA,NA,Lusaka,Functional
 Kris Katumba Health Post,1611,Health Post,MOH,-15.41721,28.1167,Lusaka,Functional
 Avinash Memorial Health Post,4709,Health Post,MOH,NA,NA,Northern,Functional
@@ -3634,11 +3634,11 @@ Mweniwisi Health Post,2888,Health Post,MOH,-10.085308424038,33.144683431244,Much
 Kasama General Hospital,2875,2nd Level Hospital,MOH,-10.21087,31.18133,Northern,Functional
 University of Lusaka Hospital,4740,1st Level Hospital,Private,NA,NA,Lusaka,Functional
 DJ CARERS LTD,4738,Hospice,Private,NA,NA,Lusaka,Functional
-Lopo Health Post,4735,Health Post,MOH,13.734573,32.794917,Eastern,Functional
+Lopo Health Post,4735,Health Post,MOH,,,Eastern,Functional
 Paramedic Medical Care,4737,Health Centre,Private,NA,NA,Lusaka,Functional
 Kazimomwe Health Post,4736,Health Post,MOH,-13.835398,32.423941,Eastern,Functional
-Nyaviyombo Rural Health Centre,4741,Health Centre,MOH,13.482793,32.569052,Eastern,Functional
-Luona Mini Hospital,4772,Health Centre,MOH,13.662935,32.355305,Eastern,Functional
+Nyaviyombo Rural Health Centre,4741,Health Centre,MOH,,,Eastern,Functional
+Luona Mini Hospital,4772,Health Centre,MOH,,,Eastern,Functional
 Champhala Health Post,4689,Health Post,MOH,-14.160349,31.795201,Eastern,Functional
 Sanket Diagnostics Laboratory,4722,Diagnostic centre,Private,-12.188248,26.422508,North-Western,Functional
 Hill Top Private Hospital,2589,1st Level Hospital,Private,-12.187405,26.412263,North-Western,Functional
@@ -3652,7 +3652,7 @@ Sikalaye Health Post,4754,Health Post,MOH,-17.354255,26.922376,Southern,Function
 Nakalengule,4749,Health Post,MOH,NA,NA,Central,Functional
 Chisebwa,4750,Health Post,MOH,NA,NA,Central,Functional
 Kapeshi,4751,Health Post,MOH,NA,NA,Central,Functional
-Kabobola Urban Health Centre,4758,Health Centre,MOH,-0.00722,27.86764,Southern,Functional
+Kabobola Urban Health Centre,4758,Health Centre,MOH,,,Southern,Functional
 Fikondo,4752,Health Post,MOH,NA,NA,Central,Functional
 Mapalo Health Post,4773,Health Post,MOH,NA,NA,Copperbelt,Functional
 Azele Health Post,4761,Health Post,MOH,NA,NA,Southern,Functional
@@ -3663,11 +3663,11 @@ Mkowe Health Post,4770,Health Post,MOH,-13.493056,32.38142,Eastern,Functional
 Kanzutu  Health Post,4769,Health Post,MOH,-13.679028,32.386018,Eastern,Functional
 Soweto Health Post,4788,Health Post,MOH,NA,NA,Central,Functional
 Kawawa Health Post,4768,Health Post,MOH,-13.37408,32.2414,Eastern,Functional
-Chibebe Rural Health Centre,4778,Health Centre,MOH,15.139839,28.209949,Central,Functional
-Chipembaulo Mini Hospital,4774,Health Centre,MOH,13.6756004,32.2676927,Eastern,Functional
+Chibebe Rural Health Centre,4778,Health Centre,MOH,,,Central,Functional
+Chipembaulo Mini Hospital,4774,Health Centre,MOH,,,Eastern,Functional
 Chimasuko,4779,Health Post,MOH,-14.078108,31.990611,Eastern,Functional
 Shamombo Health Post,4771,Health Post,MOH,-13.7740618,32.3446281,Eastern,Functional
-Chamaseche Health Post,4793,Health Post,MOH,14.1344,32.213803,Eastern,Functional
+Chamaseche Health Post,4793,Health Post,MOH,,,Eastern,Functional
 Fikola Health post,4790,Health Post,MOH,NA,NA,Central,Functional
 Twalubuka health post,4789,Health Post,MOH,NA,NA,Central,Functional
 Kalola,4783,Health Post,MOH,-15.001739,27.922892,Central,Functional
@@ -3676,7 +3676,7 @@ AeroMED kenneth Kaunda,4683,Health Centre,MOH,-12.984443,28.658695,Copperbelt,Fu
 21 miles health post,4794,Health Post,MOH,-12.752498,28.468417,Copperbelt,Functional
 Waseka,4781,Health Post,MOH,-14.132328,31.877533,Eastern,Functional
 Mwala Health Post,4791,Health Post,MOH,-13.978426,32.513052,Eastern,Functional
-Mukungwa Health Post,4786,Health Post,MOH,-11.5,35,Muchinga,Functional
+Mukungwa Health Post,4786,Health Post,MOH,,,Muchinga,Functional
 Chinkumba Health Post,4785,Health Post,MOH,-10.8703883,32.0357567,Muchinga,Functional
 Muchenje,4784,Health Post,MOH,-15.209183,28.034161,Central,Functional
 Mkale,4780,Health Post,MOH,-14.0847946,32.0382856,Eastern,Functional
@@ -3710,18 +3710,18 @@ Mukungule Rural Health Centre,3403,Health Centre,MOH,-11.5908,31.921,Muchinga,Fu
 Chimfwembe Health Post,4820,Health Post,MOH,-11.11860550163,29.979661599426,Northern,Functional
 Nteko Health Post,4834,Health Post,MOH,-9.286764,32.442449,Muchinga,Functional
 Musenga Mini Hospital,4826,Health Centre,MOH,-10.1910847,31.1675057,Northern,Functional
-Wapendwe Surgery Clinic,4827,First-aid stations,Private,11.83688,31.45098,Muchinga,Functional
-Lubuto Clinic,4828,First-aid stations,Private,-11.84186,3144469,Muchinga,Functional
+Wapendwe Surgery Clinic,4827,First-aid stations,Private,,,Muchinga,Functional
+Lubuto Clinic,4828,First-aid stations,Private,,,Muchinga,Functional
 Nachipeta Health Post,4833,Health Post,MOH,-9.244272,32.362,Muchinga,Functional
-Mweshilungu Rural Health Centre,4836,Health Centre,MOH,29.497431,-11.171568,Luapula,Functional
+Mweshilungu Rural Health Centre,4836,Health Centre,MOH,,,Luapula,Functional
 Munkwanga Health Post,4837,Health Post,MOH,-10.96431657822,29.472960130005,Luapula,Functional
 Mumanalupando Health Post,4821,Health Post,MOH,-10.23653,30.58333,Northern,Functional
 Chiyambi,4840,Health Post,MOH,-13.99602,32.45705,Eastern,Functional
 ZAF Kasama Urban Health Centre,4822,Health Centre,ZAF,-10.21057,31.16661,Northern,Functional
 Chitulika Health Post,4825,Health Post,MOH,-11.832738,31.438401,Muchinga,Functional
 SCHOOL OF MILITARY POLICE CLINIC (EMMASDALE),4760,Health Post,ZDF,-15.3936032,28.283476,Lusaka,Functional
-Chafulu Health Post,4792,Health Post,MOH,14.19134,32.213498,Eastern,Functional
-Mushili Level 1 Hospital,4795,1st Level Hospital,MOH,13.027,28.6619,Copperbelt,Functional
+Chafulu Health Post,4792,Health Post,MOH,,,Eastern,Functional
+Mushili Level 1 Hospital,4795,1st Level Hospital,MOH,,,Copperbelt,Functional
 Chibinda health post,4850,Health Post,MOH,-11.192866,29.251347,Luapula,Functional
 Mutukeni Health Post,4851,Health Post,MOH,-11.20968,29.165226,Luapula,Functional
 Mpika District Hospital,4835,1st Level Hospital,MOH,-11.83898,31.457226,Muchinga,Functional

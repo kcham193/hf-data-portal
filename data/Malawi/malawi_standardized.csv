@@ -267,7 +267,7 @@ Chisala,KB050266,Health Centre,Government,-11.6064929,34.2540704,North Zone,Func
 chisambo,MU210267,Clinic,Other,-16.03822,35.70899,South West Zone,Functional
 Chisenga,CP060268,Health Post,Government,-9.974946,33.389664,North Zone,Functional
 chisepo,DA020269,Health Centre,Government,-13.63492,33.47017,Central East Zone,Functional
-Chisi,ZA230270,Health Centre,Government,-1,1,South West Zone,Functional
+Chisi,ZA230270,Health Centre,Government,,,South West Zone,Functional
 Chisimuka,RU140271,Health Centre,Government,-10.76924,33.55751,North Zone,Functional
 Chinsinga,KU070272,Health Centre,Government,-12.622028,33.326917,Central East Zone,Functional
 Chisitu,MU210273,Health Centre,Government,-16.0009921,35.4330321,South West Zone,Functional
@@ -343,7 +343,7 @@ District Health Office Mobile,BT240342,Health Centre,Government,NA,NA,South East
 DMI-St. John the Baptist University Clinic,MG200343,Dispensary,Private,NA,NA,South West Zone,Functional
 Tambala,NT120344,Health Centre,Government,-14.929733,34.598272,Centrals West Zone,Functional
 Dolo,CK270345,Health Centre,Government,-16.55349,34.92423,South East Zone,Functional
-Domasi College Clinic,ZA230346,Dispensary,Government,-1,1,South West Zone,Functional
+Domasi College Clinic,ZA230346,Dispensary,Government,,,South West Zone,Functional
 Ginisi,ZA230347,Hospital,Government,-15.28099,35.39935,South West Zone,Functional
 Dopa,LL040348,Clinic,Private,-13.88647,33.75712,Centrals West Zone,Non-functional
 Doviko,NT120349,Dispensary,Government,-15.0822,34.59094,Centrals West Zone,Functional
@@ -923,8 +923,8 @@ Mikondo,DE030923,Health Centre,Christian Health Association of Malawi (CHAM),-14
 Mikundi,TH310924,Dispensary,Private,-16.018751,35.125457,South East Zone,Non-functional
 Mikundi Health Centre,MC010925,Health Centre,Government,-13.70751,33.13821,Centrals West Zone,Functional
 Mikuyu,ZA230926,Clinic,Government,-15.41764,35.41968,South West Zone,Functional
-Mikuyu Adult Clinic,ZA230927,Dispensary,Government,-1,2,South West Zone,Functional
-Mikuyu Young Clinic,ZA230928,Dispensary,Government,-1,3,South West Zone,Functional
+Mikuyu Adult Clinic,ZA230927,Dispensary,Government,,,South West Zone,Functional
+Mikuyu Young Clinic,ZA230928,Dispensary,Government,,,South West Zone,Functional
 Milepa,CR260929,Health Centre,Government,-15.68713,35.31818,South East Zone,Functional
 Milonde,MU210930,Health Centre,Government,-16.1024462,35.4782637,South West Zone,Functional
 Mimosa,MU210931,Health Centre,Government,-16.08574,35.61263,South West Zone,Functional
@@ -1142,7 +1142,7 @@ Naperi,BT241142,Health Centre,Private,NA,NA,South East Zone,Functional
 Naphimba Health Centre,MU211143,Health Centre,Government,-16.045639,35.445462,South West Zone,Functional
 Naso,NK101144,Clinic,Private,-12.92739,34.28465,Central East Zone,Functional
 Nasonia Dispensary,TH311145,Clinic,Private,-16.02475,35.1565,South East Zone,Non-functional
-Nàthenje,LL041146,Health Centre,Government,-14.08504,33.90823,Centrals West Zone,Functional
+NÃ thenje,LL041146,Health Centre,Government,-14.08504,33.90823,Centrals West Zone,Functional
 NRC clinic,LL041147,Clinic,Parastatal,-14.02247,33.67422,Centrals West Zone,Functional
 Nayinunje,MC191148,Health Centre,Government,-14.7406,35.56503,South West Zone,Functional
 Nayuchi,MC191149,Health Centre,Government,-14.97585,35.86726,South West Zone,Functional
@@ -1348,7 +1348,7 @@ Sobo,MZ161348,Dispensary,Private,-11.41853,34.00645,North Zone,Functional
 Mikoke,NT121349,Hospital,Christian Health Association of Malawi (CHAM),-14.99902,34.82815,Centrals West Zone,Functional
 SSH,LL041350,Dispensary,Private,-13.97345,33.77328,Centrals West Zone,Functional
 St. Anne's,KA151351,Clinic,Mission/Faith-based (other than CHAM),-10.4130292,34.2111016,North Zone,Non-functional
-Chiphwanya,DE031352,Health Centre,Christian Health Association of Malawi (CHAM),-1,2,Centrals West Zone,Functional
+Chiphwanya,DE031352,Health Centre,Christian Health Association of Malawi (CHAM),,,Centrals West Zone,Functional
 St Joseph's Health Center,TH311353,Health Centre,Christian Health Association of Malawi (CHAM),NA,NA,South East Zone,Functional
 St Martin'S Clinic,CK271354,Dispensary,Private,NA,NA,South East Zone,Functional
 St. Marys,LK181355,Health Centre,Government,-12.0293441,34.62425,North Zone,Functional
@@ -1537,11 +1537,11 @@ Kayerekera Health Centre,KA151538,Health Centre,Government,-9.949218870246149,33
 Police College Mua,DE031539,Health Centre,Government,-14.22589,34.51142,Centrals West Zone,Functional
 Ruo Dispensary,MU211540,Dispensary,Other,-16.08964,35.66507,South West Zone,Functional
 Senga Bay Baptist Health Centre,SA091541,Health Centre,Mission/Faith-based (other than CHAM),-13.74117,34.59536,Central East Zone,Functional
-St Augustine Health Centre,KU071542,Health Centre,Other,-0.1,0.1,Central East Zone,Functional
+St Augustine Health Centre,KU071542,Health Centre,Other,,,Central East Zone,Functional
 Thekerani Health Centre,TH311543,Health Centre,Other,NA,NA,South East Zone,Non-functional
 Thekerani Health Centre,TH311544,Health Centre,Other,-16.32106,35.20716,South East Zone,Non-functional
 Tutu Private Clinic,MG201545,Clinic,Other,NA,NA,South West Zone,Functional
-Tutu Private Clinic,MG201546,Clinic,Other,-0.1,0.1,South West Zone,Functional
+Tutu Private Clinic,MG201546,Clinic,Other,,,South West Zone,Functional
 Umoyo Private Clinic,LL041547,Clinic,Private,NA,NA,Centrals West Zone,Non-functional
 Umoyo Private Clinic,LL041548,Clinic,Private,-14.99987,35.49031,Centrals West Zone,Functional
 Phalombe District Hospital,PH221549,District Hospital,Government,-15.7170604,35.7038228,South West Zone,Functional
@@ -1551,23 +1551,23 @@ Chisomo,BT241552,Clinic,Private,-15.652717,35.019541,South East Zone,Functional
 MDF Secondary School Clinic,BT241553,Clinic,Other,-15.701300515348676,35.008320808410645,South East Zone,Functional
 Makata Dispensary Ndirande,BT241554,Dispensary,Government,-15.63006,35.07975,South East Zone,Functional
 Area 47 DIC,LL041555,Unclassified,Other,NA,NA,Centrals West Zone,Non-functional
-Area 47 DIC,LL041556,Private,Other,-0.1,0.1,Centrals West Zone,Functional
+Area 47 DIC,LL041556,Private,Other,,,Centrals West Zone,Functional
 Nyambadwe DIC,BT241557,Unclassified,Other,NA,NA,South East Zone,Non-functional
-Nyambadwe DIC,BT241558,Unclassified,Other,-0.1,0.1,South East Zone,Non-functional
+Nyambadwe DIC,BT241558,Unclassified,Other,,,South East Zone,Non-functional
 Hiltop DIC,MZ161559,Unclassified,Other,NA,NA,North Zone,Non-functional
-Hiltop DIC,MZ161560,Unclassified,Other,-0.1,0.1,North Zone,Non-functional
+Hiltop DIC,MZ161560,Unclassified,Other,,,North Zone,Non-functional
 Mangochi Boma DIC,MG201561,Unclassified,Other,NA,NA,South West Zone,Non-functional
-Mangochi Boma DIC,MG201562,Unclassified,Other,-0.1,0.1,South West Zone,Non-functional
+Mangochi Boma DIC,MG201562,Unclassified,Other,,,South West Zone,Non-functional
 Manolo Health Centre,MZ161563,Health Centre,Government,-11.898040790369997,33.58455561169471,North Zone,Functional
 McGuire Wellness Center (Child Legacy),LL041564,Clinic,Non-Government,-14.067927759309073,33.471991297500175,Centrals West Zone,Functional
 Mehboob Clinic,MG201565,Clinic,Private,-14.363570938561626,35.16665223910086,South West Zone,Functional
 Moyale Barracks Health Centre,MZ161566,Health Centre,Government,NA,NA,North Zone,Non-functional
-Moyale Barracks Health Centre,MZ161567,Health Centre,Government,-1,10,North Zone,Non-functional
+Moyale Barracks Health Centre,MZ161567,Health Centre,Government,,,North Zone,Non-functional
 Moyo Private Clinic,BT241568,Clinic,Private,NA,NA,South East Zone,Functional
-Moyo Private Clinic,BT241569,Clinic,Private,-1,1,South East Zone,Functional
+Moyo Private Clinic,BT241569,Clinic,Private,,,South East Zone,Functional
 Mtengowanthenga Community Hospital,DA021570,Hospital,Government,NA,NA,Central East Zone,Non-functional
 Namalweso,MG201571,Health Centre,Mission/Faith-based (other than CHAM),-13.95226,35.137631,South West Zone,Functional
-Nancholi Youth Organisation Clinic,BT241572,Clinic,Non-Government,-1,1,South East Zone,Functional
+Nancholi Youth Organisation Clinic,BT241572,Clinic,Non-Government,,,South East Zone,Functional
 Njereza,MG201573,Health Centre,Government,-14.3392413,35.0317026,South West Zone,Functional
 Cape Mclear Dispensary,MG201574,Health Centre,Government,-14.0259407,34.8521397,South West Zone,Functional
 Msaka Dispendary,MG201575,Dispensary,Government,-14.0792622,34.8522917,South West Zone,Functional
@@ -1893,7 +1893,7 @@ COCHI,LL041902,Unclassified,Private,-13.53498,33.45413,Centrals West Zone,Functi
 Home Care,LL041903,Unclassified,Private,-14.021168,33.801051,Centrals West Zone,Functional
 JVC Pharmacy,KU071904,Unclassified,Private,-13.040142,33.480668,Central East Zone,Functional
 Mitch,LL041905,Unclassified,Private,-13.985137,33.767411,Centrals West Zone,Functional
-Pharmacare,SA091906,Unclassified,Private,-13770082,34.437579,Central East Zone,Functional
+Pharmacare,SA091906,Unclassified,Private,,,Central East Zone,Functional
 Nafuse Health Centre,MC011907,Health Centre,Government,-13.814322091077559,33.15905277554406,Centrals West Zone,Functional
 Pemba Health Centre,SA091908,Health Centre,Government,-13.76214,34.42199,Central East Zone,Functional
 Mphelero Health Centre,MC011909,Health Centre,Government,-13.80273,32.88716,Centrals West Zone,Functional

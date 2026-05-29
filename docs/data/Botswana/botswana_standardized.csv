@@ -1,4 +1,4 @@
-﻿facility_name,facility_code,facility_type,facility_ownership,latitude,longitude,admin2,admin1,Telephone,status
+facility_name,facility_code,facility_type,facility_ownership,latitude,longitude,admin2,admin1,Telephone,status
 24 HOUR EM CLINIC,803293-0,Individual practitioner,PRIVATE,-24.55882,25.97973,South East,Greater Gaborone,3114171,OPERATIONAL
 24 HR EMERGENCY MEDICAL CARE,304543-2,Poly Clinic,PRIVATE,-17.806833,25.240925,Chobe,Chobe,+267 6251548,OPERATIONAL
 4 EYES OPTOMETRIST,946994-1,Individual practitioner,PRIVATE,-24.394279,26.145249,Kgatleng,Kgatleng,+267 3914556 / 77791340,OPERATIONAL
@@ -37,11 +37,11 @@ BETHESDA MEDICAL CENTRE,42380-6,Individual practitioner,PRIVATE,-22.551487,27.11
 BETHESDA MEDICAL CENTRE,745542-1,Individual practitioner,PRIVATE,-21.1746816,27.5185664,Greater Gaborone,--,+267 4922552,OPERATIONAL
 BIDII MEDICAL SERVICES,540264-1,Individual practitioner,PRIVATE,-21.184512,27.5316736,Greater Gaborone,--,+267 71866769,OPERATIONAL
 BLM DENTAL CLINIC,602523-3,Individual practitioner,PRIVATE,-24.394279,26.145249,Kgatleng,Kgatleng,+267 5710762,OPERATIONAL
-BMC Clinic,280610-7,Clinic,undefined,--,--,Ngami,Ngami,+267 6862782,OPERATIONAL
+BMC Clinic,280610-7,Clinic,undefined,,,Ngami,Ngami,+267 6862782,OPERATIONAL
 BMC Clinic (factory),602729-6,Clinic,GOVERNMENT,-25.21667,25.66667,Lobatse,Greater Lobatse,+267 5330321,OPERATIONAL
 BOCHAIP,168242-6,Group practice,PRIVATE,-24.8597791,25.8497607,South East,Greater Gaborone,+267 5392078,OPERATIONAL
 BOFWA,411725-5,Group practice,PRIVATE,-24.980392,25.305358,Kanye,Southern,5403086,OPERATIONAL
-BOFWA Clinic,969077-7,Clinic,undefined,--,--,Ngami,Ngami,+267 6864718,OPERATIONAL
+BOFWA Clinic,969077-7,Clinic,undefined,,,Ngami,Ngami,+267 6864718,OPERATIONAL
 BOIPUSO SURGERY,45728-3,Individual practitioner,PRIVATE,-21.162705,27.510021,Greater Francistown,--,2672419044,OPERATIONAL
 BONGAKA HEALTH,353408-8,Individual practitioner,PRIVATE,-24.6595939,25.9288518,Greater Gaborone,Greater Gaborone,+267 3919900,OPERATIONAL
 BOPMOE HOLDINGS,816049-1,Individual practitioner,PRIVATE,-24.6404355,25.929759,Greater Gaborone,--,+267 3113669,OPERATIONAL
@@ -495,7 +495,7 @@ Mabuo Health Post,162465-9,Health Post,GOVERNMENT,-22.625971,26.357756,Serowe,Se
 Mabutsane Clinic,791197-7,Clinic with Maternity,GOVERNMENT,-24.396071,23.577519,Mabutsane,Southern,+267 5889218,OPERATIONAL
 Machaneng Clinic ,867922-7,Clinic with Maternity,GOVERNMENT,-23.181384,27.488793,Mahalapye,Mahalapye,+267 4940270,OPERATIONAL
 Madiba Health Post,719032-5,Health Post,GOVERNMENT,-23.081726,26.818272,Mahalapye,Mahalapye,+267 4710981,OPERATIONAL
-Madiba Senior Secondary School Clinic,219564-2,Clinic,GOVERNMENT,--,--,Mahalapye,Mahalapye,,OPERATIONAL
+Madiba Senior Secondary School Clinic,219564-2,Clinic,GOVERNMENT,,,Mahalapye,Mahalapye,,OPERATIONAL
 Madisakwane Health Post,512171-0,Health Post,GOVERNMENT,-21.448829,27.476809,Greater Francistown,Greater Francistown,+267 2485529,OPERATIONAL
 Mafhikana Clinic,518039-3,Clinic,GOVERNMENT,-24.991023,25.357684,Kanye,Southern,+267 5440752,OPERATIONAL
 Mafhungo/Hubona,218345-7,Health Post,GOVERNMENT,-20.942894,27.262162,Tutume,Tutume,2470093,OPERATIONAL
@@ -677,7 +677,7 @@ Mosu Health Post,317664-1,Health Post,GOVERNMENT,-21.218411,26.019257,Boteti,Bot
 Mothamo CJSS Clinic,717471-7,Clinic,GOVERNMENT,-22.641166,26.397377,Serowe,Serowe/Palapye,4620343,OPERATIONAL
 Motopi Clinic,490856-2,Clinic with Maternity,GOVERNMENT,-20.216337,24.131747,Boteti,Boteti,+267 6869002,OPERATIONAL
 Motsentshe Health Post,907515-1,Health Post,GOVERNMENT,-25.385333,25.364388,Goodhope,Greater Lobatse,+267 5410854,OPERATIONAL
-Motswedi Clinic,456973-7,Clinic,GOVERNMENT,"	-25.22407",25.70536,Lobatse,Greater Lobatse,+267 5333037,OPERATIONAL
+Motswedi Clinic,456973-7,Clinic,GOVERNMENT,	-25.22407,25.70536,Lobatse,Greater Lobatse,+267 5333037,OPERATIONAL
 Mowana Copper Mine Clinic,61986-6,Individual practitioner,PRIVATE,-20.521754,26.600861,Tutume,Tutume,76240258,OPERATIONAL
 Mowana Health Post,322012-6,Health Post,GOVERNMENT,-23.140048,26.815761,Mahalapye,Mahalapye,+267 4720586,OPERATIONAL
 Mowana Health Post,796866-2,Health Post,GOVERNMENT,-20.80149,27.621247,North East,North East,+267 73782213,OPERATIONAL
@@ -930,7 +930,7 @@ Shashe Station Health Post,792566-2,Health Post,GOVERNMENT,-21.390487,27.446741,
 Sheepfarm Health Post,120761-2,Health Post,GOVERNMENT,-25.54223,25.49369,Goodhope,Greater Lobatse,+267 5404614,OPERATIONAL
 Sheleketla Clinic,585584-6,Clinic,GOVERNMENT,-23.052126,26.492512,Mahalapye,Mahalapye,+267 4769700,OPERATIONAL
 Shorobe Clinic,617724-0,Clinic with Maternity,GOVERNMENT,-19.766877,23.673459,Ngami,Ngami,+267 6840083,OPERATIONAL
-Shoshong Senior Secondary School Clinic,162118-4,Clinic,GOVERNMENT,--,--,Mahalapye,Mahalapye,,OPERATIONAL
+Shoshong Senior Secondary School Clinic,162118-4,Clinic,GOVERNMENT,,,Mahalapye,Mahalapye,,OPERATIONAL
 Sidilega Private Hospital,821194-8,Private Hospital,PRIVATE,-24.6372227,25.9113084,Greater Gaborone,--,+267 3709518,OPERATIONAL
 Sidilega Private Hospital ,484729-9,Private Hospital,PRIVATE,-24.620346,25.900573,Greater Gaborone,Greater Gaborone,370 9500,OPERATIONAL
 Siga Clinic,528798-2,Clinic,GOVERNMENT,-24.870745,25.872746,South East,Greater Gaborone,5390297/580,OPERATIONAL
@@ -994,7 +994,7 @@ Tloaneng Health Post,540164-1,Health Post,GOVERNMENT,-24.66605,25.80049,Kweneng 
 Tlokweng Main Clinic,991139-7,Clinic,GOVERNMENT,-24.667312,25.957463,Greater Gaborone,Greater Gaborone,+267 3928228,OPERATIONAL
 Tlokweng Pharmacy,188196-0,Individual practitioner,PRIVATE,-24.6758806,25.9664733,South East,Greater Gaborone,3132223,OPERATIONAL
 Tobane Health Post,878856-4,Health Post,GOVERNMENT,-21.904243,28.043809,Phikwe,Greater Phikwe,+267 2615576,OPERATIONAL
-Tobela Clinic,210240-8,Clinic,GOVERNMENT,--,--,Mahalapye,Mahalapye,,PENDING
+Tobela Clinic,210240-8,Clinic,GOVERNMENT,,,Mahalapye,Mahalapye,,PENDING
 Tonota Clinic,827088-6,Clinic with Maternity,GOVERNMENT,-21.441143,27.457372,Greater Francistown,Greater Francistown,+267 2484218,OPERATIONAL
 Topisi Health Post ,921369-5,Clinic,GOVERNMENT,-22.419484,27.400149,Palapye,Serowe/Palapye,+267 4928407,OPERATIONAL
 Toro Clinic,807112-8,Individual practitioner,PRIVATE,-22.560513,27.081601,Palapye,Serowe/Palapye,492 4763,OPERATIONAL
@@ -1008,7 +1008,7 @@ Tsamaya Clinic,159292-2,Clinic with Maternity,GOVERNMENT,-20.836992,27.627205,No
 Tsarona Eye Specialist Services,24528-2,Individual practitioner,PRIVATE,-24.6602,25.9258,Greater Gaborone,Greater Gaborone,3973345/6,OPERATIONAL
 Tsau Clinic,762953-8,Clinic with Maternity,GOVERNMENT,-20.168088,22.456916,Ngami,Ngami,+267 6871010,OPERATIONAL
 Tsetsebjwe Clinic,461911-0,Clinic with Maternity,GOVERNMENT,-21.99116,28.429727,Bobirwa,Greater Phikwe,+267 2646233,OPERATIONAL
-Tsetseng Health Post,687580-1,Health Post,GOVERNMENT,--,--,Kweneng East,Kweneng,+267 5960277,OPERATIONAL
+Tsetseng Health Post,687580-1,Health Post,GOVERNMENT,,,Kweneng East,Kweneng,+267 5960277,OPERATIONAL
 Tshane Health Post,758986-4,Health Post,GOVERNMENT,-24.020721,21.86909,Kgalagadi North,Kgalagadi North,+267 5810261,OPERATIONAL
 Tshepo Medical Centre,888181-5,Individual practitioner,PRIVATE,-25.22576,25.66915,Lobatse,Greater Lobatse,5300350,OPERATIONAL
 Tshesebe Clinic,550673-8,Health Post,GOVERNMENT,-20.726976,27.582452,North East,North East,+267 2489215,OPERATIONAL
@@ -1030,7 +1030,7 @@ Tutume Medical Center,974441-8,Individual practitioner,PRIVATE,-20.489346,27.041
 Tutume Pharmacy,904700-2,Individual practitioner,PRIVATE,-20.489346,27.041418,Tutume,Tutume,71634666,OPERATIONAL
 Tutume Primary Hospital ,148454-2,Primary Hospital,GOVERNMENT,-20.489979,27.045552,Tutume,Tutume,+267 2987249,OPERATIONAL
 UB (Main Campus) Clinic,79831-4,Clinic,GOVERNMENT,-24.658485,25.937288,South East,Greater Gaborone,+267 3550000,OPERATIONAL
-ULTRA CARE PHARMACY,59027-3,Individual practitioner,PRIVATE,-24393981,26.14443,Kgatleng,Kgatleng,267 72897706,OPERATIONAL
+ULTRA CARE PHARMACY,59027-3,Individual practitioner,PRIVATE,,,Kgatleng,Kgatleng,267 72897706,OPERATIONAL
 UNICHEM PHARMACY,641008-8,Individual practitioner,PRIVATE,-24.65722575,25.91728256,Greater Gaborone,--,+267 3906279,OPERATIONAL
 UNIVERSAL FAMILY CLINIC,395705-7,Individual practitioner,PRIVATE,-24.6311588,25.8831774,Kweneng East,--,+267 71429704,OPERATIONAL
 UNIVERSAL FAMILY CLINIC,128761-4,Poly Clinic,PRIVATE,-24.405846,25.508883,Kweneng East,Kweneng,5921998,OPERATIONAL

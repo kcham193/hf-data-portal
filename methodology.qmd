@@ -14,7 +14,7 @@ toc-depth: 3
 ## Overview
 
 This page describes the end-to-end pipeline used to produce each country dataset.
-The pipeline runs through four stages: **source collation → harmonisation →
+The pipeline runs through four stages: **source collation → harmonization →
 quality assessment → versioned release**. All pipeline code is open-source and
 available in the [GitHub repository](https://github.com/myalla-christina/hf-data-portal).
 
@@ -37,7 +37,7 @@ snapshots.
 
 ---
 
-## 2. Harmonisation
+## 2. Harmonization
 
 ### Common Schema
 
@@ -107,8 +107,6 @@ Datasets follow **semantic versioning** (`MAJOR.MINOR.PATCH`):
 - `MAJOR` — schema-breaking changes
 - `MINOR` — new facilities or additional fields (backward-compatible)
 - `PATCH` — coordinate corrections or name fixes
-
-Each release is archived on Zenodo and assigned a citable DOI.
 
 ---
 

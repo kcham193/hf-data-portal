@@ -5,216 +5,212 @@ toc: false
 ---
 
 ```{=html}
-<!-- WELCOME BANNER -->
-<section class="welcome-section">
-  <h1>Welcome to the HF Data Portal</h1>
-  <p class="welcome-sub">
-    The Health Facility Data Portal is a centralised resource for structured,
-    quality-assured facility data relevant to modelling in sub-Saharan
-    Africa. Explore our country pages for guidance on accessing and using
-    health facility datasets.
-  </p>
-</section>
+<!-- ═══════════════ HERO ═══════════════ -->
+<section class="hero-section">
+  <div class="hero-grid-bg"></div>
 
-<!-- SELECTOR CARD: dropdown + workflow diagram -->
-<section class="selector-section">
-  <div class="selector-card">
+  <!-- Animated orbs -->
+  <div style="position:absolute;inset:0;z-index:1;overflow:hidden;pointer-events:none;">
+    <div style="position:absolute;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(201,162,39,0.12),transparent 70%);top:8%;left:3%;animation:float 8s ease-in-out infinite;"></div>
+    <div style="position:absolute;width:250px;height:250px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,0.1),transparent 70%);bottom:12%;right:8%;animation:float 6s ease-in-out infinite 1s;"></div>
+    <div style="position:absolute;width:180px;height:180px;border-radius:50%;background:radial-gradient(circle,rgba(6,182,212,0.08),transparent 70%);top:55%;left:55%;animation:float 7s ease-in-out infinite 2s;"></div> mnbbbbbbbbbbbbbbbbbbbbb                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
+  </div>
 
-<div class="selector-left">
-  <label for="countrySelect">I am looking for data from</label>
-  <select class="country-select" id="countrySelect" onchange="onCountryChange(this)">
-    <option value="" disabled selected>Select a country…</option>
-    <option value="countries/tanzania.qmd">🇹🇿 Tanzania</option>
-    <option value="countries/Malawi.qmd">🇲🇼 Malawi</option>
-    <option value="countries/uganda.qmd">🇺🇬 Uganda</option>
-    <option value="countries/Zambia.qmd">🇿🇲 Zambia</option>
-    <option value="countries/Benin.qmd">🇧🇯 Benin</option>
-    <option value="countries/Botswana.qmd">🇧🇼 Botswana</option>
-    <option value="countries/Nigeria.qmd">🇳🇬 Nigeria</option>
-  </select>
-  <button class="proceed-btn" id="proceedBtn" onclick="goToCountry()">
-    Proceed ➔
-  </button>
-</div>
-
-    <div class="workflow-diagram">
-
-      <!-- Row 1: left to right -->
-      <div class="wf-row">
-        <div class="wf-node">
-          <span class="wf-icon">🔍</span>
-          I need HF data for modelling
-        </div>
-        <div class="wf-arrow">→</div>
-        <div class="wf-node wf-center">
-          <span class="wf-icon">🏥</span>
-          Visit HFD Portal
-        </div>
-        <div class="wf-arrow">→</div>
-        <div class="wf-node wf-action">
-          <span class="wf-icon">📂</span>
-          Explore country pages
-        </div>
-        <div class="wf-arrow">→</div>
-        <div class="wf-node wf-action">
-          <span class="wf-icon">🔗</span>
-          Find the dataset links
-        </div>
-      </div>
-
-      <!-- Turn: down arrow on right side -->
-      <div class="wf-turn-row">
-        <div class="wf-turn-spacer"></div>
-        <div class="wf-arrow wf-arrow-down"> <- </div>
-      </div>
-
-      <!-- Row 2: right to left (snake) -->
-      <div class="wf-row wf-row-reverse">
-        <div class="wf-node wf-download">
-          <span class="wf-icon">⬇️</span>
-          Download data
-        </div>
-        <div class="wf-arrow">→</div>
-        <div class="wf-node wf-decision">
-          <span class="wf-icon">❓</span>
-          Decide whether to download
-        </div>
-        <div class="wf-arrow">→</div>
-        <div class="wf-node wf-external">
-          <span class="wf-icon">🏥</span>
-          Review country HF profile
-        </div>
-        <!-- <div class="wf-arrow">→</div> -->
-        <!-- <div class="wf-node wf-action"> -->
-        <!--   <span class="wf-icon">ℹ️</span> -->
-        <!--   Review quality report -->
-        <!-- </div> -->
-      </div>
-
+  <div class="hero-content">
+    <div class="hero-badge">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+      Malaria Atlas Project &mdash; Dar es Salaam Node
     </div>
 
+    <h1>
+      <span class="hero-accent">HealthScope</span>
+    </h1>
+    <p style="font-size:1.5rem;color:rgba(255,255,255,0.85);margin-bottom:0.5rem;font-weight:500;">Health Facility Intelligence Portal</p>
+    <p>Beyond static inventories. Demand-driven health access analytics across Sub-Saharan Africa &mdash; revealing not just where facilities exist, but whether populations can realistically access them.</p>
+
+    <div class="hero-buttons">
+      <a href="registry.html" class="btn-primary">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        Explore Registry
+      </a>
+      <a href="find-facility.html" class="btn-secondary">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+        Find Nearby Facility
+      </a>
+    </div>
+  </div>
+
+  <div style="position:absolute;bottom:30px;left:50%;transform:translateX(-50%);z-index:3;animation:float 3s ease-in-out infinite;">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
   </div>
 </section>
 
-<hr class="hf-divider">
+<!-- ═══════════════ LIVE STATS ═══════════════ -->
+<section class="stats-bar">
+  <div class="stat-item">
+    <span class="stat-number">78,346</span>
+    <span class="stat-label">Facilities in Registry</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-number">6</span>
+    <span class="stat-label">Countries Live</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-number">18</span>
+    <span class="stat-label">Service Categories Tracked</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-number">MoH-Sourced</span>
+    <span class="stat-label">Direct from Ministries of Health</span>
+  </div>
+</section>
 
-<!-- FEATURE CARDS -->
+<!-- ═══════════════ THE PROBLEM ═══════════════ -->
+<section style="padding:4rem 2rem;background:var(--map-bg,#fff);">
+  <div style="max-width:900px;margin:0 auto;text-align:center;">
+    <p style="font-size:0.85rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--map-red,#c9a227);font-weight:600;margin-bottom:0.5rem;">The Problem</p>
+    <h2 style="font-family:'Space Grotesk',sans-serif;font-size:2rem;margin-bottom:1.25rem;color:var(--map-navy,#1a2332);">Existing portals show <em>where</em> facilities are. Not whether anyone can reach them.</h2>
+    <p style="color:var(--map-text-muted,#64748b);line-height:1.8;font-size:1.05rem;">
+      WHO AFRO and HDX document facility locations but offer no population-demand modelling, temporal tracking, service-level intelligence, or equity analysis. A dispensary 15&nbsp;km from the nearest road and one on a highway appear identically as map pins. HealthScope fills all four gaps simultaneously.
+    </p>
+  </div>
+</section>
+
+<!-- ═══════════════ FIVE INTELLIGENCE LAYERS ═══════════════ -->
 <section class="features-section">
-     <h2> What we Have </h2>
-  <div class="feature-cards">
-
-    <div class="feature-card">
-      <h3>Facility Datasets</h3>
-      <div class="card-svg">
-        <svg viewBox="0 0 80 80" fill="none" stroke="#3d7a6e" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="12" y="12" width="20" height="22" rx="3"/>
-          <rect x="30" y="8" width="20" height="22" rx="3"/>
-          <line x1="40" y1="30" x2="40" y2="46"/>
-          <line x1="32" y1="38" x2="40" y2="46"/>
-          <line x1="48" y1="38" x2="40" y2="46"/>
-          <ellipse cx="40" cy="52" rx="14" ry="5"/>
-          <line x1="26" y1="52" x2="26" y2="62"/>
-          <line x1="54" y1="52" x2="54" y2="62"/>
-          <ellipse cx="40" cy="62" rx="14" ry="5"/>
-        </svg>
-      </div>
-      <p>Access georeferenced, harmonised facility lists including type, ownership, service availability, and administrative hierarchy across sub-saharan countries.</p>
+  <div style="max-width:1200px;margin:0 auto;padding:0 2rem;">
+    <div class="section-header">
+      <h2>Five Intelligence Layers</h2>
+      <p>Each layer transforms raw registry data into actionable health system intelligence</p>
     </div>
 
-    <div class="feature-card">
-      <h3>Countries HF Profiles</h3>
-      <div class="card-svg">
-        <svg viewBox="0 0 80 80" fill="none" stroke="#3d7a6e" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="20" y="12" width="34" height="44" rx="3"/>
-          <rect x="24" y="8" width="34" height="44" rx="3" fill="white" stroke="#3d7a6e"/>
-          <line x1="32" y1="24" x2="50" y2="24"/>
-          <line x1="32" y1="31" x2="50" y2="31"/>
-          <line x1="32" y1="38" x2="50" y2="38"/>
-          <line x1="32" y1="45" x2="44" y2="45"/>
-        </svg>
-      </div>
-      <p>Detailed informationabout the health faciliies overview, demographics and services per each avaliable country</p>
-    </div>
+    <div class="feature-cards" style="grid-template-columns:repeat(auto-fit,minmax(320px,1fr));">
 
-    <div class="feature-card">
-      <h3>Methods</h3>
-      <div class="card-svg">
-        <svg viewBox="0 0 80 80" fill="none" stroke="#3d7a6e" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="10" y="16" width="60" height="48" rx="4"/>
-          <line x1="10" y1="28" x2="70" y2="28"/>
-          <circle cx="20" cy="22" r="2.5"/>
-          <circle cx="29" cy="22" r="2.5"/>
-          <circle cx="38" cy="22" r="2.5"/>
-          <polyline points="24,40 32,50 24,60"/>
-          <line x1="38" y1="60" x2="56" y2="60"/>
-        </svg>
-      </div>
-      <p>Detailed information on the methods used in gathering, processing and standardizing the health facilities dataset</p>
-    </div>
-
-  </div>
-</section>
-
-<hr class="hf-divider">
-
-<!-- ABOUT STRIP -->
-<section class="about-strip">
-  <div class="about-inner">
-    <div class="about-text">
-      <h2>Access to Health Facility Data for Analysis and Research</h2>
-      <p>
-        The HF Data Portal makes it easier to find and use health facility data for modelling. The Portal collates facility lists from national master facility registries, DHIS2, and partner sources and documenting the each country.
-      </p>
-      <p>
-        The Portal guides you through downloading and contextualises each dataset with quality overview.
-      </p>
-      <a href="about.html" class="btn-hf-primary">Learn More About the Portal</a>
-    </div>
-    <div class="about-visual">
-      <div class="about-stat">
-        <span class="about-stat-icon">🌍</span>
-        <div>
-          <div class="about-stat-value">+5</div>
-          <div class="about-stat-label">Countries covered</div>
+      <!-- Layer 1: Registry -->
+      <div class="feature-card">
+        <div class="feature-icon" style="background:rgba(201,162,39,0.08);">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c9a227" stroke-width="2"><path d="M3 21h18"/><path d="M5 21V7l8-4v18"/><path d="M19 21V11l-6-4"/></svg>
         </div>
+        <h3>Facility Registry Lake</h3>
+        <p>Standardized facility data from MoH sources across 6 SSA countries. Multi-country harmonized schema with 78,000+ facilities &mdash; directly from Ministries, not aggregators.</p>
+        <a href="registry.html">Explore Registry &rarr;</a>
       </div>
-      <div class="about-stat">
-        <span class="about-stat-icon">🏥</span>
-        <div>
-          <div class="about-stat-value">+50,000</div>
-          <div class="about-stat-label">Facilities catalogued</div>
+
+      <!-- Layer 2: Temporal -->
+      <div class="feature-card">
+        <div class="feature-icon" style="background:rgba(37,99,235,0.08);">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
         </div>
+        <h3>Temporal Tracking</h3>
+        <p>Animated timeline of facility openings, service expansions, and closures. No existing open platform tracks how health infrastructure has evolved over time.</p>
+        <span style="display:inline-flex;align-items:center;gap:0.35rem;color:var(--map-text-muted);font-size:0.85rem;font-weight:500;margin-top:1rem;padding:0.3rem 0.75rem;background:var(--map-bg-section,#f1f5f9);border-radius:100px;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          Phase 2 &mdash; Data enrichment underway
+        </span>
       </div>
-      <div class="about-stat">
-        <span class="about-stat-icon">📅</span>
-        <div>
-          <div class="about-stat-value">Current</div>
-          <div class="about-stat-label">Temporal coverage</div>
+
+      <!-- Layer 3: Access -->
+      <div class="feature-card">
+        <div class="feature-icon" style="background:rgba(5,150,105,0.08);">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
         </div>
+        <h3>Demand-Side Access</h3>
+        <p>Find the nearest facility offering the service you need.</p>
+        <a href="find-facility.html">Find Nearest Facility &rarr;</a>
       </div>
-      <!-- <div class="about-stat"> -->
-      <!--   <span class="about-stat-icon">🔓</span> -->
-      <!--   <div> -->
-      <!--     <div class="about-stat-value">Open Access</div> -->
-      <!--     <div class="about-stat-label">CC BY 4.0 licensed</div> -->
-      <!--   </div> -->
+
+      <!-- Layer 4: Service Gaps -->
+      <div class="feature-card">
+        <div class="feature-icon" style="background:rgba(245,158,11,0.08);">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+        </div>
+        <h3>Service Gap Intelligence</h3>
+        <p>Which services exist where? Identify malaria service deserts, lab coverage gaps, and emergency preparedness blind spots at the facility level.</p>
+        <a href="services.html">View Service Analysis &rarr;</a>
       </div>
+
+      <!-- Layer 5: Equity -->
+      <div class="feature-card">
+        <div class="feature-icon" style="background:rgba(6,182,212,0.08);">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#06b6d4" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3>Equity &amp; Vulnerability Lens</h3>
+        <p>Population-weighted access scores. Facility density by region, ownership distribution, and type coverage &mdash; exposing inequities masked by aggregate counts.</p>
+        <a href="equity.html">View Equity Dashboard &rarr;</a>
+      </div>
+
     </div>
   </div>
 </section>
 
-<script>
-function goToCountry() {
-  const select = document.getElementById("countrySelect");
-  const value = select.value;
-  if (!value) {
-    alert("Please select a country first.");
-    return;
-  }
-  // Convert .qmd path to .html for the rendered site
-  const url = value.replace(".qmd", ".html");
-  window.location.href = url;
-}
-</script>
+<!-- ═══════════════ DATA PIPELINE ═══════════════ -->
+<section style="padding:5rem 2rem;background:var(--map-bg,#fff);">
+  <div style="max-width:1100px;margin:0 auto;">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;">
 
+      <div>
+        <p style="font-size:0.85rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--map-red,#c9a227);font-weight:600;margin-bottom:0.5rem;">ETL Pipeline v2</p>
+        <h2 style="font-family:'Space Grotesk',sans-serif;font-size:1.8rem;margin-bottom:1rem;color:var(--map-navy,#1a2332);">MoH Data &rarr; Standardized Intelligence</h2>
+        <p style="color:var(--map-text-muted,#64748b);line-height:1.8;">
+          Raw facility data from Ministry of Health registries is processed through a validated 7-step ETL pipeline: extraction, column standardization, coordinate cleaning, date parsing, schema enforcement, quality flagging, and versioned export.
+        </p>
+        <div style="display:flex;gap:0.75rem;margin-top:1.5rem;flex-wrap:wrap;">
+          <a href="about.html" class="btn-hf-primary">Architecture &amp; Methods</a>
+          <a href="data-sources.html" class="btn-hf-outline" style="color:var(--map-red)!important;border-color:var(--map-red);">Data Sources</a>
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;">
+        <div class="about-stat">
+          <div>
+            <div class="about-stat-value">13,075</div>
+            <div class="about-stat-label">Tanzania</div>
+          </div>
+        </div>
+        <div class="about-stat">
+          <div>
+            <div class="about-stat-value">51,023</div>
+            <div class="about-stat-label">Nigeria</div>
+          </div>
+        </div>
+        <div class="about-stat">
+          <div>
+            <div class="about-stat-value">8,512</div>
+            <div class="about-stat-label">Uganda</div>
+          </div>
+        </div>
+        <div class="about-stat">
+          <div>
+            <div class="about-stat-value">3,731</div>
+            <div class="about-stat-label">Zambia</div>
+          </div>
+        </div>
+        <div class="about-stat">
+          <div>
+            <div class="about-stat-value">1,929</div>
+            <div class="about-stat-label">Malawi</div>
+          </div>
+        </div>
+        <div class="about-stat">
+          <div>
+            <div class="about-stat-value">1,076</div>
+            <div class="about-stat-label">Botswana</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ CTA ═══════════════ -->
+<section class="countries-banner">
+  <h2>Start Exploring</h2>
+  <p>Choose a country or tool to begin working with HealthScope data</p>
+  <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:0.5rem;">
+    <a href="registry.html" class="btn-primary">Registry Explorer</a>
+    <a href="find-facility.html" class="btn-secondary">Find Nearby Facility</a>
+    <a href="equity.html" class="btn-secondary">Equity Dashboard</a>
+  </div>
+</section>
 ```
